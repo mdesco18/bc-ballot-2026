@@ -10,8 +10,10 @@ function el(id){
                       addEventListener(){},setAttribute(){},closest:()=>null};
 }
 global.document={getElementById:el,querySelectorAll:()=>[],addEventListener(){},
+                 querySelector:()=>({classList:{add(){},remove(){},contains:()=>false}}),
                  body:{classList:{toggle(){}}}};
-global.window={scrollTo(){},print(){},scrollY:0,addEventListener(){},matchMedia:()=>({matches:false})};
+global.window={scrollTo(){},print(){},scrollY:0,innerWidth:1280,addEventListener(){},
+               matchMedia:()=>({matches:false}),requestAnimationFrame:f=>f()};
 let store={};
 global.localStorage={getItem:k=>store[k]??null,setItem:(k,v)=>{store[k]=v}};
 const src=fs.readFileSync(PAGE,'utf8').split('<script>')[1].split('</script>')[0];

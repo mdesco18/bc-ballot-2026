@@ -118,7 +118,7 @@ const slot=p=>SLOT[p] || "--hind";
 
 // jurisdiction tabs
 document.getElementById("jtabs").innerHTML = JORDER.map(j=>
-  `<button class="jtab" data-j="${esc(j)}" aria-pressed="${j===state.j}">${esc(SHORT[j]||j)}</button>`).join("");
+  `<button type="button" class="jtab" data-j="${esc(j)}" aria-pressed="${j===state.j}" aria-current="${j===state.j?"page":"false"}">${esc(SHORT[j]||j)}</button>`).join("");
 
 function rowsFor(j){ return ALL.filter(c=>c.j===j); }
 function partiesFor(j){
@@ -159,7 +159,7 @@ function renderControls(){
     b.setAttribute("aria-pressed", String(r===state.race));
   });
   document.getElementById("parties").innerHTML = partiesFor(state.j).map(p=>
-    `<button class="pchip" data-party="${esc(p)}" aria-pressed="${p===state.party}" style="--pc:var(${slot(p)})"><span class="dot"></span>${esc(p)}</button>`).join("");
+    `<button type="button" class="pchip" data-party="${esc(p)}" aria-pressed="${p===state.party}" style="--pc:var(${slot(p)})"><span class="dot"></span>${esc(p)}</button>`).join("");
 }
 
 function renderRoster(){
@@ -227,7 +227,7 @@ function disclosure(key){
 function card(c){
   const id=c.j+"|"+c.race+"|"+c.name;
   return `<li class="cand" data-id="${esc(id)}" data-search="${esc((c.name+" "+c.party).toLowerCase())}">
-    <button class="mark" aria-pressed="${marks.has(id)}" aria-label="Shortlist ${esc(c.name)}">&#10003;</button>
+    <button type="button" class="mark" aria-pressed="${marks.has(id)}" aria-label="Shortlist ${esc(c.name)}">&#10003;</button>
     <div>
       <div class="nm">${esc(c.name)}</div>
       <div class="row2">
@@ -258,6 +258,8 @@ function applyFilters(){
     h.hidden = ![...document.querySelectorAll(`.pgroup[data-race="${h.dataset.race}"]`)].some(g=>!g.hidden);
   });
   document.getElementById("empty").hidden = visible>0;
+  const rc=document.getElementById("resultcount");
+  if(rc) rc.textContent = visible+(visible===1?" candidate":" candidates")+" shown in "+state.j;
   const mc=document.getElementById("markcount");
   if(mc) mc.textContent=[...marks].filter(k=>k.startsWith(state.j+"|")).length;
   document.querySelectorAll(".section[data-juris]").forEach(s=>{ s.hidden = s.dataset.juris!==state.j; });
@@ -272,7 +274,7 @@ document.getElementById("jtabs").addEventListener("click",e=>{
   const b=e.target.closest(".jtab"); if(!b) return;
   state.j=b.dataset.j; state.party=null;
   if(!racesFor(state.j).includes(state.race)) state.race="all";
-  document.querySelectorAll(".jtab").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.j===state.j)));
+  document.querySelectorAll(".jtab").forEach(x=>{const s=x.dataset.j===state.j;x.setAttribute("aria-pressed",String(s));x.setAttribute("aria-current",s?"page":"false");});
   renderAll();
   window.scrollTo({top:0,behavior:"instant"});
 });
@@ -361,6 +363,21 @@ on("filterstoggle",()=>{
 });
 on("expandbtn",()=>allDetails().forEach(d=>{ d.open=true; }));
 on("collapsebtn",()=>allDetails().forEach(d=>{ d.open=false; }));
+(function(){
+  const bar=document.querySelector(".controls");
+  if(!bar) return;
+  const raf = (window.requestAnimationFrame || (f=>f())).bind(window);
+  let last=window.scrollY||0, queued=false, hidden=false;
+  function setHidden(v){ if(v===hidden) return; hidden=v; bar.classList.toggle("hide", v); }
+  function update(){
+    const y=window.scrollY||0, d=y-last;
+    if(y<140) setHidden(false);
+    else if(d>6) setHidden(true);
+    else if(d<-6) setHidden(false);
+    last=y; queued=false;
+  }
+  window.addEventListener("scroll",()=>{ if(!queued){ queued=true; raf(update); } },{passive:true});
+})();
 const toTop=document.getElementById("totop");
 if(toTop){
   const smooth=!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);

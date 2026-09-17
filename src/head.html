@@ -1,0 +1,497 @@
+<title>BC Ballot 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --ground:#F5F7F4; --surface:#FFFFFF; --surface-2:#EDF1EC;
+  --ink:#13201D; --ink-2:#3C4C48; --muted:#65756F;
+  --rule:#DCE3DD; --rule-2:#C6D0C8;
+  --accent:#0F6E5C; --accent-soft:#E2EFE9; --flag:#A8442B;
+  --h0:#2E6DB4;  --h1:#A63446;  --h2:#15899A;  --h3:#C2761B;
+  --h4:#3E8E41;  --h5:#7A4FA3;  --h6:#CE3C22;  --h7:#B53F83;
+  --h8:#22406B;  --h9:#65813A;  --h10:#46626C; --h11:#8A5A33;
+  --h12:#4A4FA8; --h13:#1F6B55; --hind:#6F7A75;
+  --shadow:0 1px 2px rgba(19,32,29,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F1513; --surface:#161E1B; --surface-2:#1E2825;
+    --ink:#E7EDE9; --ink-2:#BCC8C3; --muted:#8C9A94;
+    --rule:#28332F; --rule-2:#36433E;
+    --accent:#59C6A6; --accent-soft:#16302A; --flag:#E08063;
+    --h0:#6BA3E0;  --h1:#DE8090;  --h2:#4FC3D2;  --h3:#E0A552;
+    --h4:#76C179;  --h5:#B18BD8;  --h6:#F0755A;  --h7:#E185BA;
+    --h8:#7C9AC8;  --h9:#A3BE6E;  --h10:#88A6B0; --h11:#C89A6A;
+    --h12:#9598E0; --h13:#5FBFA0; --hind:#9BA8A2;
+    --shadow:0 1px 2px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F1513; --surface:#161E1B; --surface-2:#1E2825;
+  --ink:#E7EDE9; --ink-2:#BCC8C3; --muted:#8C9A94;
+  --rule:#28332F; --rule-2:#36433E;
+  --accent:#59C6A6; --accent-soft:#16302A; --flag:#E08063;
+  --h0:#6BA3E0;  --h1:#DE8090;  --h2:#4FC3D2;  --h3:#E0A552;
+  --h4:#76C179;  --h5:#B18BD8;  --h6:#F0755A;  --h7:#E185BA;
+  --h8:#7C9AC8;  --h9:#A3BE6E;  --h10:#88A6B0; --h11:#C89A6A;
+  --h12:#9598E0; --h13:#5FBFA0; --hind:#9BA8A2;
+  --shadow:0 1px 2px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:0}
+h1,h2,h3{font-family:Newsreader,Georgia,"Times New Roman",serif;font-weight:600;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+
+.masthead{border-bottom:1px solid var(--rule-2);background:var(--surface)}
+.masthead .wrap{padding-block:32px 16px}
+.kicker{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(32px,5.6vw,50px);line-height:1.02;letter-spacing:-.015em;margin-top:10px}
+h1 em{font-style:italic;color:var(--accent)}
+.standfirst{margin-top:13px;max-width:62ch;color:var(--ink-2);font-size:16px}
+.subnote{margin-top:9px;max-width:62ch;font-size:13.5px;color:var(--muted)}
+.countdown{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:18px;align-items:baseline}
+.countdown b{font-family:"IBM Plex Mono",monospace;font-size:25px;font-weight:500;color:var(--flag)}
+.countdown span{font-size:13px;color:var(--muted)}
+
+.provisional{margin-top:16px;max-width:70ch;font-size:13.5px;color:var(--ink);
+  background:var(--accent-soft);border-left:3px solid var(--flag);padding:10px 14px}
+
+/* jurisdiction tabs */
+.jtabs{display:flex;flex-wrap:wrap;gap:5px;margin-top:22px}
+.jtab{appearance:none;flex:0 0 auto;font:inherit;font-size:13.5px;padding:8px 14px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.jtab[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink);font-weight:600}
+.jtab:hover[aria-pressed="false"]{border-color:var(--ink-2);color:var(--ink)}
+
+.whynote{border-bottom:1px solid var(--rule-2);background:var(--surface-2)}
+.whynote .wrap{padding-block:22px 24px}
+.whynote h2{font-size:20px;letter-spacing:-.005em}
+.whynote p{margin-top:10px;max-width:68ch;color:var(--ink-2);font-size:14.5px}
+@media print{.whynote{display:none !important}}
+
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ground);border-bottom:1px solid var(--rule-2);box-shadow:var(--shadow)}
+.controls .wrap{padding-block:12px}
+.ctl-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--rule-2);background:var(--surface);overflow:hidden}
+.seg button{appearance:none;border:0;background:transparent;color:var(--ink-2);font:inherit;font-size:13.5px;padding:7px 14px;cursor:pointer;border-right:1px solid var(--rule)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.seg button[hidden]{display:none}
+input[type="search"]{flex:1 1 170px;min-width:0;font:inherit;font-size:13.5px;padding:7px 11px;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink)}
+.mini{appearance:none;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink-2);font:inherit;font-size:13px;padding:7px 12px;cursor:pointer}
+.mini[aria-pressed="true"]{background:var(--flag);border-color:var(--flag);color:#fff}
+#filterpanel{margin-top:10px}
+.parties{display:flex;flex-wrap:wrap;gap:6px}
+.pchip{appearance:none;font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink-2);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.pchip .dot{width:8px;height:8px;border-radius:50%;background:var(--pc,var(--hind));flex:none}
+.pchip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+
+main .wrap{padding-block:28px 10px}
+
+/* at a glance */
+.glance{border:1px solid var(--rule-2);background:var(--surface)}
+.glance-top{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--rule)}
+.gcell{background:var(--surface-2);padding:12px 15px}
+.gcell .t-lab{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.gcell .t-num{font-family:"IBM Plex Mono",monospace;font-size:21px;font-variant-numeric:tabular-nums;margin-top:5px}
+.gcell .t-sub{font-size:12px;color:var(--muted);margin-top:1px}
+.glance-body{padding:15px}
+.glance-body p{color:var(--ink-2);max-width:74ch}
+.glance-body p + p{margin-top:10px}
+.dates{margin-top:12px;padding-top:12px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:4px 22px}
+.dates b{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:400;display:block}
+
+.racehead{margin-top:32px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.racehead h2{font-size:26px;letter-spacing:-.01em}
+.racenote{font-size:13px;color:var(--muted);margin-top:8px;max-width:72ch;font-family:"IBM Plex Sans",sans-serif;letter-spacing:0;text-transform:none}
+.racehead .rmeta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+.pgroup{margin-top:20px}
+.pgroup h3{font-size:16px;display:flex;align-items:center;gap:9px;font-family:"IBM Plex Sans",sans-serif;font-weight:600}
+.pgroup h3 .bar{width:4px;height:17px;background:var(--pc);flex:none}
+.pgroup h3 .cnt{font-family:"IBM Plex Mono",monospace;font-weight:400;font-size:12px;color:var(--muted);letter-spacing:.06em}
+.pnote{font-size:13px;color:var(--muted);margin:5px 0 0 13px;max-width:70ch}
+
+ul.cands{list-style:none;margin:10px 0 0;padding:0;border-top:1px solid var(--rule)}
+li.cand{display:grid;grid-template-columns:30px 1fr;gap:0 12px;align-items:start;padding:9px 4px 9px 0;border-bottom:1px solid var(--rule)}
+li.cand.hide{display:none}
+.mark{appearance:none;width:22px;height:22px;margin-top:2px;border:1.5px solid var(--rule-2);background:var(--surface);cursor:pointer;color:transparent;font-size:14px;line-height:1;display:flex;align-items:center;justify-content:center;padding:0}
+.mark[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--ground)}
+.cand .nm{font-family:Newsreader,Georgia,serif;font-size:19px;line-height:1.25}
+.cand .row2{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-top:3px}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:1px 6px;border:1px solid var(--pc);color:var(--pc)}
+.inc{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:1px 6px;background:var(--ink);color:var(--ground)}
+.sit{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:1px 6px;border:1px dashed var(--ink-2);color:var(--ink-2)}
+.cand .bio{font-size:13.5px;color:var(--ink-2);max-width:74ch}
+.cand .lnk{font-size:12.5px}
+.empty{padding:26px 0;color:var(--muted);font-size:14px}
+
+.section{margin-top:48px;padding-top:26px;border-top:1px solid var(--rule-2)}
+.section[hidden]{display:none}
+.section h2{font-size:24px;letter-spacing:-.01em}
+.section > p,.section li{max-width:68ch}
+.section p{margin-top:12px;color:var(--ink-2)}
+.section h3{font-size:17px;margin-top:22px;font-family:"IBM Plex Sans",sans-serif;font-weight:600}
+.section ul{margin:12px 0 0;padding-left:20px;color:var(--ink-2)}
+.section li{margin-top:7px}
+
+.qbox{border-left:3px solid var(--flag);background:var(--surface);padding:14px 16px;margin-top:14px}
+.qbox .qn{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.qbox blockquote{margin:6px 0 0;font-family:Newsreader,Georgia,serif;font-size:17px;line-height:1.4;color:var(--ink)}
+.qbox .qs{font-size:12.5px;color:var(--muted);margin-top:8px}
+
+.tblwrap{overflow-x:auto;margin-top:14px;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:13.5px;background:var(--surface)}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--rule)}
+th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);background:var(--surface-2)}
+td.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;text-align:right}
+tr:last-child td{border-bottom:0}
+
+.callout{background:var(--accent-soft);border:1px solid var(--accent);padding:14px 16px;margin-top:16px}
+.callout strong{color:var(--ink)}
+.callout p{margin-top:6px}
+.callout p:first-child{margin-top:0}
+
+footer{margin-top:48px;border-top:1px solid var(--rule-2);background:var(--surface)}
+footer .wrap{padding-block:24px 40px}
+footer h3{font-family:"IBM Plex Sans",sans-serif;font-size:13px;font-weight:600}
+footer ul{list-style:none;margin:10px 0 0;padding:0;columns:2;column-gap:28px}
+footer li{font-size:13px;margin-bottom:6px;break-inside:avoid}
+footer .fine{font-size:12px;color:var(--muted);margin-top:18px;max-width:72ch}
+
+#floatbar{position:fixed;right:16px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:30;
+  display:flex;flex-direction:column;align-items:flex-end;gap:7px;pointer-events:none}
+.fbtn{pointer-events:auto;appearance:none;cursor:pointer;font:inherit;font-size:13px;
+  padding:10px 15px;min-height:40px;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink-2);
+  box-shadow:0 2px 10px rgba(19,32,29,.14);white-space:nowrap}
+.fbtn:hover{border-color:var(--ink-2);color:var(--ink)}
+@media print{#floatbar{display:none !important}}
+body.showcard #floatbar{display:none}
+
+/* record + promise disclosures */
+details.rec{margin-top:7px}
+details.rec > summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-2);border:1px solid var(--rule-2);background:var(--surface);padding:2px 9px}
+details.rec > summary::-webkit-details-marker{display:none}
+details.rec > summary:hover{border-color:var(--ink-2)}
+details.rec > summary .chev{transition:transform .15s}
+details.rec[open] > summary .chev{transform:rotate(90deg)}
+.recbody{margin-top:9px;border-left:2px solid var(--rule-2);padding:2px 0 2px 13px;max-width:78ch}
+.subhead{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);padding:10px 0 2px;border-bottom:1px solid var(--rule-2);margin-bottom:2px}
+.subhead:first-child{padding-top:2px}
+.entry{padding:8px 0;border-bottom:1px dotted var(--rule)}
+.entry:last-child{border-bottom:0}
+.etags{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.etype{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:1px 6px;color:#fff;background:var(--et,var(--hind))}
+.elabel{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:1px 6px;border:1px solid var(--rule-2);color:var(--muted)}
+.edate{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--muted)}
+.etext{font-size:13.5px;color:var(--ink-2);margin-top:5px}
+.esrc{font-size:12px;margin-top:4px}
+.pstat{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:1px 6px;color:#fff;background:var(--ps,var(--hind))}
+.nosearch{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.07em;color:var(--muted);margin-top:6px}
+.pgroup .recbody{margin-left:13px}
+@media print{ details.rec{display:none !important} }
+
+/* ballot card + print */
+#ballotcard{padding-block:26px 60px}
+.cardhead{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.cardhead h2{font-size:27px}
+.cardactions{display:flex;gap:8px}
+.cardmeta{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.cj{margin-top:26px;break-inside:avoid}
+.cj h3{font-family:Newsreader,Georgia,serif;font-size:21px;border-bottom:1px solid var(--rule-2);padding-bottom:5px}
+.cjdates{font-size:12.5px;color:var(--muted);margin-top:6px}
+.cr{margin-top:14px;break-inside:avoid}
+.cr .crh{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cr ul{list-style:none;margin:6px 0 0;padding:0}
+.cr li{display:flex;gap:9px;align-items:baseline;padding:4px 0;border-bottom:1px dotted var(--rule)}
+.cr .box{flex:none;width:13px;height:13px;border:1.2px solid var(--ink-2);display:inline-block;position:relative;top:2px}
+.cr .cn{font-family:Newsreader,Georgia,serif;font-size:17px}
+.cr .cp{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.warn{color:var(--flag);font-size:13px;margin-top:6px}
+.cardfoot{margin-top:30px;padding-top:14px;border-top:1px solid var(--rule-2);font-size:12px;color:var(--muted);max-width:74ch}
+.cardempty{margin-top:24px;color:var(--muted)}
+
+body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard footer{display:none}
+
+@media print{
+  .masthead,.controls,main,footer,.cardactions{display:none !important}
+  #ballotcard{display:block !important;padding:0}
+  .wrap{max-width:none;padding-inline:0}
+  body{background:#fff;color:#000;font-size:12pt}
+  .cardhead{border-bottom:2px solid #000}
+  .cr .box{border-color:#000}
+  .cj{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+}
+
+@media (max-width:640px){
+  body{font-size:16px;line-height:1.6}
+  .wrap{padding-inline:16px}
+
+  h1{font-size:clamp(30px,8.5vw,40px)}
+  .standfirst{font-size:17px}
+  .subnote{font-size:15px}
+  .provisional{font-size:15px;padding:12px 14px}
+  .countdown b{font-size:28px}
+  .countdown span{font-size:15px}
+
+  .jtabs{gap:5px}
+  .jtab{font-size:15px;padding:10px 14px}
+
+  /* 16px minimum stops iOS zooming the page when the field is focused */
+  input[type="search"]{font-size:16px;padding:10px 12px;flex:1 1 100%}
+  .seg button{font-size:15px;padding:10px 14px}
+  .mini{font-size:15px;padding:10px 14px}
+  .pchip{font-size:14px;padding:6px 11px}
+
+  .whynote h2{font-size:22px}
+  .whynote p{font-size:16px}
+
+  .gcell .t-lab{font-size:11px}
+  .gcell .t-num{font-size:24px}
+  .gcell .t-sub{font-size:14px}
+  .glance-body p{font-size:15.5px}
+  .dates{font-size:14.5px}
+  .dates b{font-size:11px}
+
+  .racehead h2{font-size:24px}
+  .racehead .rmeta{font-size:12.5px}
+  .racenote{font-size:14.5px}
+  .pgroup h3{font-size:17px}
+  .pgroup h3 .cnt{font-size:13px}
+  .pnote{font-size:14.5px}
+
+  li.cand{grid-template-columns:30px 1fr;gap:0 11px;padding:12px 4px 12px 0}
+  .mark{width:26px;height:26px;font-size:16px}
+  .cand .nm{font-size:21px}
+  .cand .bio{font-size:15px}
+  .cand .lnk{font-size:14px}
+  .tag,.inc,.sit{font-size:11.5px;padding:2px 7px}
+  .nosearch{font-size:12px}
+
+  details.rec > summary{font-size:12px;padding:6px 11px}
+  .recbody{padding-left:11px}
+  .subhead{font-size:11px}
+  .etype,.elabel,.pstat{font-size:11px;padding:2px 7px}
+  .edate{font-size:12px}
+  .etext{font-size:15px}
+  .esrc{font-size:14px}
+
+  .section h2{font-size:22px}
+  .section h3{font-size:18px}
+  .section p,.section li{font-size:16px}
+  .qbox blockquote{font-size:17px}
+  .qbox .qs{font-size:14px}
+  table{font-size:15px}
+  .callout{font-size:15.5px}
+
+  #floatbar{right:14px;bottom:calc(30px + env(safe-area-inset-bottom,0px));gap:8px}
+  .fbtn{font-size:15px;padding:13px 18px;min-height:46px}
+
+  .cardhead h2{font-size:24px}
+  .cr .cn{font-size:18px}
+  .cr .cp{font-size:11.5px}
+  .cj h3{font-size:22px}
+  .cardfoot{font-size:13.5px}
+
+  footer ul{columns:1}
+  footer li{font-size:15px}
+  footer .fine{font-size:13.5px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div id="floatbar">
+  <button class="fbtn" id="expandbtn">Expand notes</button>
+  <button class="fbtn" id="collapsebtn">Collapse notes</button>
+  <button class="fbtn" id="totop" hidden aria-label="Back to top">&#8593; Top</button>
+</div>
+
+<div id="ballotcard" hidden>
+  <div class="wrap">
+    <div class="cardhead">
+      <h2>Your shortlist</h2>
+      <div class="cardactions">
+        <button class="mini" id="doprint">Print this</button>
+        <button class="mini" id="backbtn">Back to the candidates</button>
+      </div>
+    </div>
+    <div id="cardbody"></div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="kicker">British Columbia &middot; General Local Elections &middot; Saturday 17 October 2026</div>
+    <h1>Who's on your <em>ballot</em></h1>
+    <p class="standfirst">Every nominated candidate for mayor, council, park board and school board in seven BC municipalities, grouped by party, straight from each city's official list. Mark the ones you want to come back to.</p>
+    <p class="subnote">North Vancouver city and district are separate municipalities with separate ballots, so each has its own tab. If you live on the North Shore, check which one you vote in.</p>
+    <div class="countdown"><b id="days">&mdash;</b><span id="dayslabel">days until voting day</span></div>
+    <p class="provisional" id="provisional" hidden>Provisional list. Candidates can withdraw until <strong>4pm Pacific on 18 September</strong>, and the ballot order is drawn at 5pm the same day. Until then, confirm any name on your municipality's own page before relying on it.</p>
+    <nav class="jtabs" id="jtabs" aria-label="Choose a municipality"></nav>
+  </div>
+</header>
+
+<section class="whynote" id="whynote">
+  <div class="wrap">
+    <h2>Why this exists</h2>
+    <p>Municipal elections are overwhelming. In Vancouver you are picking 27 people out of 130 candidates, across four different bodies, most of whom you have never heard of, plus five ballot questions.</p>
+    <p>The information is not secret. It is scattered across seven municipal websites in seven different formats, and the Elections BC candidate list is incomplete: it leaves out 34 of Vancouver's 99 candidates, including a whole party and every independent. So I put it in one place, for myself first, then for anyone else who wants it.</p>
+    <p>Every name here comes from the city's own official list. Tick the candidates you are considering and print the list to take with you. Nothing you do on this page is collected or sent anywhere.</p>
+  </div>
+</section>
+
+<div class="controls">
+  <div class="wrap">
+    <div class="ctl-row">
+      <div class="seg" id="raceseg" role="group" aria-label="Filter by race">
+        <button data-race="all" aria-pressed="true">All races</button>
+        <button data-race="Mayor" aria-pressed="false">Mayor</button>
+        <button data-race="Council" aria-pressed="false">Council</button>
+        <button data-race="Park Board" aria-pressed="false">Park Board</button>
+        <button data-race="School" aria-pressed="false">School Board</button>
+      </div>
+      <input type="search" id="q" placeholder="Search name or party&hellip;" aria-label="Search candidates by name or party">
+      <button class="mini" id="filterstoggle" aria-expanded="true" aria-controls="filterpanel">Filters</button>
+      <button class="mini" id="printbtn">Print shortlist</button>
+    </div>
+    <div id="filterpanel">
+      <div class="parties" id="parties" role="group" aria-label="Filter by party"></div>
+      <div class="ctl-row" style="margin-top:8px">
+        <button class="mini" id="onlymarked" aria-pressed="false">Shortlist only</button>
+        <button class="mini" id="clearmarks">Clear marks here</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="glance" id="glance"></div>
+    <div id="roster"></div>
+    <p class="empty" id="empty" hidden>No candidates match those filters.</p>
+
+    <section class="section" data-juris="Vancouver">
+      <h2>The park board fight, and where it landed</h2>
+      <p>In December 2023 Mayor Ken Sim announced a plan to abolish the elected park board and fold its powers into council. Three of the four ABC commissioners, Brennan Bastyovanszky, Laura Christensen and Scott Jensen, quit the party over it and, with Green commissioner Tom Digby, formed a majority that opposed the move. Abolition needed a provincial change to the Vancouver Charter, which never came.</p>
+      <p>In July 2026 ABC announced it will not pursue abolition and is running a full slate of commissioner candidates. Only three sitting commissioners are seeking re-election: Digby with the Greens, Jensen with the Vancouver Liberals, and Jas Virdi with ABC.</p>
+      <p>Vancouver's park board is the only separately elected parks body in Canada, which is why this page has a third race for Vancouver and two for everywhere else.</p>
+    </section>
+
+    <section class="section" data-juris="Vancouver">
+      <h2>The shape of Vancouver's mayoral race</h2>
+      <p>Eight names, and a field that fractured and then partly reassembled. Three parties on the left, COPE, OneCity and the Greens, agreed to try to settle on one mayoral candidate. That took until September. COPE's Stephanie Allen ended her campaign on 2 September; OneCity's William Azaroff withdrew on 8 September, saying the priority was to unseat the incumbent. Neither party nominated a replacement, which leaves the Greens' Pete Fry as the only candidate from those three. COPE and OneCity are still running full council and park board slates.</p>
+      <p>On the other side of the field, two parties that did not exist in 2022 are now competing with ABC for the same voters: the Vancouver Liberals, founded in 2025 by Sim's former chief of staff Kareem Allam, and Vote Vancouver, led by Rebecca Bligh, who was elected with ABC and expelled from it in February 2025.</p>
+      <h3>Polling, and what it predates</h3>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>Poll</th><th>Field dates</th><th>Sim</th><th>Fry</th><th>Allam</th><th>Hardwick</th><th>Bligh</th><th>Undecided</th></tr></thead>
+          <tbody>
+            <tr><td>Research Co. (decided)</td><td>1 Aug 2026</td><td class="n">30%</td><td class="n">19%</td><td class="n">19%</td><td class="n">14%</td><td class="n">7%</td><td class="n">&mdash;</td></tr>
+            <tr><td>Research Co. (all)</td><td>1 Aug 2026</td><td class="n">22%</td><td class="n">14%</td><td class="n">14%</td><td class="n">10%</td><td class="n">5%</td><td class="n">26%</td></tr>
+            <tr><td>Pallas Data</td><td>20&ndash;24 Jul 2026</td><td class="n">13.8%</td><td class="n">18.1%</td><td class="n">11.5%</td><td class="n">10.5%</td><td class="n">2.9%</td><td class="n">33.8%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Both polls were taken before Allen and Azaroff withdrew, so the 4% and 5% they held are unallocated. Research Co.'s own read was that roughly a third of the vote could be enough to win.</p>
+    </section>
+
+    <section class="section" data-juris="Vancouver">
+      <h2>Vancouver's five ballot questions</h2>
+      <h3>Three capital plan borrowing questions (binding)</h3>
+      <p>The 2027&ndash;2030 Capital Plan proposes $3.5 billion of investment. Of that, $790 million would be borrowed, and borrowing needs voter approval. A yes lets council pass borrowing by-laws up to the stated amount without coming back to voters.</p>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>Question</th><th>What it covers</th><th>Amount</th></tr></thead>
+          <tbody>
+            <tr><td>1. Transportation and street infrastructure</td><td>Granville and Cambie bridge work, pavement and sidewalks, traffic signals and street lighting</td><td class="n">$292M</td></tr>
+            <tr><td>2. Community and civic facilities</td><td>Community centres, pools, rinks, libraries, childcare; fire halls, service yards, Civic Theatres</td><td class="n">$438M</td></tr>
+            <tr><td>3. Parks and open public spaces</td><td>Park renewal, seawall, pathways, playgrounds, playfields, sport courts</td><td class="n">$60M</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Two public safety questions (non-binding)</h3>
+      <p>Council added these on 14 August 2026 on a motion from ABC. They are plebiscite questions: the result does not bind anyone.</p>
+      <div class="qbox">
+        <div class="qn">Question 4</div>
+        <blockquote>Are you in favour of the City of Vancouver strengthening its laws to forbid open-air hard drug (Heroin, Meth, Fentanyl, and Crack) use in public spaces?</blockquote>
+      </div>
+      <div class="qbox">
+        <div class="qn">Question 5</div>
+        <blockquote>Should the City of Vancouver formally ask the Province of B.C. to convert portions of the old St. Paul's Hospital, or another similar site, into a secure medical facility that provides acute voluntary and 100-plus involuntary care beds for individuals posing a serious risk to themselves or others due to severe substance use and mental health disorders?</blockquote>
+        <div class="qs">ABC's council majority voted for both. Bligh, Fry and Orr left the chamber before the vote; Maloney voted against. Orr called it a get-out-the-vote exercise costing about $500,000 and noted hard drug use is already illegal; Fry objected to the short notice and limited public input; Bligh objected to framing vulnerable people as the problem.</div>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <h2>How the record notes work</h2>
+      <p>Some candidates carry a collapsed <strong>Record</strong> or <strong>Promises</strong> note. Open it and you get dated, linked entries, not a score. There is deliberately no ranking and no index, for a reason worth stating plainly.</p>
+      <p>Coverage follows scrutiny, not conduct. Four newsrooms cover Vancouver city hall daily; almost nobody covers a first-time council candidate in Delta. A number would make the unexamined candidate look clean and the examined one look dirty, which inverts what a voter actually wants to know. So: no note means nothing was found or nobody has looked, and those are not the same thing. Where a candidate was searched and nothing adverse turned up, the page says so.</p>
+      <h3>Every entry carries two tags</h3>
+      <p>The first says what kind of thing it is. <strong>Financial interest</strong> covers self-dealing or benefit. <strong>Election finance</strong> covers spending and donation rules. <strong>Conduct in office</strong> covers code-of-conduct and open-meeting matters. <strong>Record</strong> covers verifiable facts about performance, such as voting and expenses. <strong>Cleared</strong> covers investigations that ended in exoneration, which are included so the page is not only bad news.</p>
+      <p>The second says how well established it is. <strong>Finding</strong> means a body with jurisdiction ruled: an integrity commissioner, a court, Elections BC. <strong>Filed</strong> means a complaint or petition exists and was not decided against the person. <strong>Reported</strong> means substantive journalism from a named outlet, linked. Rumour, social media and opinion columns are excluded, and so is anything that cannot be linked.</p>
+      <h3>Promises</h3>
+      <p>Two different things sit here. For people who held the office, whether a specific commitment was <strong>kept</strong>, <strong>partially kept</strong>, <strong>broken</strong> or <strong>reversed</strong>. For current platforms, no judgment on whether a plan is a good idea, only two checkable flags: <strong>outside council's power</strong>, where delivery needs the province or a regional body, and <strong>costing questioned</strong>, where the arithmetic has been publicly challenged.</p>
+      <p>Slate platforms outside Vancouver were searched too. Richmond's eleven council slates and REAL Nanaimo had not published detailed platforms as of 17 September 2026, so there is nothing to flag rather than nothing to find.</p>
+      <p>This section is incomplete by design and weighted toward Vancouver. If you find an error, it is worth telling whoever sent you this link rather than passing it on.</p>
+    </section>
+
+    <section class="section" id="privacy">
+      <h2>What this page stores</h2>
+      <p>This page never learns who you plan to vote for. Your choices are not collected, not counted and not transmitted. No information about your selections leaves your device, and no server receives anything you do here.</p>
+      <p>There is no account and no sign-in. The page sets no cookies, runs no analytics, and has no form that submits anywhere. Nobody, including the person who shared this link with you, can see which candidates you marked.</p>
+      <p>Your shortlist is written to your own browser's local storage on the device you are using. It survives closing the tab. It never syncs, so marks made on your phone will not appear on your laptop, and clearing your browser data erases them. Everyone you send the link to gets their own empty shortlist.</p>
+      <p>Print your shortlist with the button at the top of the candidate list. The printed sheet is a plain checklist of the candidates you marked, grouped by municipality and race, with the seat limits and voting dates for each. Printing happens entirely on your own machine.</p>
+    </section>
+
+    <section class="section" id="how">
+      <h2>How BC local elections work</h2>
+      <p>Every municipality votes on the same day, Saturday 17 October 2026, for a four-year term. All of them use plurality-at-large voting: there are no wards in these seven cities, everyone votes citywide, and the top finishers take the seats.</p>
+      <p>You may vote for up to the number of seats in each race, and no more. Marking fewer names than your maximum does not weaken the ones you do mark. A ballot with too many marks in one race has that race discounted.</p>
+      <p>School boards are elected the same day on the same ballot. Trustees set district budgets and decide school closures, catchment boundaries and board policy; the province sets curriculum and funding levels. Every property owner pays the provincial school tax whether or not they have children in the system.</p>
+      <h3>Registering and finding your voting place</h3>
+      <p>You can register at the voting place when you go to vote. Several of these cities closed advance registration in August, so for most people this is now the route. Bring two pieces of ID. If you are already on the voters list you may not be asked for it, but carrying it costs nothing.</p>
+      <p>Voting places open at 8am and close at 8pm local time on 17 October. Each municipality publishes its own map of advance and voting-day locations, linked at the top of every tab on this page. To check or update your registration in advance, use <a href="https://eregister.electionsbc.gov.bc.ca/ovr/" target="_blank" rel="noopener">Elections BC's online voter registration</a>, and the province's <a href="https://www2.gov.bc.ca/gov/content/governments/local-governments/governance-powers/general-local-elections/voting-local-elections/voter-registration-voting" target="_blank" rel="noopener">guide to voter registration</a> covers eligibility and ID rules.</p>
+      <p>To vote you must be 18 or older on voting day, a Canadian citizen, a BC resident for at least six months, and a resident of the municipality. Non-resident property owners can vote in the municipality where they own property, under separate rules.</p>
+      <p>Housing promises on this ballot sit on top of two intergovernmental agreements signed this year, which is worth knowing before judging any of them. On 18 February 2026 Canada and British Columbia committed $810 million through Build Canada Homes and BC Housing to at least 700 shovel-ready supportive and transitional homes. On 18 June 2026 they announced more than $5 billion over ten years for BC local infrastructure, including up to $3.2 billion to cut development charges on multi-unit housing by as much as half in priority communities, worth up to $40,000 a unit. The Build Canada Homes Act received Royal Assent the same day. Municipalities are named as direct partners, and development charges are set by councils, so a city has real levers here rather than a waiting role.</p>
+      <p>Slates, sometimes called elector organizations, are not parties in the provincial or federal sense. They register with Elections BC, endorse candidates and pool fundraising, but a candidate can leave one and keep the seat. Several did in this term.</p>
+      <div class="callout">
+        <p><strong>Two lists, and only one of them is the ballot.</strong> Elections BC publishes a <em>Registered Candidates</em> PDF, but that is a campaign-financing registration snapshot. Its 17 September version leaves out 34 of Vancouver's 99 candidates, including every Green Party and OneCity name and every independent, and it is missing names in other cities too.</p>
+        <p>Each municipality's own candidate page is the list that matches the ballot. That is what this page is built from, cross-checked against Elections BC data compiled by localelections.ca.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://vancouver.ca/your-government/2026-candidate-information.aspx">Vancouver &mdash; who is running</a></li>
+      <li><a href="https://vancouver.ca/your-government/2026-capital-plan-borrowing-questions-and-plebiscite-questions.aspx">Vancouver &mdash; ballot questions</a></li>
+      <li><a href="https://www.richmond.ca/city-hall/elections/candidateslist.htm">Richmond &mdash; candidate list</a></li>
+      <li><a href="https://vancouver.ca/your-government/2026-candidates-school-trustee.aspx">Vancouver &mdash; school trustees</a></li>
+      <li><a href="https://www.delta.ca/elections/candidates">Delta &mdash; candidates</a></li>
+      <li><a href="https://www.cnv.org/City-Hall/General-Local-Election/2026-General-Local-Election">City of North Vancouver &mdash; election</a></li>
+      <li><a href="https://www.dnv.org/government-administration/2026-general-local-election">District of North Vancouver &mdash; election</a></li>
+      <li><a href="https://www.victoria.ca/city-government/elections">Victoria &mdash; elections</a></li>
+      <li><a href="https://www.nanaimo.ca/your-government/elections">Nanaimo &mdash; elections</a></li>
+      <li><a href="https://eregister.electionsbc.gov.bc.ca/ovr/">Elections BC &mdash; register to vote</a></li>
+      <li><a href="https://elections.bc.ca/local-elections/2026-general-local-elections/">Elections BC &mdash; 2026 general local elections</a></li>
+      <li><a href="https://localelections.ca/">localelections.ca &mdash; BC-wide candidate data</a></li>
+      <li><a href="https://votemate.org/bc2026">VoteMate &mdash; BC 2026 local elections</a></li>
+      <li><a href="#method">How the record notes work</a></li>
+      <li><a href="#privacy">What this page stores</a></li>
+      <li><a href="https://researchco.ca/2026/08/04/vanpoli-2/">Research Co. &mdash; August 2026 Vancouver poll</a></li>
+    </ul>
+    <p class="fine">Candidate lists current to 17 September 2026. Names could be withdrawn until 4pm on 18 September, so check your city's page before you vote. Party and slate summaries paraphrase each organization's own published material and are not endorsements. Biographical notes appear only where a source provided one. School board incumbency is not marked: the data source that supplies it for mayor and council races does not cover school districts.</p>
+  </div>
+</footer>

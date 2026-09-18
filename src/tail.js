@@ -169,7 +169,7 @@ function renderRoster(){
     const s=J[state.j].seats[race];
     const title = race==="School" ? "School Board" : race;
     const note = race==="School" ? `<p class="racenote">${esc(J[state.j].schoolNote)} Incumbency is not marked in this race.</p>` : "";
-    out.push(`<div class="racehead" data-race="${esc(race)}"><h2>${esc(title)}</h2><div class="rmeta">${s===1?"1 seat &middot; vote for 1":s+" seats &middot; vote for up to "+s} &middot; ${inRace.length} candidates</div>${note}</div>`);
+    out.push(`<div class="racehead" data-race="${esc(race)}"><h2>${esc(title)}</h2><div class="rmeta">${s===1?"1 seat &middot; vote for 1":s+" seats &middot; vote for up to "+s} &middot; ${inRace.length} candidates<span class="rmark" data-seats="${s}" hidden></span></div>${note}</div>`);
     for(const p of partiesFor(state.j)){
       const list=inRace.filter(c=>c.party===p);
       if(!list.length) continue;
@@ -241,6 +241,50 @@ function card(c){
     </div></li>`;
 }
 
+// Marked-vs-seats, per race. renderCard() has warned about over-voting since launch, but only
+// once the print view is open, which is after the choices are made. Same arithmetic, shown while
+// the choice is being made.
+function syncSeatCounts(){
+  document.querySelectorAll(".racehead").forEach(h=>{
+    const el=h.querySelector(".rmark"); if(!el) return;
+    const seats=+el.dataset.seats;
+    const n=[...marks].filter(k=>k.startsWith(state.j+"|"+h.dataset.race+"|")).length;
+    el.hidden = n===0;
+    el.classList.toggle("over", n>seats);
+    el.textContent = n>seats ? ` \u00b7 ${n} marked, drop ${n-seats}` : ` \u00b7 ${n} marked`;
+  });
+}
+
+// The print sheet covers every municipality, so this counts all marks, not just this tab's.
+// Counted through ALL so a mark left behind by a withdrawn candidate is not advertised.
+function syncPrintCount(){
+  const pb=document.getElementById("printbtn"); if(!pb) return;
+  const n=ALL.filter(c=>marks.has(c.j+"|"+c.race+"|"+c.name)).length;
+  pb.textContent = n ? `Print shortlist (${n})` : "Print shortlist";
+}
+
+// A search only looks inside the current tab, so a name on another ballot reads as "no matches".
+// The City and District of North Vancouver are separate ballots that people mix up, which is
+// exactly when this bites. Party is left out of the count because the jump clears it.
+function showEmpty(visible){
+  const em=document.getElementById("empty"); if(!em) return;
+  em.hidden = visible>0;
+  if(visible>0) return;
+  let hint="";
+  if(state.q){
+    const others=JORDER.filter(j=>j!==state.j).map(j=>{
+      const n=ALL.filter(c=>c.j===j
+        && (state.race==="all" || c.race===state.race)
+        && (c.name+" "+c.party).toLowerCase().includes(state.q)
+        && (!state.onlyMarked || marks.has(c.j+"|"+c.race+"|"+c.name))).length;
+      return n ? {j,n} : null;
+    }).filter(Boolean);
+    if(others.length) hint=`<span class="elsewhere">Found on another ballot: ${others.map(o=>
+      `<button type="button" class="mini jump" data-j="${esc(o.j)}">${o.n} in ${esc(SHORT[o.j]||o.j)}</button>`).join("")}</span>`;
+  }
+  em.innerHTML = "No candidates match those filters." + hint;
+}
+
 function applyFilters(){
   let visible=0;
   document.querySelectorAll("li.cand").forEach(li=>{
@@ -257,11 +301,13 @@ function applyFilters(){
   document.querySelectorAll(".racehead").forEach(h=>{
     h.hidden = ![...document.querySelectorAll(`.pgroup[data-race="${h.dataset.race}"]`)].some(g=>!g.hidden);
   });
-  document.getElementById("empty").hidden = visible>0;
+  showEmpty(visible);
   const rc=document.getElementById("resultcount");
   if(rc) rc.textContent = visible+(visible===1?" candidate":" candidates")+" shown in "+state.j;
   const mc=document.getElementById("markcount");
   if(mc) mc.textContent=[...marks].filter(k=>k.startsWith(state.j+"|")).length;
+  syncSeatCounts();
+  syncPrintCount();
   document.querySelectorAll(".section[data-juris]").forEach(s=>{ s.hidden = s.dataset.juris!==state.j; });
   syncFilters();
   renderCard();
@@ -270,13 +316,17 @@ function applyFilters(){
 function allDetails(){ return [...document.querySelectorAll("#roster details.rec")]; }
 function renderAll(){ renderGlance(); renderControls(); renderRoster(); applyFilters(); }
 
-document.getElementById("jtabs").addEventListener("click",e=>{
-  const b=e.target.closest(".jtab"); if(!b) return;
-  state.j=b.dataset.j; state.party=null;
+function selectJuris(j){
+  barSettle();
+  state.j=j; state.party=null;
   if(!racesFor(state.j).includes(state.race)) state.race="all";
   document.querySelectorAll(".jtab").forEach(x=>{const s=x.dataset.j===state.j;x.setAttribute("aria-pressed",String(s));x.setAttribute("aria-current",s?"page":"false");});
   renderAll();
   window.scrollTo({top:0,behavior:"instant"});
+}
+document.getElementById("jtabs").addEventListener("click",e=>{
+  const b=e.target.closest(".jtab"); if(!b) return;
+  selectJuris(b.dataset.j);
 });
 document.getElementById("raceseg").addEventListener("click",e=>{
   const b=e.target.closest("button"); if(!b) return;
@@ -296,11 +346,31 @@ document.getElementById("onlymarked").addEventListener("click",e=>{
   e.currentTarget.setAttribute("aria-pressed",String(state.onlyMarked));
   applyFilters();
 });
-document.getElementById("clearmarks").addEventListener("click",()=>{
-  [...marks].filter(k=>k.startsWith(state.j+"|")).forEach(k=>marks.delete(k));
-  save();
-  document.querySelectorAll(".mark").forEach(m=>m.setAttribute("aria-pressed","false"));
-  applyFilters();
+// Marks are the only thing a reader creates here, they live in localStorage alone, and there is
+// no undo. So the first click arms, the second clears. It disarms itself after a few seconds.
+(function(){
+  const cb=document.getElementById("clearmarks"); if(!cb) return;
+  const LABEL="Clear marks here";
+  let armed=null;
+  function disarm(){ clearTimeout(armed); armed=null; cb.textContent=LABEL; cb.classList.remove("arm"); }
+  cb.addEventListener("click",()=>{
+    if(!armed){
+      cb.textContent="Click again to clear";
+      cb.classList.add("arm");
+      armed=setTimeout(disarm,4000);
+      return;
+    }
+    disarm();
+    [...marks].filter(k=>k.startsWith(state.j+"|")).forEach(k=>marks.delete(k));
+    save();
+    document.querySelectorAll(".mark").forEach(m=>m.setAttribute("aria-pressed","false"));
+    applyFilters();
+  });
+})();
+
+document.getElementById("empty").addEventListener("click",e=>{
+  const b=e.target.closest(".jump"); if(!b) return;
+  selectJuris(b.dataset.j);
 });
 document.getElementById("roster").addEventListener("click",e=>{
   const b=e.target.closest(".mark"); if(!b) return;
@@ -352,6 +422,11 @@ function showCard(on){
   document.body.classList.toggle("showcard", on);
   if(on){ renderCard(); window.scrollTo({top:0,behavior:"instant"}); }
 }
+// Anything that changes the height of the sticky bar calls this first. The browser corrects
+// the scroll position to keep the page steady, and that correction is delivered as an ordinary
+// scroll event. Scroll events run before resize-observer callbacks in the rendering loop, so
+// the observer below cannot catch it in time: the caller has to say so up front.
+let barSettle = ()=>{};
 function on(id,fn){ const el=document.getElementById(id); if(el) el.addEventListener("click",fn); }
 on("printbtn",()=>showCard(true));
 on("backbtn",()=>showCard(false));
@@ -359,24 +434,57 @@ on("doprint",()=>{ try{ window.print(); }catch(e){} });
 on("filterstoggle",()=>{
   filtersOpen=!filtersOpen;
   try{ localStorage.setItem("bcballot2026.filters", filtersOpen?"1":"0"); }catch(e){}
+  barSettle();
   syncFilters();
 });
+// footer/in-page links point at collapsed sections; open the target before the browser scrolls to it
+document.addEventListener("click",e=>{
+  const a=e.target.closest('a[href^="#"]'); if(!a) return;
+  const t=document.getElementById(a.getAttribute("href").slice(1));
+  if(t && t.tagName==="DETAILS") t.open=true;
+});
+
 on("expandbtn",()=>allDetails().forEach(d=>{ d.open=true; }));
 on("collapsebtn",()=>allDetails().forEach(d=>{ d.open=false; }));
 (function(){
   const bar=document.querySelector(".controls");
   if(!bar) return;
   const raf = (window.requestAnimationFrame || (f=>f())).bind(window);
-  let last=window.scrollY||0, queued=false, hidden=false;
+  // Auto-hide is a small-screen affordance: on a desktop viewport the bar just stays pinned.
+  // 820px is the page's breakpoint. Re-checked on every scroll so a resize can't strand it hidden.
+  const narrow = window.matchMedia && window.matchMedia("(max-width:820px)");
+  // Only auto-hide once the bar is actually pinned. While it still sits in normal flow
+  // there is nothing to win by sliding it away. Measured off the masthead's bottom edge
+  // rather than the bar itself, because the bar carries a transform while hidden and its
+  // own rect would then always read as pinned.
+  const above = document.querySelector(".masthead");
+  const topInset = (typeof getComputedStyle === "function" && parseFloat(getComputedStyle(bar).top)) || 0;
+  function pinned(){
+    if(!above || !above.getBoundingClientRect) return true;
+    return above.getBoundingClientRect().bottom <= topInset;
+  }
+  let last=window.scrollY||0, queued=false, hidden=false, settleUntil=0;
   function setHidden(v){ if(v===hidden) return; hidden=v; bar.classList.toggle("hide", v); }
   function update(){
     const y=window.scrollY||0, d=y-last;
-    if(y<140) setHidden(false);
+    // The bar changing its own height moves the page under the reader, and the browser
+    // corrects the scroll position to compensate. That correction arrives as a scroll event
+    // and reads exactly like a downward flick, so the bar would hide itself. Ignore scrolls
+    // for a moment after any resize of the bar: opening the filter panel, switching to a
+    // municipality with a different party-chip count, or rotating the phone.
+    if(Date.now() < settleUntil){ last=y; queued=false; return; }
+    if(!narrow || !narrow.matches) setHidden(false);
+    else if(!pinned()) setHidden(false);
     else if(d>6) setHidden(true);
     else if(d<-6) setHidden(false);
     last=y; queued=false;
   }
   window.addEventListener("scroll",()=>{ if(!queued){ queued=true; raf(update); } },{passive:true});
+  barSettle = ()=>{ last=window.scrollY||0; settleUntil=Date.now()+400; };
+  // Backstop for height changes with no click behind them: rotating the phone, a font
+  // swap landing, the result-count text rewrapping.
+  if(typeof ResizeObserver === "function") new ResizeObserver(barSettle).observe(bar);
+  if(narrow && narrow.addEventListener) narrow.addEventListener("change",()=>{ if(!narrow.matches) setHidden(false); });
 })();
 const toTop=document.getElementById("totop");
 if(toTop){

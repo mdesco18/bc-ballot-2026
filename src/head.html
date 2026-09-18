@@ -73,12 +73,6 @@ h1 em{font-style:italic;color:var(--accent)}
 .jtab[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink);font-weight:600}
 .jtab:hover[aria-pressed="false"]{border-color:var(--ink-2);color:var(--ink)}
 
-.whynote{border-bottom:1px solid var(--rule-2);background:var(--surface-2)}
-.whynote .wrap{padding-block:22px 24px}
-.whynote h2{font-size:20px;letter-spacing:-.005em}
-.whynote p{margin-top:10px;max-width:68ch;color:var(--ink-2);font-size:14.5px}
-@media print{.whynote{display:none !important}}
-
 .controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ground);
   border-bottom:1px solid var(--rule-2);box-shadow:var(--shadow);
   will-change:transform,opacity;backface-visibility:hidden;
@@ -106,6 +100,7 @@ h1 em{font-style:italic;color:var(--accent)}
 input[type="search"]{flex:1 1 170px;min-width:0;font:inherit;font-size:13.5px;padding:7px 11px;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink)}
 .mini{appearance:none;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink-2);font:inherit;font-size:13px;padding:7px 12px;cursor:pointer}
 .mini[aria-pressed="true"]{background:var(--flag);border-color:var(--flag);color:#fff}
+.mini.arm{background:var(--flag);border-color:var(--flag);color:#fff}
 #filterpanel{margin-top:10px}
 .parties{display:flex;flex-wrap:wrap;gap:6px}
 .pchip{appearance:none;font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink-2);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
@@ -151,6 +146,9 @@ li.cand.hide{display:none}
 .cand .bio{font-size:13.5px;color:var(--ink-2);max-width:74ch}
 .cand .lnk{font-size:12.5px}
 .empty{padding:26px 0;color:var(--muted);font-size:14px}
+.elsewhere{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-top:11px;color:var(--ink-2)}
+.rmark{color:var(--accent)}
+.rmark.over{color:var(--flag);font-weight:600}
 
 .section{margin-top:48px;padding-top:26px;border-top:1px solid var(--rule-2)}
 .section[hidden]{display:none}
@@ -160,6 +158,20 @@ li.cand.hide{display:none}
 .section h3{font-size:17px;margin-top:22px;font-family:"IBM Plex Sans",sans-serif;font-weight:600}
 .section ul{margin:12px 0 0;padding-left:20px;color:var(--ink-2)}
 .section li{margin-top:7px}
+
+#roster{margin-bottom:26px}
+details.section{margin-top:12px;padding-top:0;border:1px solid var(--rule);background:var(--surface)}
+details.section > summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:11px;padding:15px 18px}
+details.section > summary::-webkit-details-marker{display:none}
+details.section > summary:hover h2{color:var(--accent)}
+details.section > summary h2{font-size:19px;margin:0;flex:1}
+details.section > summary .chev{flex:none;color:var(--muted);transition:transform .15s}
+details.section[open] > summary{border-bottom:1px solid var(--rule)}
+details.section[open] > summary .chev{transform:rotate(90deg)}
+details.section > :not(summary){margin-left:18px;margin-right:18px}
+details.section > summary + *{margin-top:16px}
+details.section[open]{padding-bottom:18px}
+@media (prefers-reduced-motion:reduce){details.section > summary .chev{transition:none}}
 
 .qbox{border-left:3px solid var(--flag);background:var(--surface);padding:14px 16px;margin-top:14px}
 .qbox .qn{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -270,12 +282,17 @@ body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard
   .jtab{font-size:17px;padding:12px 16px;min-height:48px}
 
   input[type="search"]{font-size:17px;padding:13px 14px;flex:1 1 100%;min-height:48px}
-  .seg button{font-size:17px;padding:12px 16px;min-height:48px}
+  /* Five race buttons need ~520px at this type size; a 360px phone has ~328px, and the
+     joined-segment box clips the overflow. Break the row into wrapping chips instead,
+     matching .pchip/.mini on the same bar. No nth-child maths, so a hidden button
+     (Park Board outside Vancouver) costs nothing. */
+  .seg{flex:1 1 100%;flex-wrap:wrap;gap:6px;border:0;background:transparent;overflow:visible}
+  .seg button{font-size:17px;padding:12px 16px;min-height:48px;flex:1 1 auto;
+    border:1px solid var(--rule-2);background:var(--surface)}
+  .seg button:last-child{border-right:1px solid var(--rule-2)}
+  .seg button[aria-pressed="true"]{border-color:var(--accent)}
   .mini{font-size:17px;padding:12px 16px;min-height:48px}
   .pchip{font-size:16px;padding:10px 14px;min-height:44px}
-
-  .whynote h2{font-size:25px}
-  .whynote p{font-size:18px}
 
   .gcell{padding:14px 16px}
   .gcell .t-lab{font-size:12px}
@@ -310,6 +327,9 @@ body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard
   .esrc{font-size:16px}
 
   .section h2{font-size:25px}
+  details.section > summary h2{font-size:20px}
+  details.section > summary{padding:16px}
+  details.section > :not(summary){margin-left:16px;margin-right:16px}
   .section h3{font-size:20px}
   .section p,.section li{font-size:18px}
   .qbox blockquote{font-size:19px}
@@ -369,15 +389,6 @@ body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard
   </div>
 </header>
 
-<section class="whynote" id="whynote">
-  <div class="wrap">
-    <h2>Why this exists</h2>
-    <p>Municipal elections are overwhelming. In Vancouver you are picking 27 people out of 130 candidates, across four different bodies, most of whom you have never heard of, plus five ballot questions.</p>
-    <p>The information is not secret. It is scattered across seven municipal websites in seven different formats, and the Elections BC candidate list is incomplete: it leaves out 34 of Vancouver's 99 candidates, including a whole party and every independent. So I put it in one place, for myself first, then for anyone else who wants it.</p>
-    <p>Every name here comes from the city's own official list. Tick the candidates you are considering and print the list to take with you. Nothing you do on this page is collected or sent anywhere.</p>
-  </div>
-</section>
-
 <div class="controls">
   <div class="wrap">
     <div class="ctl-row">
@@ -410,15 +421,15 @@ body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard
     <div id="roster"></div>
     <p class="empty" id="empty" hidden>No candidates match those filters.</p>
 
-    <section class="section" data-juris="Vancouver">
-      <h2>The park board fight, and where it landed</h2>
+    <details class="section" data-juris="Vancouver">
+      <summary><span class="chev">&#9656;</span><h2>The park board fight, and where it landed</h2></summary>
       <p>In December 2023 Mayor Ken Sim announced a plan to abolish the elected park board and fold its powers into council. Three of the four ABC commissioners, Brennan Bastyovanszky, Laura Christensen and Scott Jensen, quit the party over it and, with Green commissioner Tom Digby, formed a majority that opposed the move. Abolition needed a provincial change to the Vancouver Charter, which never came.</p>
       <p>In July 2026 ABC announced it will not pursue abolition and is running a full slate of commissioner candidates. Only three sitting commissioners are seeking re-election: Digby with the Greens, Jensen with the Vancouver Liberals, and Jas Virdi with ABC.</p>
       <p>Vancouver's park board is the only separately elected parks body in Canada, which is why this page has a third race for Vancouver and two for everywhere else.</p>
-    </section>
+    </details>
 
-    <section class="section" data-juris="Vancouver">
-      <h2>The shape of Vancouver's mayoral race</h2>
+    <details class="section" data-juris="Vancouver">
+      <summary><span class="chev">&#9656;</span><h2>The shape of Vancouver's mayoral race</h2></summary>
       <p>Eight names, and a field that fractured and then partly reassembled. Three parties on the left, COPE, OneCity and the Greens, agreed to try to settle on one mayoral candidate. That took until September. COPE's Stephanie Allen ended her campaign on 2 September; OneCity's William Azaroff withdrew on 8 September, saying the priority was to unseat the incumbent. Neither party nominated a replacement, which leaves the Greens' Pete Fry as the only candidate from those three. COPE and OneCity are still running full council and park board slates.</p>
       <p>On the other side of the field, two parties that did not exist in 2022 are now competing with ABC for the same voters: the Vancouver Liberals, founded in 2025 by Sim's former chief of staff Kareem Allam, and Vote Vancouver, led by Rebecca Bligh, who was elected with ABC and expelled from it in February 2025.</p>
       <h3>Polling, and what it predates</h3>
@@ -433,10 +444,10 @@ body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard
         </table>
       </div>
       <p>Both polls were taken before Allen and Azaroff withdrew, so the 4% and 5% they held are unallocated. Research Co.'s own read was that roughly a third of the vote could be enough to win.</p>
-    </section>
+    </details>
 
-    <section class="section" data-juris="Vancouver">
-      <h2>Vancouver's five ballot questions</h2>
+    <details class="section" data-juris="Vancouver">
+      <summary><span class="chev">&#9656;</span><h2>Vancouver's five ballot questions</h2></summary>
       <h3>Three capital plan borrowing questions (binding)</h3>
       <p>The 2027&ndash;2030 Capital Plan proposes $3.5 billion of investment. Of that, $790 million would be borrowed, and borrowing needs voter approval. A yes lets council pass borrowing by-laws up to the stated amount without coming back to voters.</p>
       <div class="tblwrap">
@@ -460,45 +471,66 @@ body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard
         <blockquote>Should the City of Vancouver formally ask the Province of B.C. to convert portions of the old St. Paul's Hospital, or another similar site, into a secure medical facility that provides acute voluntary and 100-plus involuntary care beds for individuals posing a serious risk to themselves or others due to severe substance use and mental health disorders?</blockquote>
         <div class="qs">ABC's council majority voted for both. Bligh, Fry and Orr left the chamber before the vote; Maloney voted against. Orr called it a get-out-the-vote exercise costing about $500,000 and noted hard drug use is already illegal; Fry objected to the short notice and limited public input; Bligh objected to framing vulnerable people as the problem.</div>
       </div>
-    </section>
+    </details>
 
-    <section class="section" id="method">
-      <h2>How the record notes work</h2>
-      <p>Some candidates carry a collapsed <strong>Record</strong> or <strong>Promises</strong> note. Open it and you get dated, linked entries, not a score. There is deliberately no ranking and no index, for a reason worth stating plainly.</p>
-      <p>Coverage follows scrutiny, not conduct. Four newsrooms cover Vancouver city hall daily; almost nobody covers a first-time council candidate in Delta. A number would make the unexamined candidate look clean and the examined one look dirty, which inverts what a voter actually wants to know. So: no note means nothing was found or nobody has looked, and those are not the same thing. Where a candidate was searched and nothing adverse turned up, the page says so.</p>
+    <details class="section" id="method">
+      <summary><span class="chev">&#9656;</span><h2>How the record notes work</h2></summary>
+      <p>Some candidates carry a collapsed <strong>Record</strong> or <strong>Promises</strong> note: dated, linked entries, not a score. There is deliberately no ranking and no index.</p>
+      <p>Coverage follows scrutiny, not conduct. Four newsrooms cover Vancouver city hall daily; almost nobody covers a first-time council candidate in Delta. A score would make the unexamined candidate look clean, which inverts what a voter wants to know. No note means nothing was found or nobody looked, and those are not the same thing. Where a candidate was searched and nothing turned up, the page says so.</p>
       <h3>Every entry carries two tags</h3>
-      <p>The first says what kind of thing it is. <strong>Financial interest</strong> covers self-dealing or benefit. <strong>Election finance</strong> covers spending and donation rules. <strong>Conduct in office</strong> covers code-of-conduct and open-meeting matters. <strong>Record</strong> covers verifiable facts about performance, such as voting and expenses. <strong>Cleared</strong> covers investigations that ended in exoneration, which are included so the page is not only bad news.</p>
-      <p>The second says how well established it is. <strong>Finding</strong> means a body with jurisdiction ruled: an integrity commissioner, a court, Elections BC. <strong>Filed</strong> means a complaint or petition exists and was not decided against the person. <strong>Reported</strong> means substantive journalism from a named outlet, linked. Rumour, social media and opinion columns are excluded, and so is anything that cannot be linked.</p>
+      <p>The first says what kind of thing it is.</p>
+      <ul>
+        <li><strong>Financial interest</strong> &mdash; self-dealing or benefit.</li>
+        <li><strong>Election finance</strong> &mdash; spending and donation rules.</li>
+        <li><strong>Conduct in office</strong> &mdash; code-of-conduct and open-meeting matters.</li>
+        <li><strong>Record</strong> &mdash; verifiable facts about performance, such as voting and expenses.</li>
+        <li><strong>Cleared</strong> &mdash; investigations that ended in exoneration, included so the page is not only bad news.</li>
+      </ul>
+      <p>The second says how well established it is.</p>
+      <ul>
+        <li><strong>Finding</strong> &mdash; a body with jurisdiction ruled: an integrity commissioner, a court, Elections BC.</li>
+        <li><strong>Filed</strong> &mdash; a complaint or petition exists and was not decided against the person.</li>
+        <li><strong>Reported</strong> &mdash; substantive journalism from a named outlet, linked.</li>
+      </ul>
+      <p>Rumour, social media and opinion columns are excluded, and so is anything that cannot be linked.</p>
       <h3>Promises</h3>
-      <p>Two different things sit here. For people who held the office, whether a specific commitment was <strong>kept</strong>, <strong>partially kept</strong>, <strong>broken</strong> or <strong>reversed</strong>. For current platforms, no judgment on whether a plan is a good idea, only two checkable flags: <strong>outside council's power</strong>, where delivery needs the province or a regional body, and <strong>costing questioned</strong>, where the arithmetic has been publicly challenged.</p>
+      <p>For people who held the office: whether a commitment was <strong>kept</strong>, <strong>partially kept</strong>, <strong>broken</strong> or <strong>reversed</strong>. For current platforms, no judgment on whether a plan is a good idea, only two checkable flags: <strong>outside council's power</strong>, where delivery needs the province or a regional body, and <strong>costing questioned</strong>, where the arithmetic has been publicly challenged.</p>
       <p>Slate platforms outside Vancouver were searched too. Richmond's eleven council slates and REAL Nanaimo had not published detailed platforms as of 17 September 2026, so there is nothing to flag rather than nothing to find.</p>
-      <p>This section is incomplete by design and weighted toward Vancouver. If you find an error, it is worth telling whoever sent you this link rather than passing it on.</p>
-    </section>
+      <p>This section is incomplete by design and weighted toward Vancouver. If you find an error, <a href="mailto:marc.a.descoteaux@gmail.com?subject=BC%20Ballot%202026%20correction">email me</a> rather than passing it on.</p>
+    </details>
 
-    <section class="section" id="privacy">
-      <h2>What this page stores</h2>
-      <p>This page never learns who you plan to vote for. Your choices are not collected, not counted and not transmitted. No information about your selections leaves your device, and no server receives anything you do here.</p>
-      <p>There is no account and no sign-in. The page sets no cookies, runs no analytics, and has no form that submits anywhere. Nobody, including the person who shared this link with you, can see which candidates you marked.</p>
-      <p>Your shortlist is written to your own browser's local storage on the device you are using. It survives closing the tab. It never syncs, so marks made on your phone will not appear on your laptop, and clearing your browser data erases them. Everyone you send the link to gets their own empty shortlist.</p>
-      <p>Print your shortlist with the button at the top of the candidate list. The printed sheet is a plain checklist of the candidates you marked, grouped by municipality and race, with the seat limits and voting dates for each. Printing happens entirely on your own machine.</p>
-    </section>
+    <details class="section" id="privacy">
+      <summary><span class="chev">&#9656;</span><h2>What this page stores</h2></summary>
+      <p>This page never learns who you plan to vote for. Nothing you do here leaves your device. There is no account, no sign-in, no cookies, no analytics and no form that submits anywhere. Nobody, including the person who shared this link with you, can see which candidates you marked.</p>
+      <p>Your shortlist is written to your own browser's local storage. It survives closing the tab, but never syncs: marks made on your phone will not appear on your laptop, and clearing your browser data erases them. Everyone you send the link to gets their own empty shortlist.</p>
+      <p>Print your shortlist with the button at the top of the candidate list. The sheet is a plain checklist of the candidates you marked, grouped by municipality and race, with the seat limits and voting dates for each. Printing happens on your own machine.</p>
+    </details>
 
-    <section class="section" id="how">
-      <h2>How BC local elections work</h2>
+    <details class="section" id="how">
+      <summary><span class="chev">&#9656;</span><h2>How BC local elections work</h2></summary>
       <p>Every municipality votes on the same day, Saturday 17 October 2026, for a four-year term. All of them use plurality-at-large voting: there are no wards in these seven cities, everyone votes citywide, and the top finishers take the seats.</p>
-      <p>You may vote for up to the number of seats in each race, and no more. Marking fewer names than your maximum does not weaken the ones you do mark. A ballot with too many marks in one race has that race discounted.</p>
-      <p>School boards are elected the same day on the same ballot. Trustees set district budgets and decide school closures, catchment boundaries and board policy; the province sets curriculum and funding levels. Every property owner pays the provincial school tax whether or not they have children in the system.</p>
+      <p>You may vote for up to the number of seats in each race, and no more. Marking fewer names does not weaken the ones you do mark. A ballot with too many marks in one race has that race discounted.</p>
+      <p>School boards are elected the same day on the same ballot. Trustees set district budgets and decide school closures, catchment boundaries and board policy; the province sets curriculum and funding levels. Every property owner pays the school tax, children or not.</p>
       <h3>Registering and finding your voting place</h3>
-      <p>You can register at the voting place when you go to vote. Several of these cities closed advance registration in August, so for most people this is now the route. Bring two pieces of ID. If you are already on the voters list you may not be asked for it, but carrying it costs nothing.</p>
-      <p>Voting places open at 8am and close at 8pm local time on 17 October. Each municipality publishes its own map of advance and voting-day locations, linked at the top of every tab on this page. To check or update your registration in advance, use <a href="https://eregister.electionsbc.gov.bc.ca/ovr/" target="_blank" rel="noopener">Elections BC's online voter registration</a>, and the province's <a href="https://www2.gov.bc.ca/gov/content/governments/local-governments/governance-powers/general-local-elections/voting-local-elections/voter-registration-voting" target="_blank" rel="noopener">guide to voter registration</a> covers eligibility and ID rules.</p>
-      <p>To vote you must be 18 or older on voting day, a Canadian citizen, a BC resident for at least six months, and a resident of the municipality. Non-resident property owners can vote in the municipality where they own property, under separate rules.</p>
-      <p>Housing promises on this ballot sit on top of two intergovernmental agreements signed this year, which is worth knowing before judging any of them. On 18 February 2026 Canada and British Columbia committed $810 million through Build Canada Homes and BC Housing to at least 700 shovel-ready supportive and transitional homes. On 18 June 2026 they announced more than $5 billion over ten years for BC local infrastructure, including up to $3.2 billion to cut development charges on multi-unit housing by as much as half in priority communities, worth up to $40,000 a unit. The Build Canada Homes Act received Royal Assent the same day. Municipalities are named as direct partners, and development charges are set by councils, so a city has real levers here rather than a waiting role.</p>
-      <p>Slates, sometimes called elector organizations, are not parties in the provincial or federal sense. They register with Elections BC, endorse candidates and pool fundraising, but a candidate can leave one and keep the seat. Several did in this term.</p>
+      <p>You can register at the voting place when you go to vote. Several of these cities closed advance registration in August, so for most people this is now the route. Bring two pieces of ID. If you are already on the voters list you may not be asked, but carrying it costs nothing.</p>
+      <p>Voting places open at 8am and close at 8pm local time on 17 October. Each municipality publishes its own map of advance and voting-day locations, linked at the top of every tab. To register in advance, use <a href="https://eregister.electionsbc.gov.bc.ca/ovr/" target="_blank" rel="noopener">Elections BC's online voter registration</a>; the province's <a href="https://www2.gov.bc.ca/gov/content/governments/local-governments/governance-powers/general-local-elections/voting-local-elections/voter-registration-voting" target="_blank" rel="noopener">guide</a> covers eligibility and ID rules.</p>
+      <p>To vote you must be 18 or older on voting day, a Canadian citizen, a BC resident for at least six months, and a resident of the municipality. Non-resident property owners can vote where they own property, under separate rules.</p>
+      <p>Housing promises on this ballot sit on top of two agreements signed this year, worth knowing before judging any of them. In February 2026 Canada and British Columbia committed $810 million through Build Canada Homes and BC Housing to at least 700 shovel-ready supportive and transitional homes. In June they announced more than $5 billion over ten years for BC local infrastructure, including up to $3.2 billion to halve development charges on multi-unit housing in priority communities, worth up to $40,000 a unit. Municipalities are named as direct partners and councils set development charges, so a city has real levers here rather than a waiting role.</p>
+      <p>Slates, sometimes called elector organizations, are not parties in the provincial or federal sense. They register with Elections BC, endorse candidates and pool fundraising, but a candidate can leave one and keep the seat. Several did this term.</p>
       <div class="callout">
-        <p><strong>Two lists, and only one of them is the ballot.</strong> Elections BC publishes a <em>Registered Candidates</em> PDF, but that is a campaign-financing registration snapshot. Its 17 September version leaves out 34 of Vancouver's 99 candidates, including every Green Party and OneCity name and every independent, and it is missing names in other cities too.</p>
+        <p><strong>Two lists, and only one of them is the ballot.</strong> Elections BC publishes a <em>Registered Candidates</em> PDF, but it is a campaign-financing snapshot. Its 17 September version leaves out 34 of Vancouver's 99 candidates, including every Green Party and OneCity name and every independent, and misses names in other cities too.</p>
         <p>Each municipality's own candidate page is the list that matches the ballot. That is what this page is built from, cross-checked against Elections BC data compiled by localelections.ca.</p>
       </div>
-    </section>
+    </details>
+    <details class="section" id="whynote">
+      <summary><span class="chev">&#9656;</span><h2>Why this exists</h2></summary>
+      <p>Municipal elections are overwhelming. In Vancouver you are picking 27 people out of 130 candidates, across four different bodies, most of whom you have never heard of, plus five ballot questions.</p>
+      <p>The information is not secret. It is scattered across seven municipal websites in seven different formats, and the Elections BC candidate list is incomplete: it leaves out 34 of Vancouver's 99 candidates, including a whole party and every independent. So I put it in one place, for myself first, then for anyone else who wants it.</p>
+      <p>Every name here comes from the city's own official list. Tick the candidates you are considering and print the list to take with you. Nothing you do on this page is collected or sent anywhere.</p>
+      <div class="callout">
+        <p><strong>Get in touch.</strong> <a href="mailto:marc.a.descoteaux@gmail.com?subject=BC%20Ballot%202026">Email me</a> with feedback, a question, a correction, or anything else about this page. All of it is welcome.</p>
+      </div>
+    </details>
   </div>
 </main>
 

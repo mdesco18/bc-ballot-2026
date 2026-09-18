@@ -1,13 +1,8 @@
 # BC Ballot 2026
 
-A single-file voter guide for the 17 October 2026 BC general local elections. Covers every
-nominated candidate for mayor, council, park board and school board in seven municipalities:
-Vancouver, Richmond, Delta, City and District of North Vancouver, Victoria and Nanaimo.
-415 candidates, 107 seats.
+A single-file voter guide for the 17 October 2026 BC general local elections. Covers every nominated candidate for mayor, council, park board and school board in seven municipalities: Vancouver, Richmond, Delta, City and District of North Vancouver, Victoria and Nanaimo. 415 candidates, 107 seats.
 
-`index.html` is the whole site. No build step, no server, no CDN scripts. Open it
-locally or drop it on any static host. The only external request is Google Fonts, and it
-falls back to system fonts without them.
+`index.html` is the whole site. No build step, no server, no CDN scripts. Open it locally or drop it on any static host. The only external request is Google Fonts, and it falls back to system fonts without them.
 
 ## Editing
 
@@ -38,9 +33,6 @@ for f in src/check-*.js; do node "$f" || break; done
 
 Candidate lists come from each municipality's own official candidate page, cross-checked against localelections.ca and votemate.org. Current to 17 September 2026. The withdrawal deadline is 4pm on 18 September and the ballot order is drawn at 5pm the same day, so the lists need re-checking against each municipality's page after that.
 
-The Elections BC "Registered Candidates" PDF is a campaign-financing snapshot and is
-incomplete: it omitted 34 of Vancouver's 99 candidates. Do not use it as a source.
+The Elections BC "Registered Candidates" PDF is a campaign-financing snapshot and is incomplete: it omitted 34 of Vancouver's 99 candidates. Do not use it as a source.
 
-Record and promise entries are tagged by evidence strength (Finding / Filed / Reported) and
-every one links to its source. Excluded: anything not traceable to a named outlet or a body
-with jurisdiction.
+Record and promise entries are tagged by evidence strength (Finding / Filed / Reported) and every one links to its source. Excluded: anything not traceable to a named outlet or a body with jurisdiction.

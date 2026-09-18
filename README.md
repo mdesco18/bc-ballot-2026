@@ -9,8 +9,6 @@ Vancouver, Richmond, Delta, City and District of North Vancouver, Victoria and N
 locally or drop it on any static host. The only external request is Google Fonts, and it
 falls back to system fonts without them.
 
-Also published at https://claude.ai/artifact/F2epaMFDVvafAvAjcCxx7x
-
 ## Editing
 
 Do not hand-edit `index.html`. Edit the parts in `src/` and run `src/build.sh`.

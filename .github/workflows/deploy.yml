@@ -1,0 +1,60 @@
+# Runs the checks, then publishes to Pages only if they pass.
+#
+# This gate only means something while Pages is set to "GitHub Actions" as its source.
+# Under "Deploy from a branch" the site republishes on every push no matter what this
+# workflow decides, and a red run would change nothing.
+name: Check and deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      # index.html is generated from src/ and is the file Pages serves. A hand edit to it,
+      # or a rebuild someone forgot to run, would publish something src/ no longer describes.
+      - name: index.html is current with src/
+        run: |
+          ./src/build.sh
+          git diff --exit-code -- index.html
+
+      - name: Checks
+        run: |
+          for f in src/check-*.js; do
+            echo "::group::$f"
+            node "$f"
+            echo "::endgroup::"
+          done
+
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v5

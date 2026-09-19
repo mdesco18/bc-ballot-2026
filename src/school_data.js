@@ -75,7 +75,7 @@ const S=[
 ["Delta", "School", "Independent", "Krissy Eiben", 0, ""],
 ["Delta", "School", "Independent", "Marcin Huniewicz", 0, ""],
 ["Delta", "School", "Independent", "Jim Mcmurtry", 0, ""],
-["Delta", "School", "Independent", "Rowan St. Germain", 0, ""],
+["Delta", "School", "Independent", "Roman St. Germain", 0, ""],
 ["Nanaimo", "School", "Independent", "Tania Brzovic", 0, ""],
 ["Nanaimo", "School", "Independent", "Kailey Gillam", 0, ""],
 ["Nanaimo", "School", "Independent", "Zeni Maartman", 0, ""],

@@ -31,7 +31,7 @@ for f in src/check-*.js; do node "$f" || break; done
 
 ## Data provenance
 
-Candidate lists come from each municipality's own official candidate page, cross-checked against localelections.ca and votemate.org. Current to 17 September 2026. The withdrawal deadline is 4pm on 18 September and the ballot order is drawn at 5pm the same day, so the lists need re-checking against each municipality's page after that.
+Candidate lists come from each municipality's own official candidate page, cross-checked against localelections.ca and votemate.org. Current to 18 September 2026, after the 4pm withdrawal deadline and the 5pm ballot draw.
 
 The Elections BC "Registered Candidates" PDF is a campaign-financing snapshot and is incomplete: it omitted 34 of Vancouver's 99 candidates. Do not use it as a source.
 

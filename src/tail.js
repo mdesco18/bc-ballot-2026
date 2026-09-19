@@ -413,7 +413,7 @@ function renderCard(){
     }
     out.push(`</div>`);
   }
-  out.push(`<p class="cardfoot">Your marks are stored in this browser only and are never sent anywhere. Nobody else can see who you picked. Candidate lists are current to 17 September 2026; check your municipality's own page before voting.</p>`);
+  out.push(`<p class="cardfoot">Your marks are stored in this browser only and are never sent anywhere. Nobody else can see who you picked. Candidate lists are current to 18 September 2026; check your municipality's own page before voting.</p>`);
   body.innerHTML=out.join("");
 }
 

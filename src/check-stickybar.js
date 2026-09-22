@@ -3,7 +3,7 @@
 // panel resizing the sticky bar made the bar hide itself, and that is not reachable
 // from check-render.js.
 const fs=require('fs'), path=require('path'), assert=require('assert');
-const page=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
+const page=fs.readFileSync(path.join(__dirname,'..','municipal','index.html'),'utf8');
 
 function harness(){
   const scrollFns=[], ros=[], clicks={};

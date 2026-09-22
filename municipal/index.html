@@ -1,0 +1,1792 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Every nominated candidate for mayor, council, park board and school board in seven British Columbia municipalities voting on 17 October 2026.">
+<style>
+  :root{color-scheme:light dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  body{margin:0}
+  img{max-width:100%}
+  [hidden]{display:none !important}
+</style>
+<title>BC Ballot 2026: local elections</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --ground:#F5F7F4; --surface:#FFFFFF; --surface-2:#EDF1EC;
+  --ink:#13201D; --ink-2:#3C4C48; --muted:#5A6A64;
+  --rule:#DCE3DD; --rule-2:#C6D0C8;
+  --accent:#0F6E5C; --accent-soft:#E2EFE9; --flag:#A8442B;
+  --h0:#2E6DB4;  --h1:#A63446;  --h2:#15899A;  --h3:#C2761B;
+  --h4:#3E8E41;  --h5:#7A4FA3;  --h6:#CE3C22;  --h7:#B53F83;
+  --h8:#22406B;  --h9:#65813A;  --h10:#46626C; --h11:#8A5A33;
+  --h12:#4A4FA8; --h13:#1F6B55; --hind:#6F7A75;
+  --shadow:0 1px 2px rgba(19,32,29,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F1513; --surface:#161E1B; --surface-2:#1E2825;
+    --ink:#E7EDE9; --ink-2:#BCC8C3; --muted:#8C9A94;
+    --rule:#28332F; --rule-2:#36433E;
+    --accent:#59C6A6; --accent-soft:#16302A; --flag:#E08063;
+    --h0:#6BA3E0;  --h1:#DE8090;  --h2:#4FC3D2;  --h3:#E0A552;
+    --h4:#76C179;  --h5:#B18BD8;  --h6:#F0755A;  --h7:#E185BA;
+    --h8:#7C9AC8;  --h9:#A3BE6E;  --h10:#88A6B0; --h11:#C89A6A;
+    --h12:#9598E0; --h13:#5FBFA0; --hind:#9BA8A2;
+    --shadow:0 1px 2px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F1513; --surface:#161E1B; --surface-2:#1E2825;
+  --ink:#E7EDE9; --ink-2:#BCC8C3; --muted:#8C9A94;
+  --rule:#28332F; --rule-2:#36433E;
+  --accent:#59C6A6; --accent-soft:#16302A; --flag:#E08063;
+  --h0:#6BA3E0;  --h1:#DE8090;  --h2:#4FC3D2;  --h3:#E0A552;
+  --h4:#76C179;  --h5:#B18BD8;  --h6:#F0755A;  --h7:#E185BA;
+  --h8:#7C9AC8;  --h9:#A3BE6E;  --h10:#88A6B0; --h11:#C89A6A;
+  --h12:#9598E0; --h13:#5FBFA0; --hind:#9BA8A2;
+  --shadow:0 1px 2px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--ground);
+  padding:12px 18px;font-size:16px;text-decoration:none}
+.skip:focus{left:0}
+body{background:var(--ground);color:var(--ink);font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:0}
+h1,h2,h3{font-family:Newsreader,Georgia,"Times New Roman",serif;font-weight:600;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+.masthead{border-bottom:1px solid var(--rule-2);background:var(--surface)}
+.masthead .wrap{padding-block:32px 16px}
+.kicker{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(32px,5.6vw,50px);line-height:1.02;letter-spacing:-.015em;margin-top:10px}
+h1 em{font-style:italic;color:var(--accent)}
+.standfirst{margin-top:13px;max-width:62ch;color:var(--ink-2);font-size:16px}
+.subnote{margin-top:9px;max-width:62ch;font-size:13.5px;color:var(--muted)}
+.countdown{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:18px;align-items:baseline}
+.countdown b{font-family:"IBM Plex Mono",monospace;font-size:25px;font-weight:500;color:var(--flag)}
+.countdown span{font-size:13px;color:var(--muted)}
+
+.provisional{margin-top:16px;max-width:70ch;font-size:13.5px;color:var(--ink);
+  background:var(--accent-soft);border-left:3px solid var(--flag);padding:10px 14px}
+
+/* jurisdiction tabs */
+.jtabs{display:flex;flex-wrap:wrap;gap:5px;margin-top:22px}
+.jtab{appearance:none;flex:0 0 auto;font:inherit;font-size:13.5px;padding:8px 14px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.jtab[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink);font-weight:600}
+.jtab:hover[aria-pressed="false"]{border-color:var(--ink-2);color:var(--ink)}
+
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ground);
+  border-bottom:1px solid var(--rule-2);box-shadow:var(--shadow);
+  will-change:transform,opacity;backface-visibility:hidden;
+  transform:translate3d(0,0,0);opacity:1;
+  /* Coming back: a long, strongly decelerating curve. The bar is fully off-screen
+     when hidden, so only the final approach is visible. A hard ease-out spends most
+     of the time on that last stretch, which is what stops it reading as a pop. */
+  transition:transform .55s cubic-bezier(.05,.7,.1,1), opacity .4s ease-out}
+.controls.hide{
+  transform:translate3d(0,-102%,0);opacity:0;
+  /* Leaving: quick and accelerating, so it gets out of the way. */
+  transition:transform .2s cubic-bezier(.55,.06,.68,.19), opacity .16s ease-in}
+/* Motion-sensitive users get a cross-fade rather than an instant jump. */
+@media (prefers-reduced-motion:reduce){
+  .controls{transform:none;transition:opacity .2s ease}
+  .controls.hide{transform:none;opacity:0;transition:opacity .2s ease;pointer-events:none}
+}
+.controls .wrap{padding-block:12px}
+.ctl-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--rule-2);background:var(--surface);overflow:hidden}
+.seg button{appearance:none;border:0;background:transparent;color:var(--ink-2);font:inherit;font-size:13.5px;padding:7px 14px;cursor:pointer;border-right:1px solid var(--rule)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.seg button[hidden]{display:none}
+input[type="search"]{flex:1 1 170px;min-width:0;font:inherit;font-size:13.5px;padding:7px 11px;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink)}
+.mini{appearance:none;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink-2);font:inherit;font-size:13px;padding:7px 12px;cursor:pointer}
+.mini[aria-pressed="true"]{background:var(--flag);border-color:var(--flag);color:#fff}
+.mini.arm{background:var(--flag);border-color:var(--flag);color:#fff}
+#filterpanel{margin-top:10px}
+.parties{display:flex;flex-wrap:wrap;gap:6px}
+.pchip{appearance:none;font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink-2);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.pchip .dot{width:8px;height:8px;border-radius:50%;background:var(--pc,var(--hind));flex:none}
+.pchip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+
+main .wrap{padding-block:28px 10px}
+
+/* at a glance */
+.glance{border:1px solid var(--rule-2);background:var(--surface)}
+.glance-top{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--rule)}
+.gcell{background:var(--surface-2);padding:12px 15px}
+.gcell .t-lab{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.gcell .t-num{font-family:"IBM Plex Mono",monospace;font-size:21px;font-variant-numeric:tabular-nums;margin-top:5px}
+.gcell .t-sub{font-size:12px;color:var(--muted);margin-top:1px}
+.glance-body{padding:15px}
+.glance-body p{color:var(--ink-2);max-width:74ch}
+.glance-body p + p{margin-top:10px}
+.dates{margin-top:12px;padding-top:12px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:4px 22px}
+.dates b{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:400;display:block}
+
+.racehead{margin-top:32px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.racehead h2{font-size:26px;letter-spacing:-.01em}
+.racenote{font-size:13px;color:var(--muted);margin-top:8px;max-width:72ch;font-family:"IBM Plex Sans",sans-serif;letter-spacing:0;text-transform:none}
+.racehead .rmeta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+.pgroup{margin-top:20px}
+.pgroup h3{font-size:16px;display:flex;align-items:center;gap:9px;font-family:"IBM Plex Sans",sans-serif;font-weight:600}
+.pgroup h3 .bar{width:4px;height:17px;background:var(--pc);flex:none}
+.pgroup h3 .cnt{font-family:"IBM Plex Mono",monospace;font-weight:400;font-size:12px;color:var(--muted);letter-spacing:.06em}
+.pnote{font-size:13px;color:var(--muted);margin:5px 0 0 13px;max-width:70ch}
+
+ul.cands{list-style:none;margin:10px 0 0;padding:0;border-top:1px solid var(--rule)}
+li.cand{display:grid;grid-template-columns:30px 1fr;gap:0 12px;align-items:start;padding:9px 4px 9px 0;border-bottom:1px solid var(--rule)}
+li.cand.hide{display:none}
+.mark{appearance:none;width:22px;height:22px;margin-top:2px;border:1.5px solid var(--rule-2);background:var(--surface);cursor:pointer;color:transparent;font-size:14px;line-height:1;display:flex;align-items:center;justify-content:center;padding:0}
+.mark[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--ground)}
+.cand .nm{font-family:Newsreader,Georgia,serif;font-size:19px;line-height:1.25}
+.cand .row2{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-top:3px}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:1px 6px;border:1px solid var(--pc);color:var(--pc)}
+.inc{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:1px 6px;background:var(--ink);color:var(--ground)}
+.sit{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:1px 6px;border:1px dashed var(--ink-2);color:var(--ink-2)}
+.cand .bio{font-size:13.5px;color:var(--ink-2);max-width:74ch}
+.cand .lnk{font-size:12.5px}
+.empty{padding:26px 0;color:var(--muted);font-size:14px}
+.elsewhere{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-top:11px;color:var(--ink-2)}
+.rmark{color:var(--accent)}
+.rmark.over{color:var(--flag);font-weight:600}
+
+.section{margin-top:48px;padding-top:26px;border-top:1px solid var(--rule-2)}
+.section[hidden]{display:none}
+.section h2{font-size:24px;letter-spacing:-.01em}
+.section > p,.section li{max-width:68ch}
+.section p{margin-top:12px;color:var(--ink-2)}
+.section h3{font-size:17px;margin-top:22px;font-family:"IBM Plex Sans",sans-serif;font-weight:600}
+.section ul{margin:12px 0 0;padding-left:20px;color:var(--ink-2)}
+.section li{margin-top:7px}
+
+#roster{margin-bottom:26px}
+details.section{margin-top:12px;padding-top:0;border:1px solid var(--rule);background:var(--surface)}
+details.section > summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:11px;padding:15px 18px}
+details.section > summary::-webkit-details-marker{display:none}
+details.section > summary:hover h2{color:var(--accent)}
+details.section > summary h2{font-size:19px;margin:0;flex:1}
+details.section > summary .chev{flex:none;color:var(--muted);transition:transform .15s}
+details.section[open] > summary{border-bottom:1px solid var(--rule)}
+details.section[open] > summary .chev{transform:rotate(90deg)}
+details.section > :not(summary){margin-left:18px;margin-right:18px}
+details.section > summary + *{margin-top:16px}
+details.section[open]{padding-bottom:18px}
+@media (prefers-reduced-motion:reduce){details.section > summary .chev{transition:none}}
+
+.qbox{border-left:3px solid var(--flag);background:var(--surface);padding:14px 16px;margin-top:14px}
+.qbox .qn{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.qbox blockquote{margin:6px 0 0;font-family:Newsreader,Georgia,serif;font-size:17px;line-height:1.4;color:var(--ink)}
+.qbox .qs{font-size:12.5px;color:var(--muted);margin-top:8px}
+
+.tblwrap{overflow-x:auto;margin-top:14px;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:13.5px;background:var(--surface)}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--rule)}
+th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);background:var(--surface-2)}
+td.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;text-align:right}
+tr:last-child td{border-bottom:0}
+
+.callout{background:var(--accent-soft);border:1px solid var(--accent);padding:14px 16px;margin-top:16px}
+.callout strong{color:var(--ink)}
+.callout p{margin-top:6px}
+.callout p:first-child{margin-top:0}
+
+footer{margin-top:48px;border-top:1px solid var(--rule-2);background:var(--surface)}
+footer .wrap{padding-block:24px 40px}
+footer h3{font-family:"IBM Plex Sans",sans-serif;font-size:13px;font-weight:600}
+footer ul{list-style:none;margin:10px 0 0;padding:0;columns:2;column-gap:28px}
+footer li{font-size:13px;margin-bottom:6px;break-inside:avoid}
+footer .fine{font-size:12px;color:var(--muted);margin-top:18px;max-width:72ch}
+
+#floatbar{position:fixed;right:16px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:30;
+  display:flex;flex-direction:column;align-items:flex-end;gap:7px;pointer-events:none}
+.fbtn{pointer-events:auto;appearance:none;cursor:pointer;padding:0;
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--rule-2);background:var(--surface);color:var(--ink-2);
+  box-shadow:0 2px 10px rgba(19,32,29,.14)}
+.fbtn svg{width:20px;height:20px;display:block}
+.fbtn:hover{border-color:var(--ink-2);color:var(--ink)}
+@media print{#floatbar{display:none !important}}
+body.showcard #floatbar{display:none}
+
+/* record + promise disclosures */
+details.rec{margin-top:7px}
+details.rec > summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-2);border:1px solid var(--rule-2);background:var(--surface);padding:2px 9px}
+details.rec > summary::-webkit-details-marker{display:none}
+details.rec > summary:hover{border-color:var(--ink-2)}
+details.rec > summary .chev{transition:transform .15s}
+details.rec[open] > summary .chev{transform:rotate(90deg)}
+.recbody{margin-top:9px;border-left:2px solid var(--rule-2);padding:2px 0 2px 13px;max-width:78ch}
+.subhead{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);padding:10px 0 2px;border-bottom:1px solid var(--rule-2);margin-bottom:2px}
+.subhead:first-child{padding-top:2px}
+.entry{padding:8px 0;border-bottom:1px dotted var(--rule)}
+.entry:last-child{border-bottom:0}
+.etags{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.etype{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:1px 6px;color:#fff;background:var(--et,var(--hind))}
+.elabel{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:1px 6px;border:1px solid var(--rule-2);color:var(--muted)}
+.edate{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--muted)}
+.etext{font-size:13.5px;color:var(--ink-2);margin-top:5px}
+.esrc{font-size:12px;margin-top:4px}
+.pstat{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:1px 6px;color:#fff;background:var(--ps,var(--hind))}
+.nosearch{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.07em;color:var(--muted);margin-top:6px}
+.pgroup .recbody{margin-left:13px}
+@media print{ details.rec{display:none !important} }
+
+/* ballot card + print */
+#ballotcard{padding-block:26px 60px}
+.cardhead{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.cardhead h2{font-size:27px}
+.cardactions{display:flex;gap:8px}
+.cardmeta{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.cj{margin-top:26px;break-inside:avoid}
+.cj h3{font-family:Newsreader,Georgia,serif;font-size:21px;border-bottom:1px solid var(--rule-2);padding-bottom:5px}
+.cjdates{font-size:12.5px;color:var(--muted);margin-top:6px}
+.cr{margin-top:14px;break-inside:avoid}
+.cr .crh{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cr ul{list-style:none;margin:6px 0 0;padding:0}
+.cr li{display:flex;gap:9px;align-items:baseline;padding:4px 0;border-bottom:1px dotted var(--rule)}
+.cr .box{flex:none;width:13px;height:13px;border:1.2px solid var(--ink-2);display:inline-block;position:relative;top:2px}
+.cr .cn{font-family:Newsreader,Georgia,serif;font-size:17px}
+.cr .cp{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.warn{color:var(--flag);font-size:13px;margin-top:6px}
+.cardfoot{margin-top:30px;padding-top:14px;border-top:1px solid var(--rule-2);font-size:12px;color:var(--muted);max-width:74ch}
+.cardempty{margin-top:24px;color:var(--muted)}
+
+body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard footer{display:none}
+
+@media print{
+  .masthead,.controls,main,footer,.cardactions{display:none !important}
+  #ballotcard{display:block !important;padding:0}
+  .wrap{max-width:none;padding-inline:0}
+  body{background:#fff;color:#000;font-size:12pt}
+  .cardhead{border-bottom:2px solid #000}
+  .cr .box{border-color:#000}
+  .cj{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+}
+
+@media (max-width:820px){
+  body{font-size:18px;line-height:1.65}
+  .wrap{padding-inline:16px}
+
+  h1{font-size:clamp(34px,9vw,46px)}
+  .standfirst{font-size:19px}
+  .subnote{font-size:17px}
+  .provisional{font-size:17px;padding:14px 16px}
+  .countdown b{font-size:32px}
+  .countdown span{font-size:17px}
+
+  .jtabs{gap:6px}
+  .jtab{font-size:17px;padding:12px 16px;min-height:48px}
+
+  input[type="search"]{font-size:17px;padding:13px 14px;flex:1 1 100%;min-height:48px}
+  /* Five race buttons need ~520px at this type size; a 360px phone has ~328px, and the
+     joined-segment box clips the overflow. Break the row into wrapping chips instead,
+     matching .pchip/.mini on the same bar. No nth-child maths, so a hidden button
+     (Park Board outside Vancouver) costs nothing. */
+  .seg{flex:1 1 100%;flex-wrap:wrap;gap:6px;border:0;background:transparent;overflow:visible}
+  .seg button{font-size:17px;padding:12px 16px;min-height:48px;flex:1 1 auto;
+    border:1px solid var(--rule-2);background:var(--surface)}
+  .seg button:last-child{border-right:1px solid var(--rule-2)}
+  .seg button[aria-pressed="true"]{border-color:var(--accent)}
+  .mini{font-size:17px;padding:12px 16px;min-height:48px}
+  .pchip{font-size:16px;padding:10px 14px;min-height:44px}
+
+  .gcell{padding:14px 16px}
+  .gcell .t-lab{font-size:12px}
+  .gcell .t-num{font-size:28px}
+  .gcell .t-sub{font-size:16px}
+  .glance-body p{font-size:17.5px}
+  .dates{font-size:16.5px;gap:8px 20px}
+  .dates b{font-size:12px}
+
+  .racehead h2{font-size:28px}
+  .racehead .rmeta{font-size:14px}
+  .racenote{font-size:16.5px}
+  .pgroup h3{font-size:19px}
+  .pgroup h3 .cnt{font-size:15px}
+  .pnote{font-size:16.5px}
+
+  li.cand{grid-template-columns:34px 1fr;gap:0 13px;padding:15px 4px 15px 0}
+  .mark{width:30px;height:30px;font-size:19px}
+  .cand .nm{font-size:24px;line-height:1.2}
+  .cand .row2{gap:8px 12px;margin-top:6px}
+  .cand .bio{font-size:17px}
+  .cand .lnk{font-size:16px}
+  .tag,.inc,.sit{font-size:13px;padding:3px 9px}
+  .nosearch{font-size:13.5px}
+
+  details.rec > summary{font-size:13.5px;padding:9px 14px;min-height:42px}
+  .recbody{padding-left:13px}
+  .subhead{font-size:12.5px}
+  .etype,.elabel,.pstat{font-size:12.5px;padding:3px 8px}
+  .edate{font-size:13.5px}
+  .etext{font-size:17px}
+  .esrc{font-size:16px}
+
+  .section h2{font-size:25px}
+  details.section > summary h2{font-size:20px}
+  details.section > summary{padding:16px}
+  details.section > :not(summary){margin-left:16px;margin-right:16px}
+  .section h3{font-size:20px}
+  .section p,.section li{font-size:18px}
+  .qbox blockquote{font-size:19px}
+  .qbox .qs{font-size:16px}
+  table{font-size:16.5px}
+  th{font-size:12px}
+  .callout{font-size:17.5px}
+
+  #floatbar{right:14px;bottom:calc(34px + env(safe-area-inset-bottom,0px));gap:9px}
+  .fbtn{width:38px;height:38px}
+  .fbtn svg{width:17px;height:17px}
+
+  .cardhead h2{font-size:27px}
+  .cj h3{font-size:24px}
+  .cr .crh{font-size:12.5px}
+  .cr .cn{font-size:20px}
+  .cr .cp{font-size:12.5px}
+  .cardfoot{font-size:15px}
+
+  footer ul{columns:1}
+  footer li{font-size:17px}
+  footer .fine{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* district picker, used when there are too many jurisdictions for tabs */
+.jselect{font:inherit;font-size:15px;margin-top:22px;padding:9px 12px;min-width:min(100%,340px);max-width:100%;
+  border:1px solid var(--rule-2);background:var(--surface);color:var(--ink)}
+@media (max-width:820px){ .jselect{font-size:17px;min-height:48px;width:100%} }
+
+/* chooser */
+.choose{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.choice{display:flex;flex-direction:column;gap:8px;padding:20px;border:1px solid var(--rule-2);background:var(--surface);
+  color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+.choice:hover{border-color:var(--accent)}
+.choice .ctitle{font-family:Newsreader,Georgia,serif;font-size:24px;font-weight:600;line-height:1.15}
+.choice .csub{font-size:14px;color:var(--ink-2)}
+@media (max-width:820px){ .choice .ctitle{font-size:26px} .choice .csub{font-size:17px} }
+</style>
+</head>
+<body>
+
+<div id="floatbar">
+  <button type="button" class="fbtn" id="expandbtn" aria-label="Expand all notes" title="Expand all notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3l5 5 5-5"/><path d="M7 11l5 5 5-5"/></svg></button>
+  <button type="button" class="fbtn" id="collapsebtn" aria-label="Collapse all notes" title="Collapse all notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 13l-5-5-5 5"/><path d="M17 21l-5-5-5 5"/></svg></button>
+  <button type="button" class="fbtn" id="totop" hidden aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V5"/><path d="M5 12l7-7 7 7"/></svg></button>
+</div>
+
+<div id="ballotcard" hidden>
+  <div class="wrap">
+    <div class="cardhead">
+      <h2>Your shortlist</h2>
+      <div class="cardactions">
+        <button type="button" class="mini" id="doprint">Print this</button>
+        <button type="button" class="mini" id="backbtn">Back to the candidates</button>
+      </div>
+    </div>
+    <div id="cardbody"></div>
+  </div>
+</div>
+
+<a class="skip" href="#roster">Skip to the candidate list</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="kicker">British Columbia &middot; General Local Elections &middot; Saturday 17 October 2026</div>
+    <h1>Who's on your <em>ballot</em></h1>
+    <p class="standfirst">Every nominated candidate for mayor, council, park board and school board in seven BC municipalities, grouped by party, straight from each city's official list. Mark the ones you want to come back to.</p>
+    <p class="subnote">North Vancouver city and district are separate municipalities with separate ballots, so each has its own tab. If you live on the North Shore, check which one you vote in.</p>
+    <div class="countdown"><b id="days">&mdash;</b><span id="dayslabel">days until voting day</span></div>
+    <p class="provisional" id="provisional" hidden>Provisional list. Candidates can withdraw until <strong>4pm Pacific on 18 September</strong>, and the ballot order is drawn at 5pm the same day. Until then, confirm any name on your municipality's own page before relying on it.</p>
+    <nav class="jtabs" id="jtabs" aria-label="Choose a municipality"></nav>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="wrap">
+    <div class="ctl-row">
+      <div class="seg" id="raceseg" role="group" aria-label="Filter by race">
+        <button type="button" data-race="all" aria-pressed="true">All races</button>
+        <button type="button" data-race="Mayor" aria-pressed="false">Mayor</button>
+        <button type="button" data-race="Council" aria-pressed="false">Council</button>
+        <button type="button" data-race="Park Board" aria-pressed="false">Park Board</button>
+        <button type="button" data-race="School" aria-pressed="false">School Board</button>
+      </div>
+      <label class="vh" for="q">Search candidates by name or party</label>
+      <input type="search" id="q" placeholder="Search name or party&hellip;">
+      <button type="button" class="mini" id="filterstoggle" aria-expanded="true" aria-controls="filterpanel">Filters</button>
+      <button type="button" class="mini" id="printbtn">Print shortlist</button>
+    </div>
+    <p class="vh" id="resultcount" role="status" aria-live="polite"></p>
+    <div id="filterpanel">
+      <div class="parties" id="parties" role="group" aria-label="Filter by party"></div>
+      <div class="ctl-row" style="margin-top:8px">
+        <button type="button" class="mini" id="onlymarked" aria-pressed="false">Shortlist only</button>
+        <button type="button" class="mini" id="clearmarks">Clear marks here</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="glance" id="glance"></div>
+    <div id="roster"></div>
+    <p class="empty" id="empty" hidden>No candidates match those filters.</p>
+
+    <details class="section" data-juris="Vancouver">
+      <summary><span class="chev">&#9656;</span><h2>The park board fight, and where it landed</h2></summary>
+      <p>In December 2023 Mayor Ken Sim announced a plan to abolish the elected park board and fold its powers into council. Three of the four ABC commissioners, Brennan Bastyovanszky, Laura Christensen and Scott Jensen, quit the party over it and, with Green commissioner Tom Digby, formed a majority that opposed the move. Abolition needed a provincial change to the Vancouver Charter, which never came.</p>
+      <p>In July 2026 ABC announced it will not pursue abolition and is running a full slate of commissioner candidates. Only three sitting commissioners are seeking re-election: Digby with the Greens, Jensen with the Vancouver Liberals, and Jas Virdi with ABC.</p>
+      <p>Vancouver's park board is the only separately elected parks body in Canada, which is why this page has a third race for Vancouver and two for everywhere else.</p>
+    </details>
+
+    <details class="section" data-juris="Vancouver">
+      <summary><span class="chev">&#9656;</span><h2>The shape of Vancouver's mayoral race</h2></summary>
+      <p>Eight names, and a field that fractured and then partly reassembled. Three parties on the left, COPE, OneCity and the Greens, agreed to try to settle on one mayoral candidate. That took until September. COPE's Stephanie Allen ended her campaign on 2 September; OneCity's William Azaroff withdrew on 8 September, saying the priority was to unseat the incumbent. Neither party nominated a replacement, which leaves the Greens' Pete Fry as the only candidate from those three. COPE and OneCity are still running full council and park board slates.</p>
+      <p>On the other side of the field, two parties that did not exist in 2022 are now competing with ABC for the same voters: the Vancouver Liberals, founded in 2025 by Sim's former chief of staff Kareem Allam, and Vote Vancouver, led by Rebecca Bligh, who was elected with ABC and expelled from it in February 2025.</p>
+      <h3>Polling, and what it predates</h3>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>Poll</th><th>Field dates</th><th>Sim</th><th>Fry</th><th>Allam</th><th>Hardwick</th><th>Bligh</th><th>Undecided</th></tr></thead>
+          <tbody>
+            <tr><td>Research Co. (decided)</td><td>1 Aug 2026</td><td class="n">30%</td><td class="n">19%</td><td class="n">19%</td><td class="n">14%</td><td class="n">7%</td><td class="n">&mdash;</td></tr>
+            <tr><td>Research Co. (all)</td><td>1 Aug 2026</td><td class="n">22%</td><td class="n">14%</td><td class="n">14%</td><td class="n">10%</td><td class="n">5%</td><td class="n">26%</td></tr>
+            <tr><td>Pallas Data</td><td>20&ndash;24 Jul 2026</td><td class="n">13.8%</td><td class="n">18.1%</td><td class="n">11.5%</td><td class="n">10.5%</td><td class="n">2.9%</td><td class="n">33.8%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Both polls were taken before Allen and Azaroff withdrew, so the 4% and 5% they held are unallocated. Research Co.'s own read was that roughly a third of the vote could be enough to win.</p>
+    </details>
+
+    <details class="section" data-juris="Vancouver">
+      <summary><span class="chev">&#9656;</span><h2>Vancouver's five ballot questions</h2></summary>
+      <h3>Three capital plan borrowing questions (binding)</h3>
+      <p>The 2027&ndash;2030 Capital Plan proposes $3.5 billion of investment. Of that, $790 million would be borrowed, and borrowing needs voter approval. A yes lets council pass borrowing by-laws up to the stated amount without coming back to voters.</p>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>Question</th><th>What it covers</th><th>Amount</th></tr></thead>
+          <tbody>
+            <tr><td>1. Transportation and street infrastructure</td><td>Granville and Cambie bridge work, pavement and sidewalks, traffic signals and street lighting</td><td class="n">$292M</td></tr>
+            <tr><td>2. Community and civic facilities</td><td>Community centres, pools, rinks, libraries, childcare; fire halls, service yards, Civic Theatres</td><td class="n">$438M</td></tr>
+            <tr><td>3. Parks and open public spaces</td><td>Park renewal, seawall, pathways, playgrounds, playfields, sport courts</td><td class="n">$60M</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Two public safety questions (non-binding)</h3>
+      <p>Council added these on 14 August 2026 on a motion from ABC. They are plebiscite questions: the result does not bind anyone.</p>
+      <div class="qbox">
+        <div class="qn">Question 4</div>
+        <blockquote>Are you in favour of the City of Vancouver strengthening its laws to forbid open-air hard drug (Heroin, Meth, Fentanyl, and Crack) use in public spaces?</blockquote>
+      </div>
+      <div class="qbox">
+        <div class="qn">Question 5</div>
+        <blockquote>Should the City of Vancouver formally ask the Province of B.C. to convert portions of the old St. Paul's Hospital, or another similar site, into a secure medical facility that provides acute voluntary and 100-plus involuntary care beds for individuals posing a serious risk to themselves or others due to severe substance use and mental health disorders?</blockquote>
+        <div class="qs">ABC's council majority voted for both. Bligh, Fry and Orr left the chamber before the vote; Maloney voted against. Orr called it a get-out-the-vote exercise costing about $500,000 and noted hard drug use is already illegal; Fry objected to the short notice and limited public input; Bligh objected to framing vulnerable people as the problem.</div>
+      </div>
+    </details>
+
+    <details class="section" id="method">
+      <summary><span class="chev">&#9656;</span><h2>How the record notes work</h2></summary>
+      <p>Some candidates carry a collapsed <strong>Record</strong> or <strong>Promises</strong> note: dated, linked entries, not a score. There is deliberately no ranking and no index.</p>
+      <p>Coverage follows scrutiny, not conduct. Four newsrooms cover Vancouver city hall daily; almost nobody covers a first-time council candidate in Delta. A score would make the unexamined candidate look clean, which inverts what a voter wants to know. No note means nothing was found or nobody looked, and those are not the same thing. Where a candidate was searched and nothing turned up, the page says so.</p>
+      <h3>Every entry carries two tags</h3>
+      <p>The first says what kind of thing it is.</p>
+      <ul>
+        <li><strong>Financial interest</strong> &mdash; self-dealing or benefit.</li>
+        <li><strong>Election finance</strong> &mdash; spending and donation rules.</li>
+        <li><strong>Conduct in office</strong> &mdash; code-of-conduct and open-meeting matters.</li>
+        <li><strong>Record</strong> &mdash; verifiable facts about performance, such as voting and expenses.</li>
+        <li><strong>Cleared</strong> &mdash; investigations that ended in exoneration, included so the page is not only bad news.</li>
+      </ul>
+      <p>The second says how well established it is.</p>
+      <ul>
+        <li><strong>Finding</strong> &mdash; a body with jurisdiction ruled: an integrity commissioner, a court, Elections BC.</li>
+        <li><strong>Filed</strong> &mdash; a complaint or petition exists and was not decided against the person.</li>
+        <li><strong>Reported</strong> &mdash; substantive journalism from a named outlet, linked.</li>
+      </ul>
+      <p>Rumour, social media and opinion columns are excluded, and so is anything that cannot be linked.</p>
+      <h3>Promises</h3>
+      <p>For people who held the office: whether a commitment was <strong>kept</strong>, <strong>partially kept</strong>, <strong>broken</strong> or <strong>reversed</strong>. For current platforms, no judgment on whether a plan is a good idea, only two checkable flags: <strong>outside council's power</strong>, where delivery needs the province or a regional body, and <strong>costing questioned</strong>, where the arithmetic has been publicly challenged.</p>
+      <p>Slate platforms outside Vancouver were searched too. Richmond's eleven council slates and REAL Nanaimo had not published detailed platforms as of 17 September 2026, so there is nothing to flag rather than nothing to find.</p>
+      <p>This section is incomplete by design and weighted toward Vancouver. If you find an error, <a href="mailto:marc.a.descoteaux@gmail.com?subject=BC%20Ballot%202026%20correction">email me</a> rather than passing it on.</p>
+    </details>
+
+    <details class="section" id="privacy">
+      <summary><span class="chev">&#9656;</span><h2>What this page stores</h2></summary>
+      <p>This page never learns who you plan to vote for. Nothing you do here leaves your device. There is no account, no sign-in, no cookies, no analytics and no form that submits anywhere. Nobody, including the person who shared this link with you, can see which candidates you marked.</p>
+      <p>Your shortlist is written to your own browser's local storage. It survives closing the tab, but never syncs: marks made on your phone will not appear on your laptop, and clearing your browser data erases them. Everyone you send the link to gets their own empty shortlist.</p>
+      <p>Print your shortlist with the button at the top of the candidate list. The sheet is a plain checklist of the candidates you marked, grouped by municipality and race, with the seat limits and voting dates for each. Printing happens on your own machine.</p>
+    </details>
+
+    <details class="section" id="how">
+      <summary><span class="chev">&#9656;</span><h2>How BC local elections work</h2></summary>
+      <p>Every municipality votes on the same day, Saturday 17 October 2026, for a four-year term. All of them use plurality-at-large voting: there are no wards in these seven cities, everyone votes citywide, and the top finishers take the seats.</p>
+      <p>You may vote for up to the number of seats in each race, and no more. Marking fewer names does not weaken the ones you do mark. A ballot with too many marks in one race has that race discounted.</p>
+      <p>School boards are elected the same day on the same ballot. Trustees set district budgets and decide school closures, catchment boundaries and board policy; the province sets curriculum and funding levels. Every property owner pays the school tax, children or not.</p>
+      <h3>Registering and finding your voting place</h3>
+      <p>You can register at the voting place when you go to vote. Several of these cities closed advance registration in August, so for most people this is now the route. Bring two pieces of ID. If you are already on the voters list you may not be asked, but carrying it costs nothing.</p>
+      <p>Voting places open at 8am and close at 8pm local time on 17 October. Each municipality publishes its own map of advance and voting-day locations, linked at the top of every tab. To register in advance, use <a href="https://eregister.electionsbc.gov.bc.ca/ovr/" target="_blank" rel="noopener">Elections BC's online voter registration</a>; the province's <a href="https://www2.gov.bc.ca/gov/content/governments/local-governments/governance-powers/general-local-elections/voting-local-elections/voter-registration-voting" target="_blank" rel="noopener">guide</a> covers eligibility and ID rules.</p>
+      <p>To vote you must be 18 or older on voting day, a Canadian citizen, a BC resident for at least six months, and a resident of the municipality. Non-resident property owners can vote where they own property, under separate rules.</p>
+      <p>Housing promises on this ballot sit on top of two agreements signed this year, worth knowing before judging any of them. In February 2026 Canada and British Columbia committed $810 million through Build Canada Homes and BC Housing to at least 700 shovel-ready supportive and transitional homes. In June they announced more than $5 billion over ten years for BC local infrastructure, including up to $3.2 billion to halve development charges on multi-unit housing in priority communities, worth up to $40,000 a unit. Municipalities are named as direct partners and councils set development charges, so a city has real levers here rather than a waiting role.</p>
+      <p>Slates, sometimes called elector organizations, are not parties in the provincial or federal sense. They register with Elections BC, endorse candidates and pool fundraising, but a candidate can leave one and keep the seat. Several did this term.</p>
+      <div class="callout">
+        <p><strong>Two lists, and only one of them is the ballot.</strong> Elections BC publishes a <em>Registered Candidates</em> PDF, but it is a campaign-financing snapshot. Its 17 September version leaves out 34 of Vancouver's 99 candidates, including every Green Party and OneCity name and every independent, and misses names in other cities too.</p>
+        <p>Each municipality's own candidate page is the list that matches the ballot. That is what this page is built from, cross-checked against Elections BC data compiled by localelections.ca.</p>
+      </div>
+    </details>
+    <details class="section" id="whynote">
+      <summary><span class="chev">&#9656;</span><h2>Why this exists</h2></summary>
+      <p>Municipal elections are overwhelming. In Vancouver you are picking 27 people out of 130 candidates, across four different bodies, most of whom you have never heard of, plus five ballot questions.</p>
+      <p>The information is not secret. It is scattered across seven municipal websites in seven different formats, and the Elections BC candidate list is incomplete: it leaves out 34 of Vancouver's 99 candidates, including a whole party and every independent. So I put it in one place, for myself first, then for anyone else who wants it.</p>
+      <p>Every name here comes from the city's own official list. Tick the candidates you are considering and print the list to take with you. Nothing you do on this page is collected or sent anywhere.</p>
+      <div class="callout">
+        <p><strong>Get in touch.</strong> <a href="mailto:marc.a.descoteaux@gmail.com?subject=BC%20Ballot%202026">Email me</a> with feedback, a question, a correction, or anything else about this page. All of it is welcome.</p>
+      </div>
+    </details>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://vancouver.ca/your-government/2026-candidate-information.aspx">Vancouver &mdash; who is running</a></li>
+      <li><a href="https://vancouver.ca/your-government/2026-capital-plan-borrowing-questions-and-plebiscite-questions.aspx">Vancouver &mdash; ballot questions</a></li>
+      <li><a href="https://www.richmond.ca/city-hall/elections/candidateslist.htm">Richmond &mdash; candidate list</a></li>
+      <li><a href="https://vancouver.ca/your-government/2026-candidates-school-trustee.aspx">Vancouver &mdash; school trustees</a></li>
+      <li><a href="https://www.delta.ca/elections/candidates">Delta &mdash; candidates</a></li>
+      <li><a href="https://www.cnv.org/City-Hall/General-Local-Election/2026-General-Local-Election">City of North Vancouver &mdash; election</a></li>
+      <li><a href="https://www.dnv.org/government-administration/2026-general-local-election">District of North Vancouver &mdash; election</a></li>
+      <li><a href="https://www.victoria.ca/city-government/elections">Victoria &mdash; elections</a></li>
+      <li><a href="https://www.nanaimo.ca/your-government/elections">Nanaimo &mdash; elections</a></li>
+      <li><a href="https://eregister.electionsbc.gov.bc.ca/ovr/">Elections BC &mdash; register to vote</a></li>
+      <li><a href="https://elections.bc.ca/local-elections/2026-general-local-elections/">Elections BC &mdash; 2026 general local elections</a></li>
+      <li><a href="https://localelections.ca/">localelections.ca &mdash; BC-wide candidate data</a></li>
+      <li><a href="https://votemate.org/bc2026">VoteMate &mdash; BC 2026 local elections</a></li>
+      <li><a href="#method">How the record notes work</a></li>
+      <li><a href="#privacy">What this page stores</a></li>
+      <li><a href="https://researchco.ca/2026/08/04/vanpoli-2/">Research Co. &mdash; August 2026 Vancouver poll</a></li>
+    </ul>
+    <p class="fine">Candidate lists current to 18 September 2026, after the 4pm withdrawal deadline. Check your city's page before you vote. Party and slate summaries paraphrase each organization's own published material and are not endorsements. Biographical notes appear only where a source provided one. School board incumbency is not marked: the data source that supplies it for mayor and council races does not cover school districts.</p>
+  </div>
+</footer>
+<script>
+const C = [
+  // ---- MAYOR ----
+  ["Mayor","ABC Vancouver","Ken Sim",1,"Incumbent mayor since 2022, elected with 51% of the vote. Co-founder of Nurse Next Door and Rosemary Rocksalt.","https://abcvancouver.ca/"],
+  ["Mayor","Green","Pete Fry",0,"City councillor since 2018. Son of former MP Hedy Fry. The Greens' first mayoral candidate since 1996.","https://petefry.ca/"],
+  ["Mayor","Vancouver Liberals","Kareem Allam",0,"Founded the Vancouver Liberals in 2025. Former chief of staff to Mayor Ken Sim and a political consultant.","https://www.vancouverliberals.com/meet_kareem_allam"],
+  ["Mayor","TEAM","Colleen Hardwick",0,"City councillor 2018 to 2022, elected with the NPA. TEAM's mayoral candidate in 2022.","https://www.voteteam.ca/"],
+  ["Mayor","Vote Vancouver","Rebecca Bligh",0,"City councillor since 2018. Elected with the NPA, joined ABC, expelled from ABC in February 2025, then founded Vote Vancouver.","https://www.votevancouver.ca/"],
+  ["Mayor","Bright Future Vancouver","Muhammad Ahmad",0,"Communications strategist and chair of the strategic advisory board at Alpharay Consulting.","https://www.brightfuturevancouver.ca/muhammad-ahmad"],
+  ["Mayor","Independent","Scott Gilbert",0,"Running on Downtown Eastside conditions, safer streets and city spending.","http://draintheswamp.ca/"],
+  ["Mayor","Independent","Amauri Caliman",0,"",""],
+
+  // ---- COUNCIL ----
+  ["Council","ABC Vancouver","Lisa Dominato",1,"Councillor since 2018, first with the NPA. Former school trustee.",""],
+  ["Council","ABC Vancouver","Sarah Kirby-Yung",1,"Councillor since 2018, first with the NPA. Former park board commissioner.","http://abcvancouver.ca/"],
+  ["Council","ABC Vancouver","Mike Klassen",1,"Councillor since 2022.","https://mikeklassen.ca/"],
+  ["Council","ABC Vancouver","Peter Meiszner",1,"Councillor since 2022. Former journalist.",""],
+  ["Council","ABC Vancouver","Lenny Zhou",1,"Councillor since 2022.",""],
+  ["Council","ABC Vancouver","Joyce Gillespie",0,"",""],
+  ["Council","ABC Vancouver","David Grewal",0,"",""],
+  ["Council","ABC Vancouver","Lorraine Lowe",0,"",""],
+  ["Council","ABC Vancouver","Arezo Zarrabian",0,"",""],
+
+  ["Council","Vancouver Liberals","John Coupar",0,"Park board commissioner 2011 to 2022 with the NPA, and its 2022 mayoral candidate. BC Conservative candidate in Vancouver-Little Mountain in 2024.","https://www.vancouverliberals.com/john_coupar"],
+  ["Council","Vancouver Liberals","Moira Stilwell",0,"Former BC Liberal MLA and provincial cabinet minister. Physician.","https://www.vancouverliberals.com/moira_stilwell"],
+  ["Council","Vancouver Liberals","Victoria Jung",0,"Vancouver School Board trustee since 2022, elected with ABC.",""],
+  ["Council","Vancouver Liberals","Armor Valor",0,"Entrepreneur, Hospital Employees Union member and Langara College board member. Ran for council with OneCity previously.","https://www.vancouverliberals.com/armor_valor"],
+  ["Council","Vancouver Liberals","Devin Clemens",0,"Graduate program manager at UBC.","https://www.vancouverliberals.com/devin_clemens"],
+  ["Council","Vancouver Liberals","Jessica Walton",0,"Political strategist and government copywriter.","https://www.vancouverliberals.com/jessica_walton"],
+  ["Council","Vancouver Liberals","Michael Wu",0,"Entrepreneur and RCMP auxiliary constable. BC Conservative candidate in Burnaby North in 2024.","https://www.vancouverliberals.com/michael_wu"],
+
+  ["Council","Vote Vancouver","Rebecca Hasdell",0,"Public health scientist at the BC Centre for Disease Control and UBC adjunct professor.","https://www.votevancouver.ca/rebecca-hasdell"],
+  ["Council","Vote Vancouver","John Boychuk",0,"Co-chair of the Vancouver Pride Society and a small business owner.","https://www.votevancouver.ca/candidates"],
+  ["Council","Vote Vancouver","Keerit Jutla",0,"Lawyer and CEO of Invicta Metals.","https://www.votevancouver.ca/keerit-jutla"],
+  ["Council","Vote Vancouver","Geoff Teoli",0,"Entrepreneur and former Vancouver film commissioner.",""],
+  ["Council","Vote Vancouver","Steve Jedreicich",0,"Development and acquisitions specialist.","https://www.votevancouver.ca/steve-jedreicich"],
+  ["Council","Vote Vancouver","Bhavna Solecki",0,"Scientific researcher and seniors' advocate.","https://www.votevancouver.ca/bhavna-solecki"],
+
+  ["Council","TEAM","Amanda Boggan",0,"Former president of the Downtown Eastside Neighbourhood Council.",""],
+  ["Council","TEAM","Charles Kelly",0,"UN Human Settlements advisor and pub owner.",""],
+  ["Council","TEAM","Kathleen Larsen",0,"Vancouver Heritage Foundation director. TEAM park board candidate in 2022.","https://www.voteteam.ca/"],
+  ["Council","TEAM","Patrick Sauriol",0,"Digital entrepreneur and former executive director of DigiBC.",""],
+  ["Council","TEAM","Jonathan Weisman",0,"Lawyer.",""],
+  ["Council","TEAM","Josh Gordon",0,"",""],
+  ["Council","TEAM","Raj Mundra",0,"",""],
+
+  ["Council","OneCity","Lucy Maloney",1,"Councillor since the 2025 by-election. Lawyer and safe streets advocate.","https://www.onecityvancouver.ca/people/lucy-maloney"],
+  ["Council","OneCity","Frances Bula",0,"Civic affairs journalist who covered Vancouver city hall for decades.",""],
+  ["Council","OneCity","Iona Bonamis",0,"Transportation planner with the City of Vancouver.","https://www.onecityvancouver.ca/people/iona-bonamis-tosiewing"],
+  ["Council","OneCity","Jarrett Hagglund",0,"Managing director of the Co-operative Housing Federation of BC.","https://www.onecityvancouver.ca/people/jarrett-hagglund"],
+  ["Council","OneCity","Caitlin Stockwell",0,"Indigenous rights lawyer.","http://onecityvancouver.ca/people/caitlin-stockwell"],
+
+  ["Council","COPE","Sean Orr",1,"Councillor since the 2025 by-election. Housing activist and journalist.",""],
+  ["Council","COPE","Devyani Singh",0,"Climate scientist and researcher.",""],
+  ["Council","COPE","Chloe Leslie",0,"Works in food redistribution non-profits.","https://www.votecope.ca/council"],
+  ["Council","COPE","Solomon Yi-Kieran",0,"Public transit activist.",""],
+
+  ["Council","Green","Camil Dumont",0,"Park board commissioner 2018 to 2022, and a former chair.",""],
+  ["Council","Green","Bridget Burns",0,"National field manager for the Green Party of Canada.","https://votebridgetburns.ca/"],
+  ["Council","Green","Annette Reilly",0,"Green candidate in the 2025 council by-election.","https://www.annettereilly.ca/"],
+  ["Council","Green","Stephanie Smith",0,"Housing, labour and social justice activist.","https://votestephanie.ca/"],
+
+  ["Council","Bright Future Vancouver","Judith Kasiama",0,"Founder of Colour the Trails and a community advocate. Lists residency in Burnaby.",""],
+  ["Council","Bright Future Vancouver","Bilal Khan",0,"Housing and homelessness advocate. Lists residency in Richmond.",""],
+  ["Council","Bright Future Vancouver","Mohadeseh Gharib P. Arasi",0,"Community advocate and entrepreneur. Lists residency in North Vancouver.",""],
+  ["Council","Bright Future Vancouver","Ibrahima Cisse",0,"Entrepreneur and community builder. Lists residency in Port Moody.",""],
+  ["Council","Bright Future Vancouver","Andy Lin",0,"Business founder and community advocate.",""],
+  ["Council","Bright Future Vancouver","Yadwinder Mangat",0,"Realtor and former Vancouver cab driver.",""],
+
+  ["Council","TrueBlue Vancouver","Naomi Chocyk",0,"People's Party of Canada candidate in Vancouver Granville in 2019 and a BC Libertarian candidate in 2020. Also running for school board.","https://naomichocyk.com/"],
+  ["Council","Affordable Housing","Eric Redmond",0,"","https://www.affordablehousingvancouver.ca/"],
+
+  ["Council","Independent","Guy Dubé",0,"",""],
+  ["Council","Independent","John Jones",0,"","https://johnjonesvancouver.netlify.app/"],
+  ["Council","Independent","Rollergirl",0,"Running under a single legal name.",""],
+  ["Council","Independent","Noi Soudarack",0,"",""],
+  ["Council","Independent","Parris J. Williams",0,"","http://voteparris.com/"],
+  ["Council","Independent","Job Zhao",0,"",""],
+
+  // ---- PARK BOARD ----
+  ["Park Board","ABC Vancouver","Jas Virdi",1,"Commissioner since 2022. One of the ABC commissioners who stayed with the party through the abolition fight.",""],
+  ["Park Board","ABC Vancouver","Jay Bailey",0,"",""],
+  ["Park Board","ABC Vancouver","Cheryl Grant",0,"",""],
+  ["Park Board","ABC Vancouver","Christian Kyle",0,"",""],
+  ["Park Board","ABC Vancouver","Stephen Molnar",0,"",""],
+  ["Park Board","ABC Vancouver","Chris Qiu",0,"",""],
+  ["Park Board","ABC Vancouver","Marie Rogers",0,"",""],
+
+  ["Park Board","Vancouver Liberals","Scott Jensen",1,"Commissioner since 2022. Elected with ABC, quit the party in 2023 over the abolition plan, joined the Vancouver Liberals in January 2026.","https://www.vancouverliberals.com/scott_jensen"],
+  ["Park Board","Vancouver Liberals","Tricia Barker",0,"Commissioner 2018 to 2022 with the NPA. Personal trainer.","https://www.vancouverliberals.com/tricia_barker"],
+  ["Park Board","Vancouver Liberals","Amir Bajehkian",0,"Flight data analyst and civic engagement advocate.","https://www.vancouverliberals.com/amir_bajehkian"],
+  ["Park Board","Vancouver Liberals","Shayla Bird",0,"Educator and public historian.","https://www.vancouverliberals.com/shayla_bird"],
+  ["Park Board","Vancouver Liberals","Amanda Bains",0,"Community leader.","https://www.vancouverliberals.com/amanda_bains"],
+  ["Park Board","Vancouver Liberals","Mark Halyk",0,"",""],
+
+  ["Park Board","Green","Tom Digby",1,"Commissioner since 2022 and current chair of the park board. Led the opposition to abolition.","https://tomdigby.ca/"],
+  ["Park Board","Green","Breanne Smart",0,"Chef and athlete.",""],
+  ["Park Board","Green","Spencer Van Vloten",0,"Writer and accessibility advocate, founder of the Vancouver Community Inclusion Fest.","https://spencervancity.ca/"],
+
+  ["Park Board","TEAM","Mayeli Alvarez",0,"","https://www.voteteam.ca/candidates-2026/mayeli-alvarez-for-park-board"],
+  ["Park Board","TEAM","Jon Girard",0,"Campaigning on saving the Vancouver Aquatic Centre pool.","https://saveourvacpool.ca/"],
+  ["Park Board","TEAM","Allan Fawley",0,"",""],
+  ["Park Board","TEAM","Wah Gee",0,"",""],
+  ["Park Board","TEAM","Alex Tkach",0,"",""],
+
+  ["Park Board","Independent Parks Party","Michael Robert Caditz",0,"Authorized representative of the Independent Parks Party.",""],
+  ["Park Board","Independent Parks Party","Niknaz Alemi",0,"","https://www.parksparty.vote/"],
+  ["Park Board","Independent Parks Party","Brynja Marshall",0,"","https://parksparty.vote/"],
+  ["Park Board","Independent Parks Party","Cam Rothery",0,"",""],
+  ["Park Board","Independent Parks Party","Leonard Vanderstar",0,"Lists residency in Smithers.",""],
+
+  ["Park Board","COPE","T'uy't'tanat Cease Wyss",0,"Ethnobotanist, artist and Squamish knowledge keeper.",""],
+  ["Park Board","COPE","Sacia Burton",0,"Co-director of the BC Poverty Reduction Coalition.",""],
+  ["Park Board","COPE","Jamie Han",0,"Youth organizer.",""],
+  ["Park Board","COPE","Tamiko Suzuki",0,"Healthcare worker and environmental activist.",""],
+
+  ["Park Board","OneCity","John Irwin",0,"Park board commissioner 2018 to 2022.","https://www.onecityvancouver.ca/people/John-Irwin"],
+  ["Park Board","OneCity","Dominic Denofrio",0,"Constituency advisor with the BC NDP.","https://www.onecityvancouver.ca/people/dominic-denofrio"],
+  ["Park Board","OneCity","Tyler Petersen",0,"Biologist and labour activist.","https://www.onecityvancouver.ca/people/tyler-petersen"],
+
+  ["Park Board","Vote Vancouver","Summit Wannamaker",0,"Wildland firefighter.","https://www.votevancouver.ca/summit-wannamaker"],
+  ["Park Board","Vote Vancouver","Stephen Menon",0,"Product development leader and Qmunity board member.",""]
+];
+const X=[
+["Richmond", "Mayor", "We Are Richmond", "Dickens Cheung", 0, ""],
+["Richmond", "Mayor", "Independent", "Kash Heed", 2, ""],
+["Richmond", "Mayor", "Richmond Forward", "Rob Howard", 0, ""],
+["Richmond", "Mayor", "Action Richmond", "Mei Kang", 0, ""],
+["Richmond", "Mayor", "Independent", "Goldentiger King", 0, ""],
+["Richmond", "Mayor", "Independent", "Dennet \"The Cat Guy\" Lee", 0, ""],
+["Richmond", "Mayor", "Richmond Strong", "Alexa Loo", 2, ""],
+["Richmond", "Mayor", "Independent", "Henry Yao", 0, ""],
+["Richmond", "Council", "Independent", "Milan Kuajic", 0, ""],
+["Richmond", "Council", "Independent", "Adil Awan", 0, ""],
+["Richmond", "Council", "Conservative", "Dale Bains", 0, ""],
+["Richmond", "Council", "Richmond Strong", "Bob Basanti", 0, ""],
+["Richmond", "Council", "Richmond Forward", "Romeo Bicego", 0, ""],
+["Richmond", "Council", "Conservative", "Oday Brahem", 0, ""],
+["Richmond", "Council", "We Are Richmond", "Jack Chen", 0, ""],
+["Richmond", "Council", "Richmond Citizens' Association", "Alton Cheung", 0, ""],
+["Richmond", "Council", "Common Sense Alliance", "Kenny Chiu", 0, ""],
+["Richmond", "Council", "Independent", "Mario Cruz", 0, ""],
+["Richmond", "Council", "RITE Richmond", "Carol Day", 1, ""],
+["Richmond", "Council", "Independent", "Jessy Dhillon", 0, ""],
+["Richmond", "Council", "RITE Richmond", "Jerome Dickey", 0, ""],
+["Richmond", "Council", "Conservative", "Adam Dobrer", 0, ""],
+["Richmond", "Council", "Independent", "Tim Fan", 0, ""],
+["Richmond", "Council", "Independent", "Donald Flintoff", 0, ""],
+["Richmond", "Council", "Richmond United", "Mike Gill", 0, ""],
+["Richmond", "Council", "RITE Richmond", "Laura Gillanders", 1, ""],
+["Richmond", "Council", "Action Richmond", "Edward He", 0, ""],
+["Richmond", "Council", "Richmond United", "Andy Hobbs", 1, ""],
+["Richmond", "Council", "Independent", "Louis Huang", 0, ""],
+["Richmond", "Council", "Richmond Forward", "Howard Jampolsky", 0, ""],
+["Richmond", "Council", "Richmond Strong", "Jeff Jiang", 0, ""],
+["Richmond", "Council", "Independent", "Alan Lackstein", 0, ""],
+["Richmond", "Council", "Advance Richmond", "Kevin Lai", 0, ""],
+["Richmond", "Council", "ONE Richmond", "Kevin Lainchbury", 0, ""],
+["Richmond", "Council", "Advance Richmond", "Gary Law", 0, ""],
+["Richmond", "Council", "Independent", "Pak Hing (Ben) Lee", 0, ""],
+["Richmond", "Council", "Richmond Forward", "Shelley Leonhardt", 0, ""],
+["Richmond", "Council", "Common Sense Alliance", "Thomas Leung", 0, ""],
+["Richmond", "Council", "Richmond Citizens' Association", "Vincent Li", 0, ""],
+["Richmond", "Council", "We Are Richmond", "Michael Lok", 0, ""],
+["Richmond", "Council", "We Are Richmond", "Jenny Mata", 0, ""],
+["Richmond", "Council", "Independent", "Andrew Mrozowski", 0, ""],
+["Richmond", "Council", "Richmond Strong", "Karen Novorr-Pezzuto", 0, ""],
+["Richmond", "Council", "We Are Richmond", "Tony Ortega", 0, ""],
+["Richmond", "Council", "Independent", "Dennis Page", 0, ""],
+["Richmond", "Council", "Independent", "Hong Yan Melody Pan", 0, ""],
+["Richmond", "Council", "Richmond Citizens' Association", "Keefer Pelech", 0, ""],
+["Richmond", "Council", "Conservative", "Lisa Phillips", 0, ""],
+["Richmond", "Council", "Advance Richmond", "Wallace Pong", 0, ""],
+["Richmond", "Council", "Richmond Citizens' Association", "Tamas Revoczi", 0, ""],
+["Richmond", "Council", "Conservative", "Alex Sagert", 0, ""],
+["Richmond", "Council", "We Are Richmond", "Adnan Sarwar", 0, ""],
+["Richmond", "Council", "Advance Richmond", "Sheldon Starrett", 0, ""],
+["Richmond", "Council", "Common Sense Alliance", "Glenda Strang", 0, ""],
+["Richmond", "Council", "Independent", "Daniel Tsang", 0, ""],
+["Richmond", "Council", "Advance Richmond", "Grace Tsang", 0, ""],
+["Richmond", "Council", "Independent", "Andy Wang", 0, ""],
+["Richmond", "Council", "Advance Richmond", "Sam Wang", 0, ""],
+["Richmond", "Council", "Advance Richmond", "William Wang", 0, ""],
+["Richmond", "Council", "RITE Richmond", "Michael Wolfe", 1, ""],
+["Richmond", "Council", "Richmond Citizens' Association", "Milly Yee", 0, ""],
+["Richmond", "Council", "Richmond Forward", "Eric Yung", 0, ""],
+["Richmond", "Council", "Richmond Forward", "Melissa Zhang", 0, ""],
+["Delta", "Mayor", "Delta First", "Melissa Granum", 0, ""],
+["Delta", "Mayor", "Achieving for Delta", "George V. Harvie", 1, ""],
+["Delta", "Mayor", "One Delta", "Dylan Kruger", 2, ""],
+["Delta", "Council", "Independent", "Wendy Beck-Orlando", 0, ""],
+["Delta", "Council", "One Delta", "Rod Binder", 1, ""],
+["Delta", "Council", "One Delta", "Sylvia Bishop", 0, ""],
+["Delta", "Council", "One Delta", "Daniel Boisvert", 1, ""],
+["Delta", "Council", "Achieving for Delta", "Jennyfer Cassar", 0, ""],
+["Delta", "Council", "Achieving for Delta", "Jessie Dosanjh", 1, ""],
+["Delta", "Council", "Independent", "Ronn Dunnett", 0, ""],
+["Delta", "Council", "Delta First", "Alexander Fischer", 0, ""],
+["Delta", "Council", "One Delta", "Sarah Gallop", 0, ""],
+["Delta", "Council", "Achieving for Delta", "Alicia Guichon", 1, ""],
+["Delta", "Council", "Delta First", "Tammy Hansen", 0, ""],
+["Delta", "Council", "One Delta", "Jennifer Johal", 1, ""],
+["Delta", "Council", "One Delta", "Pawan Joshi", 0, ""],
+["Delta", "Council", "Achieving for Delta", "Nick Kanakos", 0, ""],
+["Delta", "Council", "Independent", "Gillian McLeod", 0, ""],
+["Delta", "Council", "Delta First", "Jat Puri", 0, ""],
+["Delta", "Council", "Achieving for Delta", "Ikjot Sandhu-Sahota", 0, ""],
+["Delta", "Council", "Achieving for Delta", "Sonya Sangster", 0, ""],
+["Delta", "Council", "Independent", "Ron Wasik", 0, ""],
+["Delta", "Council", "Independent", "Brian White", 0, ""],
+["City of North Vancouver", "Mayor", "Independent", "Linda Buchanan", 1, ""],
+["City of North Vancouver", "Mayor", "Independent", "Oliver King", 0, ""],
+["City of North Vancouver", "Mayor", "Independent", "Dave Kurvers", 0, ""],
+["City of North Vancouver", "Mayor", "Independent", "Mike McGraw", 0, ""],
+["City of North Vancouver", "Council", "Independent", "Sean Alexander", 0, ""],
+["City of North Vancouver", "Council", "Independent", "Holly Back", 1, ""],
+["City of North Vancouver", "Council", "Independent", "Don Bell", 1, ""],
+["City of North Vancouver", "Council", "Independent", "Tammy Bentz", 0, ""],
+["City of North Vancouver", "Council", "Independent", "Anna Boltenko", 0, ""],
+["City of North Vancouver", "Council", "Independent", "David Brun", 0, ""],
+["City of North Vancouver", "Council", "Independent", "Jeremy Cato", 0, ""],
+["City of North Vancouver", "Council", "Independent", "Angela Girard", 1, ""],
+["City of North Vancouver", "Council", "Independent", "Guy Heywood", 0, ""],
+["City of North Vancouver", "Council", "Independent", "Ken Izatt", 0, ""],
+["City of North Vancouver", "Council", "Independent", "Jullian Kolstee", 0, ""],
+["City of North Vancouver", "Council", "Independent", "Max Lai", 0, ""],
+["City of North Vancouver", "Council", "Independent", "Jessica McIlroy", 1, ""],
+["City of North Vancouver", "Council", "Independent", "Krishna Raisinghani", 0, ""],
+["City of North Vancouver", "Council", "Independent", "Andrew Robertson", 0, ""],
+["City of North Vancouver", "Council", "Independent", "Shervin Shahriari", 1, ""],
+["City of North Vancouver", "Council", "Independent", "Lailani Tumaneng", 0, ""],
+["City of North Vancouver", "Council", "Independent", "Tony Valente", 1, ""],
+["District of North Vancouver", "Mayor", "Independent", "Graham Alexander", 0, ""],
+["District of North Vancouver", "Mayor", "Independent", "Mike Little", 1, ""],
+["District of North Vancouver", "Mayor", "Independent", "Stephan Nieweler", 0, ""],
+["District of North Vancouver", "Mayor", "Independent", "Paolo Pucci", 0, ""],
+["District of North Vancouver", "Mayor", "Independent", "Max Zahedi", 0, ""],
+["District of North Vancouver", "Council", "Independent", "Daniel Anderson", 0, ""],
+["District of North Vancouver", "Council", "Independent", "Jordan Back", 1, ""],
+["District of North Vancouver", "Council", "Independent", "Trey Bell", 0, ""],
+["District of North Vancouver", "Council", "Independent", "Mathew Bond", 0, ""],
+["District of North Vancouver", "Council", "Independent", "Daina Boyd", 0, ""],
+["District of North Vancouver", "Council", "Independent", "Betty Forbes", 1, ""],
+["District of North Vancouver", "Council", "Independent", "Jim Hanson", 1, ""],
+["District of North Vancouver", "Council", "Independent", "Aidan Kyle", 0, ""],
+["District of North Vancouver", "Council", "Independent", "Herman Mah", 1, ""],
+["District of North Vancouver", "Council", "Independent", "Kulvir Mann", 0, ""],
+["District of North Vancouver", "Council", "Independent", "Linda Munro", 0, ""],
+["District of North Vancouver", "Council", "Independent", "Lisa Muri", 1, ""],
+["District of North Vancouver", "Council", "Independent", "Victoria Nwabuisi", 0, ""],
+["District of North Vancouver", "Council", "Independent", "Catherine Pope", 1, ""],
+["District of North Vancouver", "Council", "Independent", "Stephanie Wilson", 0, ""],
+["Victoria", "Mayor", "Independent", "Marianne Alto", 1, ""],
+["Victoria", "Mayor", "Independent", "Lyall Atkinson", 0, ""],
+["Victoria", "Mayor", "Independent", "Darren Gervais-Harrison", 0, ""],
+["Victoria", "Mayor", "Independent", "Christopher Hanna", 0, ""],
+["Victoria", "Mayor", "Independent", "Mike Harris", 0, ""],
+["Victoria", "Mayor", "Independent", "David Johnston", 0, ""],
+["Victoria", "Mayor", "Independent", "Bruce McGuigan", 0, ""],
+["Victoria", "Mayor", "Independent", "Gregoor Miller", 0, ""],
+["Victoria", "Council", "Independent", "Wendy Bowkett", 0, ""],
+["Victoria", "Council", "Independent", "Jeremy Caradonna", 1, ""],
+["Victoria", "Council", "Independent", "Herb Collins", 0, ""],
+["Victoria", "Council", "Independent", "Melissa Cseszko", 0, ""],
+["Victoria", "Council", "Independent", "Matt Dell", 1, ""],
+["Victoria", "Council", "Independent", "Shona Dion", 0, ""],
+["Victoria", "Council", "Independent", "Steve Filipovic", 0, ""],
+["Victoria", "Council", "Independent", "Jerry Garcia", 0, ""],
+["Victoria", "Council", "Independent", "Marg Gardiner", 1, ""],
+["Victoria", "Council", "Victoria For All", "Peter Gibbs", 0, ""],
+["Victoria", "Council", "Independent", "Martin Girard", 0, ""],
+["Victoria", "Council", "Independent", "Stephen Hammond", 1, ""],
+["Victoria", "Council", "Independent", "James Harasymow", 0, ""],
+["Victoria", "Council", "Independent", "Jason Heit", 0, ""],
+["Victoria", "Council", "Victoria For All", "Susan Kim", 1, ""],
+["Victoria", "Council", "Independent", "Bella Lee", 0, ""],
+["Victoria", "Council", "Independent", "Krista Loughton", 1, ""],
+["Victoria", "Council", "Independent", "Arthur McInnis", 0, ""],
+["Victoria", "Council", "Independent", "Karen Rothe", 0, ""],
+["Victoria", "Council", "Independent", "Jack Sandor", 0, ""],
+["Victoria", "Council", "Independent", "Dave Thompson", 1, ""],
+["Nanaimo", "Mayor", "Independent", "Brunie Brunie", 0, ""],
+["Nanaimo", "Mayor", "REAL Nanaimo", "Anne-Marie Dryden", 0, ""],
+["Nanaimo", "Mayor", "Independent", "Leonard Krog", 1, ""],
+["Nanaimo", "Mayor", "Independent", "Sarah Lovegrove", 0, ""],
+["Nanaimo", "Council", "REAL Nanaimo", "Jeff Annesley", 0, ""],
+["Nanaimo", "Council", "Independent", "Sheryl Armstrong", 1, ""],
+["Nanaimo", "Council", "REAL Nanaimo", "Sandy Bartlett", 0, ""],
+["Nanaimo", "Council", "Independent", "Kenneth Bennett", 0, ""],
+["Nanaimo", "Council", "Independent", "Marnie Boers", 0, ""],
+["Nanaimo", "Council", "Independent", "Jackie Bolen", 0, ""],
+["Nanaimo", "Council", "Independent", "Mark Chandler", 0, ""],
+["Nanaimo", "Council", "Independent", "Paul Chapman", 0, ""],
+["Nanaimo", "Council", "REAL Nanaimo", "Malcolm Cooke", 0, ""],
+["Nanaimo", "Council", "Independent", "Andréa Coutu", 0, ""],
+["Nanaimo", "Council", "Independent", "Shane Crawley", 0, ""],
+["Nanaimo", "Council", "Independent", "Ryan Djakovic", 0, ""],
+["Nanaimo", "Council", "Independent", "Hilary Eastmure", 1, ""],
+["Nanaimo", "Council", "REAL Nanaimo", "Joe Figel", 0, ""],
+["Nanaimo", "Council", "Independent", "Meg Fyfe Watkins", 0, ""],
+["Nanaimo", "Council", "Independent", "Ben Geselbracht", 1, ""],
+["Nanaimo", "Council", "REAL Nanaimo", "Bryan Gordon", 0, ""],
+["Nanaimo", "Council", "Independent", "Anita Greer", 0, ""],
+["Nanaimo", "Council", "Independent", "Patrick Gunville", 0, ""],
+["Nanaimo", "Council", "REAL Nanaimo", "Derek Hanna", 0, ""],
+["Nanaimo", "Council", "Independent", "Richard Harlow", 0, ""],
+["Nanaimo", "Council", "Independent", "Erin Hemmens", 1, ""],
+["Nanaimo", "Council", "Independent", "Steven Johns", 0, ""],
+["Nanaimo", "Council", "Independent", "Cameron Leckenby", 0, ""],
+["Nanaimo", "Council", "Independent", "Max MacKay", 0, ""],
+["Nanaimo", "Council", "Independent", "Paul Manly", 1, ""],
+["Nanaimo", "Council", "Independent", "Bryant Marshall", 0, ""],
+["Nanaimo", "Council", "Independent", "Bill McKay", 0, ""],
+["Nanaimo", "Council", "Independent", "Andrew Merilees", 0, ""],
+["Nanaimo", "Council", "Independent", "Matthew Miller", 0, ""],
+["Nanaimo", "Council", "Independent", "Zaki Mohammed", 0, ""],
+["Nanaimo", "Council", "Independent", "Rod Moreno", 0, ""],
+["Nanaimo", "Council", "Independent", "Janice Perrino", 1, ""],
+["Nanaimo", "Council", "Independent", "Robert Phelan", 0, ""],
+["Nanaimo", "Council", "REAL Nanaimo", "Frank Pluta", 0, ""],
+["Nanaimo", "Council", "Independent", "Austin Seng", 0, ""],
+["Nanaimo", "Council", "Independent", "Holden Southward", 0, ""],
+["Nanaimo", "Council", "Independent", "Ian Thorpe", 1, ""],
+["Nanaimo", "Council", "Independent", "Paul Van Ryssel", 0, ""],
+["Nanaimo", "Council", "Independent", "Angela Waldick", 0, ""],
+];
+
+const S=[
+["Vancouver", "School", "Vancouver Liberals", "Darren Boidman", 0, "https://www.vancouverliberals.com/darren_boidman"],
+["Vancouver", "School", "OneCity", "Sherry Breshears", 0, "https://www.onecityvancouver.ca/our_candidates"],
+["Vancouver", "School", "OneCity", "Rory Brown", 0, "https://www.onecityvancouver.ca/people/rory-brown"],
+["Vancouver", "School", "Vancouver Liberals", "Joshua Cameron", 0, "https://www.vancouverliberals.com/joshua_cameron"],
+["Vancouver", "School", "OneCity", "Steve Cardwell", 0, "https://onecityvancouver.ca/people/steve-cardwell"],
+["Vancouver", "School", "COPE", "Melanie Cheng", 0, "https://melaniecheng.ca/"],
+["Vancouver", "School", "ABC Vancouver", "Alfred Chien 錢育廷", 0, ""],
+["Vancouver", "School", "TrueBlue Vancouver", "Naomi Chocyk", 0, "https://naomichocyk.com/"],
+["Vancouver", "School", "TrueBlue Vancouver", "Blair Coleman", 0, ""],
+["Vancouver", "School", "Vancouver Liberals", "Ishi Dinim", 0, "https://www.vancouverliberals.com/ishi_dinim"],
+["Vancouver", "School", "Vote Vancouver", "Tasha Doucas", 0, ""],
+["Vancouver", "School", "ABC Vancouver", "Preeti Faridkot", 0, "https://abcvancouver.ca/"],
+["Vancouver", "School", "TrueBlue Vancouver", "Travers Fenton", 0, "http://truebluevancouver.com/"],
+["Vancouver", "School", "COPE", "Gwen Giesbrecht", 0, "https://www.votecope.ca/schools"],
+["Vancouver", "School", "Vote Vancouver", "Amarys Joseph", 0, ""],
+["Vancouver", "School", "ABC Vancouver", "Maria Kritikos", 0, "http://www.kritikosrealestategroup.com/"],
+["Vancouver", "School", "ABC Vancouver", "Matt Kroeker", 0, ""],
+["Vancouver", "School", "OneCity", "Christopher Lee 李基鵬", 0, "https://www.onecityvancouver.ca/people/christopher-lee"],
+["Vancouver", "School", "COPE", "Suzie Mah", 0, "https://www.votecope.ca/schools"],
+["Vancouver", "School", "Green", "Alisha Masongsong", 0, "https://www.vangreens.ca/meet_your_candidates"],
+["Vancouver", "School", "Vancouver Liberals", "Noosha Mehdian", 0, "https://www.vancouverliberals.com/noosha_mehdian"],
+["Vancouver", "School", "ABC Vancouver", "Rob Nijjar", 0, ""],
+["Vancouver", "School", "TEAM", "Kat Nystedt", 0, ""],
+["Vancouver", "School", "Vancouver Liberals", "Isabel Ochoa Prieto", 0, "https://www.vancouverliberals.com/isabel_ochoa"],
+["Vancouver", "School", "COPE", "Derrick O'Keefe", 0, ""],
+["Vancouver", "School", "Vote Vancouver", "Mandy Potter", 0, ""],
+["Vancouver", "School", "Independent", "Christopher JK Richardson", 0, "https://christopherrichardson.ca/"],
+["Vancouver", "School", "OneCity", "Krista Sigurdson", 0, "https://www.onecityvancouver.ca/people/krista-sigurdson"],
+["Vancouver", "School", "ABC Vancouver", "Shirley Sio 邵己凌", 0, ""],
+["Vancouver", "School", "Green", "Julie Strilesky", 0, ""],
+["Vancouver", "School", "ABC Vancouver", "Lina Vargas", 0, ""],
+["Richmond", "School", "Advance Richmond", "Dean Billings", 0, ""],
+["Richmond", "School", "Advance Richmond", "Rod Belleza", 0, ""],
+["Richmond", "School", "Advance Richmond", "Danny Chang", 0, ""],
+["Richmond", "School", "Advance Richmond", "Willy Sinconegue", 0, ""],
+["Richmond", "School", "Advance Richmond", "Phyllis Tang", 0, ""],
+["Richmond", "School", "Advance Richmond", "Sophia Woo", 0, ""],
+["Richmond", "School", "Empower", "Debbie Tablotney", 0, ""],
+["Richmond", "School", "Empower", "David Yang", 0, ""],
+["Richmond", "School", "Empower", "Sandra Nixon", 0, ""],
+["Richmond", "School", "Common Sense Alliance", "Alice Wong", 0, ""],
+["Richmond", "School", "Richmond Education Party", "Ken Hamaguchi", 0, ""],
+["Richmond", "School", "Richmond Education Party", "Heather Larson", 0, ""],
+["Richmond", "School", "Richmond Education Party", "Martin Li", 0, ""],
+["Richmond", "School", "Richmond Education Party", "Bill Mok", 0, ""],
+["Richmond", "School", "Independent", "Hongyun Chen", 0, ""],
+["Richmond", "School", "Independent", "Lawrence Chen", 0, ""],
+["Richmond", "School", "Independent", "Calvin Dang", 0, ""],
+["Richmond", "School", "Independent", "Kiana Dashtbazi", 0, ""],
+["Richmond", "School", "Independent", "Kay Hale", 0, ""],
+["Richmond", "School", "Independent", "Aithan Kang", 0, ""],
+["Richmond", "School", "Independent", "Ausha Kang", 0, ""],
+["Richmond", "School", "Independent", "Vivien Lee", 0, ""],
+["Richmond", "School", "Independent", "Stefan Mladenovic", 0, ""],
+["Richmond", "School", "Independent", "Jordan Oye", 0, ""],
+["Richmond", "School", "Independent", "Helen Quan", 0, ""],
+["Richmond", "School", "Independent", "Donna Sargent", 0, ""],
+["Richmond", "School", "Independent", "Nancy Williams", 0, ""],
+["Richmond", "School", "Independent", "John Zhang", 0, ""],
+["Delta", "School", "Achieving for Delta", "Erica Beard", 0, ""],
+["Delta", "School", "Achieving for Delta", "Nimmi Daula", 0, ""],
+["Delta", "School", "Achieving for Delta", "Joe Muego", 0, ""],
+["Delta", "School", "Achieving for Delta", "Rick Ocean", 0, ""],
+["Delta", "School", "Achieving for Delta", "Nenah Sandy", 0, ""],
+["Delta", "School", "Achieving for Delta", "Sagar Sanghera", 0, ""],
+["Delta", "School", "Achieving for Delta", "Umendra Singh", 0, ""],
+["Delta", "School", "One Delta", "Jesse Bierman", 0, ""],
+["Delta", "School", "One Delta", "Tamara Bissett-Laza", 0, ""],
+["Delta", "School", "One Delta", "Ammen Dhillon", 0, ""],
+["Delta", "School", "One Delta", "Masako Gooch", 0, ""],
+["Delta", "School", "One Delta", "Gurinder Kahlon", 0, ""],
+["Delta", "School", "One Delta", "Val Windsor", 0, ""],
+["Delta", "School", "One Delta", "Amar Hundal", 0, ""],
+["Delta", "School", "Independent", "Krissy Eiben", 0, ""],
+["Delta", "School", "Independent", "Marcin Huniewicz", 0, ""],
+["Delta", "School", "Independent", "Jim Mcmurtry", 0, ""],
+["Delta", "School", "Independent", "Roman St. Germain", 0, ""],
+["Nanaimo", "School", "Independent", "Tania Brzovic", 0, ""],
+["Nanaimo", "School", "Independent", "Kailey Gillam", 0, ""],
+["Nanaimo", "School", "Independent", "Zeni Maartman", 0, ""],
+["Nanaimo", "School", "Independent", "Chantelle Morvay", 0, ""],
+["Nanaimo", "School", "Independent", "Mark Allan Robinson", 0, ""],
+["Nanaimo", "School", "Independent", "Adrianne Cafariello", 0, ""],
+["Nanaimo", "School", "Independent", "Tim Harris", 0, ""],
+["Nanaimo", "School", "Independent", "Leana Pellegrin", 0, ""],
+["Nanaimo", "School", "Independent", "Fred MacDonald", 0, ""],
+["Nanaimo", "School", "Independent", "Tom Rokeby", 0, ""],
+["Nanaimo", "School", "Independent", "Leanne Lee", 0, ""],
+["Victoria", "School", "Victoria For All", "Maiya Beech", 0, ""],
+["Victoria", "School", "Independent", "James Le", 0, ""],
+["Victoria", "School", "Independent", "Tanner May-Poole", 0, ""],
+["Victoria", "School", "Independent", "Angela Carmichael", 0, ""],
+["Victoria", "School", "Independent", "Evan Llewellyn", 0, ""],
+["Victoria", "School", "Independent", "James McAllister", 0, ""],
+["Victoria", "School", "Independent", "Ken Waldron", 0, ""],
+["Victoria", "School", "Independent", "Ann Whiteaker", 0, ""],
+["District of North Vancouver", "School", "Independent", "Cyndi Gerlach", 0, ""],
+["District of North Vancouver", "School", "Independent", "Rob Haines", 0, ""],
+["District of North Vancouver", "School", "Independent", "Mike Boehm", 0, ""],
+["District of North Vancouver", "School", "Independent", "Jennifer Branston", 0, ""],
+["District of North Vancouver", "School", "Independent", "Michael Charrois", 0, ""],
+["District of North Vancouver", "School", "Independent", "Barry Forward", 0, ""],
+["District of North Vancouver", "School", "Independent", "Emma Juniper", 0, ""],
+["District of North Vancouver", "School", "Independent", "Raheela Khan", 0, ""],
+["District of North Vancouver", "School", "Independent", "Laura Nickerson", 0, ""],
+["District of North Vancouver", "School", "Independent", "Layne North", 0, ""],
+["District of North Vancouver", "School", "Independent", "Raphael Perfecto", 0, ""],
+["District of North Vancouver", "School", "Independent", "Ainslie Rinfret", 0, ""],
+["District of North Vancouver", "School", "Independent", "George Tsiakos", 0, ""],
+["City of North Vancouver", "School", "Independent", "Manoochehr Azizi", 0, ""],
+["City of North Vancouver", "School", "Independent", "Peggy Hung", 0, ""],
+["City of North Vancouver", "School", "Independent", "Senora Navales", 0, ""],
+["City of North Vancouver", "School", "Independent", "Trish Neufeld", 0, ""],
+["City of North Vancouver", "School", "Independent", "Ethel Purugganan", 0, ""],
+["City of North Vancouver", "School", "Independent", "Antje Wilson", 0, ""],
+];
+
+
+// R = record entries, P = promise entries, keyed "Jurisdiction|Race|Name" or "Jurisdiction|party|PartyName"
+// type:  financial | election | conduct | record | cleared
+// label: Finding | Filed | Reported | Cleared
+// status (promises): kept | broken | partial | reversed | jurisdiction | costing
+
+const OPEN_MEETINGS = {
+  type:"conduct", label:"Finding", date:"August 2025",
+  text:"Integrity Commissioner Lisa Southern found that Mayor Sim and six ABC councillors breached the Vancouver Charter's open-meeting rules. Over at least two matters, a turf field at Moberly Park and a climate justice charter, they agreed in private group chats and party meetings on the wording of amendments and how members would vote. The investigation followed a complaint by Green Coun. Pete Fry.",
+  src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/ken-sim-integrity-commissioner-1.7617152"
+};
+
+const R = {
+  // ---------------- VANCOUVER ----------------
+  "Vancouver|Mayor|Ken Sim":[
+    OPEN_MEETINGS,
+    { type:"conduct", label:"Finding", date:"11 May 2026",
+      text:"A second investigation found Sim breached the council code of conduct twice, by using a City Hall news conference and an official social media post to represent Coun. Sean Orr as antisemitic. The investigator called for a written apology. Council voted not to act on the findings: all six ABC members against, the other four in favour. Sim declared a conflict and did not vote.",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/vancouver-mayor-ken-sim-no-sanctions-9.7222049" },
+    { type:"cleared", label:"Cleared", date:"2024",
+      text:"A review involving VPD professional standards, RCMP E Division and Abbotsford Police cleared Sim of an allegation that he drove after drinking during his first 100 days in office.",
+      src:"Global News", url:"https://globalnews.ca/news/11029624/vancouver-mayor-ken-sim-police-cleared-of-baseless-dui-allegation" }
+  ],
+  "Vancouver|Council|Sarah Kirby-Yung":[OPEN_MEETINGS],
+  "Vancouver|Council|Lisa Dominato":[OPEN_MEETINGS],
+  "Vancouver|Council|Mike Klassen":[OPEN_MEETINGS],
+  "Vancouver|Council|Peter Meiszner":[
+    OPEN_MEETINGS,
+    { type:"financial", label:"Raised, no finding", date:"2023\u20132024",
+      text:"Meiszner moved the motion to review Vancouver's view protection guidelines. Council adopted it on 10 July 2024, removing 14 view cones and increasing the development capacity of sites beneath them. Before entering politics he published urbanYVR, a real estate and development news site. A resident raised conflict-of-interest concerns with the Integrity Commissioner over meetings he held with developers ahead of the motion. According to the Integrity Commissioner, Meiszner had sold urbanYVR more than a year before that inquiry. No finding of conflict was made against him. Unlike most entries here, the concerns were documented by the civic watchdog blog CityHallWatch rather than by a newsroom, which is why the label is weaker.",
+      src:"The Tyee, on the view cone decision", url:"https://thetyee.ca/News/2024/07/18/Vancouver-Protected-View-Cones-Started-Melt/" }
+  ],
+  "Vancouver|Council|Lenny Zhou":[
+    OPEN_MEETINGS,
+    { type:"conduct", label:"Reported", date:"July 2024",
+      text:"Zhou moved the 24 July 2024 motion that froze Integrity Commissioner Lisa Southern's power to report publicly on complaints, including investigations then pending against council members. After public backlash he moved to rescind it, saying he had heard “loud and clear from the residents of Vancouver that they do not want to see this amendment move forward.” Council recessed the special meeting and the freeze was dropped.",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/vancouver-council-integrity-commissioner-1.7285897" }
+  ],
+  "Vancouver|Mayor|Rebecca Bligh":[
+    Object.assign({}, OPEN_MEETINGS, {text: OPEN_MEETINGS.text + " Bligh was an ABC councillor at the time and was among those named."}),
+    { type:"record", label:"Reported", date:"February 2025",
+      text:"ABC expelled Bligh from its caucus. The party president said she was “not a core value fit.” Reporting linked the split to her objections to a hold on new supportive housing and her vote to keep the 2022 ban on natural gas heating in new detached homes. She sat as an independent for the rest of the term.",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/bligh-kicked-out-of-abc-1.7460001" }
+  ],
+  "Vancouver|Mayor|Pete Fry":[
+    { type:"record", label:"Reported", date:"2024–2025",
+      text:"Fry lodged the complaint that led to the August 2025 open-meetings finding against the mayor and six ABC councillors.",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/ken-sim-integrity-commissioner-1.7617152" }
+  ],
+  "Vancouver|Council|Sean Orr":[
+    { type:"record", label:"Reported", date:"2025–2026",
+      text:"Orr was the complainant in the code of conduct case that found the mayor had represented him as antisemitic. Council declined to impose the recommended sanction.",
+      src:"The Tyee", url:"https://thetyee.ca/News/2026/06/03/Vancouver-Council-Mayor-Harassing-Councillor/" }
+  ],
+  "Vancouver|Mayor|Colleen Hardwick":[
+    { type:"record", label:"Reported", date:"2022",
+      text:"A CBC analysis of her 2018–2022 term found roughly 250 abstentions in two and a half years, about 150 more than the next closest councillor. Of 25 contested motions CBC examined, she was the only member to vote against or abstain on every one.",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/vancouver-profiles-colleen-hardwick-team-2022-1.6603464" },
+    { type:"cleared", label:"Finding", date:"2022",
+      text:"Vancouver's integrity commissioner found that then-mayor Kennedy Stewart breached the code of conduct by publishing tweets about Hardwick that were untrue, concerning a motion she drafted on the 2030 Olympic bid. The finding was against Stewart, who is not a candidate.",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/integrity-commissioner-vancouver-mayor-ruling-1.6516014" }
+  ],
+  "Vancouver|Mayor|Kareem Allam":[
+    { type:"record", label:"Reported", date:"February 2023",
+      text:"Allam left his post as Mayor Sim's chief of staff after roughly three months. Neither he nor the mayor's office gave a public reason. He is a political strategist and lobbyist and has been associated with Fairview Strategy since 2019.",
+      src:"Business in Vancouver", url:"https://www.biv.com/news/economy-law-politics/vancouver-mayor-ken-sims-top-staffer-quits-8270477" },
+    { type:"record", label:"Reported", date:"2022",
+      text:"As ABC campaign manager he publicly apologized for a commitment he made about clearing the East Hastings encampment, saying “I made a strong statement.”",
+      src:"Vancouver Is Awesome", url:"https://www.vancouverisawesome.com/local-news/ken-sims-former-chief-of-staff-apologizes-for-promise-related-to-east-hastings-encampment-kareem-allam-6960999" }
+  ],
+
+  // ---------------- RICHMOND ----------------
+  "Richmond|Mayor|Kash Heed":[
+    { type:"election", label:"Finding", date:"2010–2012",
+      text:"Heed resigned as BC Solicitor General in April 2010 after a special prosecutor was appointed to examine his 2009 provincial campaign, over flyers attacking the NDP that did not disclose who paid for them. The prosecutor found Heed had nothing to do with the flyers and recommended charges against two campaign aides. Heed resigned from cabinet a second time after it emerged the special prosecutor's firm had donated to his campaign. He was later fined at least $8,000 for exceeding the 2009 spending limit, in a finding that he did not intentionally break the law.",
+      src:"The Globe and Mail", url:"https://www.theglobeandmail.com/news/british-columbia/former-bc-solicitor-general-fined-at-least-8000-for-election-violations/article592737/" }
+  ],
+
+  // ---------------- DELTA ----------------
+  "Delta|Mayor|George V. Harvie":[
+    { type:"conduct", label:"Reported", date:"May 2024",
+      text:"Delta council passed seven motions limiting the mayor's influence and removed him as Delta's director to Metro Vancouver, which ended his term as Metro Vancouver board chair on 1 July 2024. Council cited what it called his “regrettable actions” and a need to re-establish good governance.",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/george-harvie-delta-mayor-metro-vancouver-chair-controversy-1.7218561" },
+    { type:"record", label:"Reported", date:"December 2025",
+      text:"Four councillors elected on Harvie's slate were told Achieving for Delta would not endorse them again. In a joint statement they said the decision was “aimed at silencing voices that have raised concerns about the mayor's pattern of reckless spending and increasingly erratic decision-making.” These are allegations by political opponents, not findings by any body.",
+      src:"Delta Optimist", url:"https://www.delta-optimist.com/local-news/dylan-kruger-launches-mayoralty-bid-with-one-delta-12326729" }
+  ],
+
+  // ---------------- VICTORIA ----------------
+  "Victoria|Council|Susan Kim":[
+    { type:"conduct", label:"Finding", date:"2025",
+      text:"An investigator found Kim inadvertently breached Victoria's code of conduct by signing an open letter titled “Stand with Palestine: Call on Political Leaders to End Their Complicity in Genocide” and by liking a related social media post. The complaint was submitted by Coun. Marianne Alto on behalf of a member of the public. Council sided with the investigator and imposed no sanctions; councillors were to receive training instead.",
+      src:"Times Colonist", url:"https://www.timescolonist.com/local-news/victoria-council-sides-with-investigator-and-wont-sanction-kim-councillors-to-get-training-9149265" }
+  ],
+  "Victoria|Mayor|Marianne Alto":[
+    { type:"record", label:"Reported", date:"2026",
+      text:"Voters approved borrowing up to $168.9 million to replace Crystal Pool, with 58% in favour on a 21% turnout. Construction is set to begin in fall 2026. Alto cites the project, thousands of approved housing units and the Community Safety and Wellbeing Plan as her record.",
+      src:"Times Colonist", url:"https://www.timescolonist.com/local-news/alto-makes-it-official-shes-running-again-for-victoria-mayor-12306817" }
+  ],
+
+  // ---------------- NANAIMO ----------------
+  "Nanaimo|Mayor|Leonard Krog":[
+    { type:"record", label:"Reported", date:"2024",
+      text:"Nanaimo's mayor and councillors claimed $77,457 in expenses in 2024. Krog claimed the least of any member, $3,887.",
+      src:"The Discourse", url:"https://thediscourse.ca/nanaimo/nanaimo-councillor-defends-conference-expenses" }
+  ],
+
+  // ---------------- DISTRICT OF NORTH VANCOUVER ----------------
+  "District of North Vancouver|Council|Betty Forbes":[
+    { type:"financial", label:"Filed, later dropped", date:"2019–2021",
+      text:"Forbes was the district's only resident with an active complaint file about pigeons, concerning birds kept by her next-door neighbour. After her 2018 election she emailed councillors asking them to ban pigeon ownership, two days before the matter first reached council. The ban that passed affected only her neighbour. Eleven residents petitioned the BC Supreme Court to remove Forbes and Coun. Lisa Muri from office. Mayor Mike Little ordered an independent review by David Loukidelis, which returned 12 recommendations on conflict-of-interest training and ethics. Council repealed the ban. The court case was dropped and no finding of conflict was made against her.",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/north-van-pigeons-betty-forbes-1.5964869" }
+  ],
+  "District of North Vancouver|Council|Lisa Muri":[
+    { type:"financial", label:"Filed, later dropped", date:"2019–2021",
+      text:"Muri was named alongside Coun. Betty Forbes in a BC Supreme Court petition by eleven residents seeking their removal from office over the district's pigeon ban. The petition was dropped and no finding was made against her. The independent review ordered by the mayor made recommendations on conflict-of-interest training rather than findings against individual members.",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/north-vancouver-pigeon-feud-petition-1.5406046" }
+  ],
+  "District of North Vancouver|Mayor|Mike Little":[
+    { type:"record", label:"Reported", date:"2019–2020",
+      text:"Little ordered the independent review of council's conduct over the pigeon ban after CBC News provided emails showing a councillor had asked colleagues to pass it. Council later repealed the bylaw.",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/pigeon-investigation-report-north-van-2020-1.5468615" }
+  ]
+};
+
+const P = {
+  "Vancouver|Mayor|Ken Sim":[
+    { status:"note", text:"This list is long because Sim is the only candidate on this page whose promises a news outlet audited. Daily Hive assessed all 93 of ABC's 2022 commitments on 16 September 2026. No comparable audit exists for any other incumbent here, so a shorter list elsewhere means nobody checked, not that the record is better.",
+      src:"Daily Hive", url:"https://dailyhive.com/vancouver/ken-sim-2022-campaign-promises" },
+    { status:"kept",    text:"Hire 100 new police officers. Target met." },
+    { status:"kept",    text:"Adopt a citywide plan. Vancouver's first Official Development Plan was adopted in March 2026." },
+    { status:"partial", text:"Hire 100 mental health nurses to pair with officers. About 50 workers with a range of specialized training were hired instead." },
+    { status:"partial", text:"5,000 new childcare spaces. About 2,000 delivered, with 743 more approved." },
+    { status:"partial", text:"Speed up permitting, the “3-3-3-1” pledge. Simple renovation permits hit the target, 92% inside three days; other categories still lag." },
+    { status:"partial", text:"Tax restraint. Property taxes rose 22.1% across the four-year term, after ABC criticised the previous council's 25%. The 2025 increase was zero." },
+    { status:"broken",  text:"Double co-op housing, about 6,000 units. 334 net new units were added." },
+    { status:"broken",  text:"Plant 100,000 trees in four years. Net new trees from 2023 to 2025 totalled 257." },
+    { status:"broken",  text:"Create a Night Mayor position. Never created." },
+    { status:"reversed",text:"The park board. ABC ran in 2022 on fixing it rather than abolishing it, announced abolition in December 2023, then dropped the plan in July 2026 after the province shelved the enabling bill and three ABC commissioners quit the party." }
+  ],
+  "Vancouver|party|ABC Vancouver":[
+    { status:"reversed",text:"Park board abolition. Announced December 2023, abandoned July 2026, and ABC is now running a full slate of commissioner candidates. Commissioner Laura Christensen, one of three who left the party over the plan, said “this is not what he campaigned on.”",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/ken-sim-park-board-stays-9.7268871" }
+  ],
+  "Vancouver|party|Vancouver Liberals":[
+    { status:"jurisdiction", text:"A ward system. The plan is a citizens' assembly and a possible plebiscite in 2030, with wards no earlier than 2034. Vancouver's electoral structure is set by the Vancouver Charter, which only the province can amend, so council cannot deliver this on its own.",
+      src:"Vancouver Liberals", url:"https://www.vancouverliberals.com/issues" },
+    { status:"costing", text:"Cancel the $800 million “Second City Hall” campus and redirect the money to parks and recreation. Analysts note that cancelling a capital project does not free an equivalent sum, because financing structures, timing and contractual obligations constrain what can be reallocated.",
+      src:"CityHallWatch", url:"https://cityhallwatch.wordpress.com/2026/09/09/election-2026-getting-to-know-the-parties-vancouver-liberals-kareem-allam/" }
+  ],
+  "Vancouver|party|Bright Future Vancouver":[
+    { status:"jurisdiction", text:"Fare-free transit for residents. Fares are set by TransLink and the Mayors' Council, with provincial oversight. A single city council cannot set them. Vancouver council's own step in December 2025 was to ask the mayor to write to the province advocating a pilot.",
+      src:"City of Vancouver", url:"https://council.vancouver.ca/20251210/documents/cfscA7.pdf" },
+    { status:"jurisdiction", text:"SkyTrain extension to UBC. The province took the lead on the Millennium Line UBC Extension from TransLink in 2022 and runs the planning and business case. Council can advocate and fund local works, not build it.",
+      src:"TransLink", url:"https://www.translink.ca/plans-and-projects/projects/rapid-transit-projects/millennium-line-ubc-extension" }
+  ]
+};
+
+// Candidates actively searched with nothing adverse found. Absence of this marker means not yet searched.
+const SEARCHED = [
+  "Richmond|Mayor|Alexa Loo","Richmond|Mayor|Rob Howard","Richmond|Mayor|Mei Kang","Richmond|Mayor|Dickens Cheung",
+  "Richmond|Council|Carol Day","Richmond|Council|Laura Gillanders","Richmond|Council|Michael Wolfe","Richmond|Council|Andy Hobbs",
+  "Delta|Mayor|Dylan Kruger","Delta|Mayor|Melissa Granum",
+  "Victoria|Council|Marg Gardiner","Victoria|Council|Jeremy Caradonna","Victoria|Council|Matt Dell","Victoria|Council|Dave Thompson",
+  "Nanaimo|Council|Paul Manly","Nanaimo|Council|Sheryl Armstrong","Nanaimo|Council|Ian Thorpe","Nanaimo|Council|Hilary Eastmure",
+  "City of North Vancouver|Mayor|Linda Buchanan","City of North Vancouver|Mayor|Mike McGraw",
+  "Vancouver|Council|Lucy Maloney","Vancouver|Council|John Coupar","Vancouver|Council|Moira Stilwell","Vancouver|Council|Michael Wu",
+  "Vancouver|Park Board|Tom Digby","Vancouver|Park Board|Scott Jensen","Vancouver|Park Board|Jas Virdi"
+];
+
+Object.assign(P, {
+  "Vancouver|party|Vote Vancouver":[
+    { status:"nocost", text:"A published housing platform with nine commitments, including land trusts for public land, faster approvals, missing-middle housing on city land and replacing unsafe SROs. No dollar cost, funding source or timeline is attached to any of them.",
+      src:"Vote Vancouver", url:"https://www.votevancouver.ca/housing" }
+  ],
+  "Vancouver|party|Green":[
+    { status:"backed", text:"Fast-tracking housing in partnership with Build Canada Homes. The program is legislated, funded and already operating in BC. The Build Canada Homes Act received Royal Assent on 18 June 2026, a Canada\u2013BC partnership signed on 18 February 2026 committed $810 million to at least 700 shovel-ready supportive and transitional homes, and Build Canada Homes names municipalities as direct partners. BC's own DASH program is already delivering the standardized and prefabricated designs the Greens describe. A city can apply rather than wait for a deal to be struck.",
+      src:"Prime Minister of Canada", url:"https://www.pm.gc.ca/en/news/news-releases/2026/06/18/canada-and-british-columbia-forge-new-partnership-accelerate" },
+    { status:"nocost", text:"Housing and local-procurement commitments are published without dollar costs or funding sources." }
+  ],
+  "Vancouver|party|OneCity":[
+    { status:"nocost", text:"Eleven platform areas are published, from housing and harm reduction to local democracy, each as a short statement. No costs or funding sources are disclosed.",
+      src:"OneCity Vancouver", url:"https://www.onecityvancouver.ca/platform" }
+  ],
+  "Vancouver|party|COPE":[
+    { status:"jurisdiction", text:"Free transit for under-18s and expanded service. Fares and service levels are set by TransLink and the Mayors' Council, not by Vancouver council alone.",
+      src:"COPE", url:"https://www.votecope.ca/platform" },
+    { status:"jurisdiction", text:"Ending the non-resident property owner vote and extending civic voting rights to permanent residents. Both require the province to amend the Vancouver Charter.",
+      src:"COPE", url:"https://www.votecope.ca/platform" },
+    { status:"costed", text:"Unusually for this ballot, one commitment names its funding mechanism: a mansion tax of 1% on assessed value above $5 million, to fund homelessness measures." }
+  ],
+  "Vancouver|party|TEAM":[
+    { status:"nocost", text:"Positions are published across several policy pages covering livability, affordability, safety and planning, without costs or funding sources.",
+      src:"TEAM", url:"https://www.voteteam.ca/our-positions-home-2026" }
+  ],
+  "Vancouver|party|TrueBlue Vancouver":[
+    { status:"jurisdiction", text:"\u201cBetter schools and parental involvement\u201d sits with the school board and the province. City council has no authority over schools, curriculum or school policy.",
+      src:"TrueBlue Vancouver", url:"https://truebluevancouver.com/" },
+    { status:"nocost", text:"Ten priorities are published as headings, with a longer platform offered as a PDF. No costs appear alongside the priorities." }
+  ],
+  "Vancouver|party|ABC Vancouver":[
+    { status:"nocost", text:"The 2026 platform is published as themes rather than costed items: a tax freeze for residents and businesses, more police and mental health nurses, core service investment and fewer permitting barriers.",
+      src:"ABC Vancouver", url:"https://abcvancouver.ca/" }
+  ],
+  "Vancouver|party|Independent Parks Party":[
+    { status:"noplatform", text:"No policy platform was found on the party's site, which carries organizational information and volunteer links only.",
+      src:"Independent Parks Party", url:"https://parksparty.vote/" }
+  ],
+  "Vancouver|party|Affordable Housing":[
+    { status:"noplatform", text:"No detailed platform was found beyond the party name and a single-page site." }
+  ],
+  "Delta|party|One Delta":[
+    { status:"nocost", text:"A concrete and checkable pledge: no new taxes, levies or fees if elected. No costing is published showing how services and capital would be funded without them.",
+      src:"Peace Arch News", url:"https://peacearchnews.com/2026/09/04/kruger-one-delta-promise-no-new-taxes-levies-or-fees-if-elected/" }
+  ],
+  "Delta|party|Delta First":[
+    { status:"noplatform", text:"No platform published. Mayoral candidate Melissa Granum said the party would listen to residents before offering one.",
+      src:"Peace Arch News", url:"https://peacearchnews.com/2026/03/11/delta-first-announces-mayor-council-candidates-ahead-of-fall-election/" }
+  ],
+  "Victoria|party|Victoria For All":[
+    { status:"jurisdiction", text:"Free and expanded public transit. In Greater Victoria, fares, routes and service levels are set by the Victoria Regional Transit Commission under the BC Transit Act, whose members are appointed by the province. Victoria council does not control them.",
+      src:"BC Transit", url:"https://www.bctransit.com/about/corporate/funding-and-governance/victoria-regional-transit-commission/" },
+    { status:"nocost", text:"The platform covers public and co-operative housing, renter protections, community mental health, harm reduction, climate resilience and cultural space, without published costs.",
+      src:"CHEK News", url:"https://cheknews.ca/victoria-for-all-launches-political-slate-ahead-of-october-municipal-election-1342211/" }
+  ]
+});
+
+const SLOT = {
+  "ABC Vancouver":"--h0","Vancouver Liberals":"--h1","Vote Vancouver":"--h2","TEAM":"--h3",
+  "Green":"--h4","OneCity":"--h5","COPE":"--h6","Bright Future Vancouver":"--h7",
+  "TrueBlue Vancouver":"--h8","Independent Parks Party":"--h9","Affordable Housing":"--h10",
+  "Advance Richmond":"--h0","Richmond Strong":"--h1","ONE Richmond":"--h2","Action Richmond":"--h3",
+  "RITE Richmond":"--h4","Richmond Citizens' Association":"--h5","Richmond Forward":"--h6",
+  "We Are Richmond":"--h7","Common Sense Alliance":"--h8","Richmond United":"--h11","Conservative":"--h12",
+  "Achieving for Delta":"--h0","One Delta":"--h2","Delta First":"--h3",
+  "REAL Nanaimo":"--h6","Victoria For All":"--h5",
+  "Empower":"--h13","Richmond Education Party":"--h9",
+  "Independent":"--hind"
+};
+
+const PNOTE = {
+  "ABC Vancouver":"Governing party since 2022, led by Mayor Ken Sim. Campaigning on a property tax freeze, the lowest violent crime rate in 23 years, encampment removal, more police and mental health nurses, road and community centre investment, longer bar and restaurant hours, and fewer permitting barriers.",
+  "Vancouver Liberals":"Founded in 2025 by Kareem Allam, Sim's former chief of staff, and describing itself as a big-tent party. Proposes hiring 400 unionized front-line staff, scrapping Vancouver's separate building code for the BC Building Code, cancelling an $800 million second city hall, cracking down on Bitcoin ATMs and money laundering, and a referendum on a ward system.",
+  "Vote Vancouver":"Founded by Rebecca Bligh after ABC expelled her in February 2025. Four platform pillars: housing, economy, transportation and public services.",
+  "Green":"Green Party of Vancouver. Pete Fry is their first mayoral candidate in 30 years. Campaigning on faster housing approvals and more housing choice, Canadian-built construction, and using city purchasing power for BC lumber and local supply chains.",
+  "OneCity":"Left party, holds one council seat through Lucy Maloney's 2025 by-election win. Running ReLight Vancouver on street lighting and safer public space, Connect Vancouver on neighbourhood transportation choice, and a Labour Day manifesto of five commitments to working families. Not running a mayoral candidate.",
+  "COPE":"Coalition of Progressive Electors, Vancouver's oldest civic left party, holds one council seat through Sean Orr. Campaigning on affordability, public education, and parks, community centres and public services. Withdrew from the mayoral race on 2 September.",
+  "TEAM":"TEAM for a Livable Vancouver. Colleen Hardwick's party, running on livability, public safety, affordability and a more participatory approach to city planning and development.",
+  "Bright Future Vancouver":"New party led by Muhammad Ahmad, pitched at shift workers, trades, renters and small business. Its Blueprint has five pillars: rent-to-own housing equity, fare-free transit for residents with a UBC SkyTrain extension, night-shift childcare and treatment-first crisis response, 21-day permits, and a 2% fair share surcharge.",
+  "Independent Parks Party":"Single-issue park board party, a project of the Association for the Promotion of Science in Governance, a BC non-profit. Authorized by candidate Michael Robert Caditz.",
+  "TrueBlue Vancouver":"New right-wing party running on cutting property taxes and civic staffing, city control of public safety, parental rights and local sovereignty.",
+  "Affordable Housing":"One-candidate party registered under the name Affordable Housing.",
+  "Richmond Strong":"Alexa Loo's slate. Loo is a sitting councillor seeking the mayor's chair.",
+  "Richmond Forward":"Rob Howard's slate, registered as the Richmond Forward Voters Society.",
+  "Action Richmond":"Mei Kang's slate.",
+  "We Are Richmond":"Dickens Cheung's slate.",
+  "RITE Richmond":"Richmond's established progressive slate. It holds three of the eight sitting council seats and is running council candidates only.",
+  "Richmond Citizens' Association":"Council-only slate, running five candidates and no mayoral candidate.",
+  "ONE Richmond":"Holds two sitting council seats, but is running a single council candidate this time and no mayoral candidate.",
+  "Advance Richmond":"Registered as the Advance Richmond Community Association. Council-only slate, the largest in the race with seven candidates.",
+  "Conservative":"Registered as the Conservative Electors Association. Council-only slate of five.",
+  "Common Sense Alliance":"Council-only slate of three, including former Steveston-Richmond East MP Kenny Chiu.",
+  "Richmond United":"Council-only slate of two, including sitting councillor Andy Hobbs.",
+  "Achieving for Delta":"Mayor George Harvie's slate, which has governed Delta since 2018.",
+  "One Delta":"Councillor Dylan Kruger's slate, running a full six-candidate council team behind his mayoral bid.",
+  "Delta First":"Melissa Granum's slate, running three council candidates.",
+  "REAL Nanaimo":"The only slate in the Nanaimo race, with mayoral candidate Anne-Marie Dryden and seven council candidates. Every other candidate runs as an independent.",
+  "Victoria For All":"The only slate on Victoria's council ballot, running two candidates. Everyone else, in both races, runs as an independent.",
+  "Independent":"Candidates running with no slate or party affiliation."
+};
+
+const J = {
+  "Vancouver": {
+    seats:{Mayor:1, Council:10, "Park Board":7, School:9}, schoolNote:"Vancouver School Board (SD39). All nine seats are elected by Vancouver voters.",
+    blurb:["Ken Sim's ABC Vancouver swept all three bodies in 2022 and is defending them against a field that has grown two new parties since. 130 candidates are running for 27 seats across four ballots.",
+           "Vancouver is the only city here with a separately elected park board, and the only one with plebiscite questions on the ballot."],
+    dates:[["Advance voting","3, 7, 10 and 13 October, 8am to 8pm"],["Voting day","Saturday 17 October, 8am to 8pm"],["Voting places","Any of 85 places citywide, vote-anywhere"],["By mail","Apply by noon on 5 October"]],
+    link:"https://vancouver.ca/your-government/2026-candidate-information.aspx", vote:"https://vancouver.ca/election/2026/where-to-vote.aspx"
+  },
+  "Richmond": {
+    seats:{Mayor:1, Council:8, School:7}, schoolNote:"Richmond Board of Education (SD38). All seven seats are elected by Richmond voters.",
+    blurb:["Malcolm Brodie, mayor since 2001, is not running. The first open mayor's race in Richmond in 25 years drew eight candidates, two of them sitting councillors.",
+           "The council race is the busiest in the province outside Vancouver: 55 candidates for eight seats, spread across eleven slates and fourteen independents."],
+    dates:[["Advance voting","3, 7, 8, 9 and 10 October"],["Voting day","Saturday 17 October"],["By mail","Applications open to 17 October"]],
+    link:"https://www.richmond.ca/city-hall/elections/candidateslist.htm", vote:"https://www.richmond.ca/city-hall/elections.htm"
+  },
+  "Delta": {
+    seats:{Mayor:1, Council:6, School:7}, schoolNote:"Delta Board of Education (SD37). All seven seats are elected by Delta voters.",
+    blurb:["Mayor George Harvie seeks a third term against Dylan Kruger, a sitting councillor running with his own slate, and Delta First's Melissa Granum.",
+           "Delta is the most slate-organized council race here: fifteen of the twenty candidates carry a slate label."],
+    dates:[["Advance voting","3, 6 and 7 October"],["Voting day","Saturday 17 October"]],
+    link:"https://www.delta.ca/elections/candidates", vote:"https://www.delta.ca/city-hall/municipal-information/elections"
+  },
+  "City of North Vancouver": {
+    seats:{Mayor:1, Council:6, School:3}, schoolNote:"North Vancouver Board of Education (SD44), shared with the District. City voters elect three of the seven seats.",
+    blurb:["Mayor Linda Buchanan seeks a third term against three challengers. All six sitting councillors are running again.",
+           "No slates: every candidate in both races runs as an independent."],
+    dates:[["Advance voting","7, 10, 13, 14 and 15 October at City Hall"],["Voting day","Saturday 17 October"],["By mail","Ballots must arrive by 8pm on 17 October"]],
+    link:"https://www.cnv.org/City-Hall/General-Local-Election/2026-General-Local-Election", vote:"https://www.cnv.org/City-Hall/General-Local-Election/2026-General-Local-Election"
+  },
+  "District of North Vancouver": {
+    seats:{Mayor:1, Council:6, School:4}, schoolNote:"North Vancouver Board of Education (SD44), shared with the City. District voters elect four of the seven seats.",
+    blurb:["Mayor Mike Little seeks a third term against four challengers. Six incumbent councillors are running in a field of fifteen.",
+           "As in the City, no slates are registered: everyone runs as an independent."],
+    dates:[["Voting day","Saturday 17 October"],["Advance voting","Check dnv.org for dates and places"]],
+    link:"https://www.dnv.org/government-administration/2026-general-local-election", vote:"https://www.dnv.org/government-administration/2026-general-local-election"
+  },
+  "Victoria": {
+    seats:{Mayor:1, Council:8, School:2}, schoolNote:"Greater Victoria Board of Education (SD61), shared with neighbouring municipalities. Victoria voters elect two trustees.",
+    blurb:["Mayor Marianne Alto seeks a second term in an eight-way race. Seven of the eight sitting councillors are running again; Chris Coleman is not.",
+           "Victoria's politics run on independents. Only two of the 21 council candidates carry a slate label, and none of the mayoral candidates do."],
+    dates:[["Advance voting","7 October at the Victoria Conference Centre; 13, 14 and 15 October at Crystal Garden"],["Voting day","Saturday 17 October"],["By mail","Ballots must arrive by 8pm on 17 October"]],
+    link:"https://www.victoria.ca/city-government/elections", vote:"https://www.victoria.ca/city-government/elections"
+  },
+  "Nanaimo": {
+    seats:{Mayor:1, Council:8, School:9}, schoolNote:"Nanaimo-Ladysmith Board of Education (SD68). Nine seats and eleven candidates.",
+    blurb:["Mayor Leonard Krog seeks a third term. Forty candidates are running for eight council seats, seven of them sitting councillors; Tyler Brown is not running again.",
+           "REAL Nanaimo is the only slate, with a mayoral candidate and seven council candidates. Everyone else runs as an independent."],
+    dates:[["Advance voting","7 and 14 October"],["Voting day","Saturday 17 October"],["By mail","Apply by 4pm on 16 October"]],
+    link:"https://www.nanaimo.ca/your-government/elections", vote:"https://www.nanaimo.ca/your-government/elections"
+  }
+};
+
+const JORDER = ["Vancouver","Richmond","Delta","City of North Vancouver","District of North Vancouver","Victoria","Nanaimo"];
+const SHORT = {"City of North Vancouver":"North Van (City)","District of North Vancouver":"North Van (District)"};
+
+// merge: Vancouver rows use [race,party,name,incumbent,bio,url]; X rows use [juris,race,party,name,inc,url]
+const ALL = [];
+for (const c of C) ALL.push({j:"Vancouver", race:c[0], party:c[1], name:c[2], inc:c[3], bio:c[4], url:c[5]});
+for (const r of X) ALL.push({j:r[0], race:r[1], party:r[2], name:r[3], inc:r[4], bio:"", url:r[5]});
+for (const r of S) ALL.push({j:r[0], race:r[1], party:r[2], name:r[3], inc:r[4], bio:"", url:r[5]});
+
+// Read by shared/guide.js.
+const STORE="bcballot2026";
+const RACES=["Mayor","Council","Park Board","School"];
+const RACE_LABEL={School:"School board"};
+const RACE_TITLE={School:"School Board"};
+function raceNote(j,race){ return race==="School" ? J[j].schoolNote+" Incumbency is not marked in this race." : ""; }
+const JGROUPS=null;
+const ELECTION_DAY="2026-10-17", VOTING_DAY="Saturday 17 October 2026";
+const PROVISIONAL_UNTIL="2026-09-18T23:00:00Z";   // 4pm Pacific, 18 Sept
+const CARD_NOTE="Candidate lists are current to 18 September 2026; check your municipality's own page before voting.";
+const NO_ROWS="No candidates are listed for this municipality.";
+
+// Shared rendering engine. Each page's config.js defines the election-specific constants it reads.
+const KEY=STORE+".marks";
+let marks=new Set();
+try{ const r=localStorage.getItem(KEY); if(r) marks=new Set(JSON.parse(r)); }catch(e){}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify([...marks])); }catch(e){} }
+
+let filtersOpen=true;
+try{ const v=localStorage.getItem(STORE+".filters");
+     filtersOpen = v===null ? ((window.innerWidth||1024)>640) : v==="1"; }catch(e){ filtersOpen=true; }
+const state={j:JORDER[0], race:"all", party:null, q:"", onlyMarked:false};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const slot=p=>SLOT[p] || "--hind";
+
+// jurisdiction picker: tabs for a handful, a grouped native select when there are too many for tabs
+document.getElementById("jtabs").innerHTML = JGROUPS
+  ? `<select class="jselect" aria-label="Choose your electoral district">${JGROUPS.map(([g,js])=>
+      `<optgroup label="${esc(g)}">${js.map(j=>`<option value="${esc(j)}"${j===state.j?" selected":""}>${esc(SHORT[j]||j)}</option>`).join("")}</optgroup>`).join("")}</select>`
+  : JORDER.map(j=>
+  `<button type="button" class="jtab" data-j="${esc(j)}" aria-pressed="${j===state.j}" aria-current="${j===state.j?"page":"false"}">${esc(SHORT[j]||j)}</button>`).join("");
+
+function rowsFor(j){ return ALL.filter(c=>c.j===j); }
+function partiesFor(j){
+  const seen=[];
+  for(const c of rowsFor(j)) if(!seen.includes(c.party)) seen.push(c.party);
+  return seen.filter(p=>p!=="Independent").concat(seen.includes("Independent")?["Independent"]:[]);
+}
+function racesFor(j){ return RACES.filter(r=>rowsFor(j).some(c=>c.race===r)); }
+
+function renderGlance(){
+  const m=J[state.j], rows=rowsFor(state.j);
+  const cells = racesFor(state.j).map(r=>{
+    const n=rows.filter(c=>c.race===r).length, s=m.seats[r];
+    return `<div class="gcell"><div class="t-lab">${esc(RACE_LABEL[r]||r)}</div><div class="t-num">${n}</div><div class="t-sub">${s===1?"1 seat &middot; vote for 1":s+" seats &middot; vote for up to "+s}</div></div>`;
+  }).join("");
+  const shortlisted = [...marks].filter(k=>k.startsWith(state.j+"|")).length;
+  document.getElementById("glance").innerHTML =
+    `<div class="glance-top">${cells}<div class="gcell"><div class="t-lab">Your shortlist</div><div class="t-num" id="markcount">${shortlisted}</div><div class="t-sub">marked here</div></div></div>
+     <div class="glance-body">${m.blurb.map(p=>`<p>${esc(p)}</p>`).join("")}
+       <div class="dates">${m.dates.map(d=>`<div><b>${esc(d[0])}</b>${esc(d[1])}</div>`).join("")}</div>
+       <p style="margin-top:12px;font-size:13px"><a href="${esc(m.link)}" target="_blank" rel="noopener">Official candidate list &rarr;</a> &nbsp;&nbsp; <a href="${esc(m.vote)}" target="_blank" rel="noopener">Register and find your voting place &rarr;</a></p>
+     </div>`;
+}
+
+function syncFilters(){
+  const p=document.getElementById("filterpanel"), b=document.getElementById("filterstoggle");
+  if(!p||!b) return;
+  p.hidden=!filtersOpen;
+  b.setAttribute("aria-expanded", String(filtersOpen));
+  const active=(state.party?1:0)+(state.onlyMarked?1:0);
+  b.textContent = active ? "Filters ("+active+")" : "Filters";
+  b.setAttribute("aria-pressed", String(active>0));
+}
+function renderControls(){
+  document.querySelectorAll("#raceseg button").forEach(b=>{
+    const r=b.dataset.race;
+    b.hidden = r!=="all" && !racesFor(state.j).includes(r);
+    b.setAttribute("aria-pressed", String(r===state.race));
+  });
+  document.getElementById("parties").innerHTML = partiesFor(state.j).map(p=>
+    `<button type="button" class="pchip" data-party="${esc(p)}" aria-pressed="${p===state.party}" style="--pc:var(${slot(p)})"><span class="dot"></span>${esc(p)}</button>`).join("");
+}
+
+function renderRoster(){
+  const rows=rowsFor(state.j), out=[];
+  for(const race of racesFor(state.j)){
+    const inRace=rows.filter(c=>c.race===race);
+    const s=J[state.j].seats[race];
+    const title = RACE_TITLE[race]||race;
+    const rn = raceNote(state.j,race), note = rn ? `<p class="racenote">${esc(rn)}</p>` : "";
+    out.push(`<div class="racehead" data-race="${esc(race)}"><h2>${esc(title)}</h2><div class="rmeta">${s===1?"1 seat &middot; vote for 1":s+" seats &middot; vote for up to "+s} &middot; ${inRace.length} candidates<span class="rmark" data-seats="${s}" hidden></span></div>${note}</div>`);
+    for(const p of partiesFor(state.j)){
+      const list=inRace.filter(c=>c.party===p);
+      if(!list.length) continue;
+      out.push(`<div class="pgroup" data-race="${esc(race)}" data-party="${esc(p)}" style="--pc:var(${slot(p)})">
+        <h3><span class="bar"></span>${esc(p)} <span class="cnt">${list.length}</span></h3>
+        ${PNOTE[p]?`<p class="pnote">${esc(PNOTE[p])}</p>`:""}
+        ${disclosure(state.j+"|party|"+p)}
+        <ul class="cands">${list.map(card).join("")}</ul></div>`);
+    }
+  }
+  document.getElementById("roster").innerHTML=out.join("");
+}
+
+const ETYPE={financial:{n:"Financial interest",c:"--h6"},election:{n:"Election finance",c:"--h3"},
+             conduct:{n:"Conduct in office",c:"--h5"},record:{n:"Record",c:"--h10"},cleared:{n:"Cleared",c:"--h4"}};
+const PSTAT={kept:{n:"Kept",c:"--h4"},partial:{n:"Partly kept",c:"--h3"},broken:{n:"Broken",c:"--h6"},
+             note:{n:"Read this first",c:"--h10"},costed:{n:"Funding named",c:"--h4"},
+             nocost:{n:"No costs published",c:"--h3"},noplatform:{n:"No platform found",c:"--hind"},
+             backed:{n:"Backed by an existing program",c:"--h4"},
+             reversed:{n:"Reversed",c:"--h6"},jurisdiction:{n:"Outside council's power",c:"--h0"},
+             costing:{n:"Costing questioned",c:"--h3"}};
+const SEARCHED_SET=new Set(SEARCHED);
+
+function entryHtml(e){
+  const t=ETYPE[e.type]||ETYPE.record;
+  return `<div class="entry">
+    <div class="etags"><span class="etype" style="--et:var(${t.c})">${esc(t.n)}</span>
+      <span class="elabel">${esc(e.label)}</span><span class="edate">${esc(e.date)}</span></div>
+    <div class="etext">${esc(e.text)}</div>
+    ${e.url?`<div class="esrc"><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.src)} &rarr;</a></div>`:""}
+  </div>`;
+}
+function promiseHtml(p){
+  const s=PSTAT[p.status]||PSTAT.kept;
+  return `<div class="entry">
+    <div class="etags"><span class="pstat" style="--ps:var(${s.c})">${esc(s.n)}</span></div>
+    <div class="etext">${esc(p.text)}</div>
+    ${p.url?`<div class="esrc"><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.src)} &rarr;</a></div>`:""}
+  </div>`;
+}
+function disclosure(key){
+  const rec=R[key]||[], pro=P[key]||[];
+  if(!rec.length && !pro.length) return SEARCHED_SET.has(key) ? `<div class="nosearch">Searched, nothing adverse found</div>` : "";
+  const bits=[];
+  if(rec.length) bits.push(rec.length+(rec.length===1?" record entry":" record entries"));
+  if(pro.length) bits.push(pro.length+(pro.length===1?" promise":" promises"));
+  const proSorted=pro.slice().sort((a,b)=>(a.status==="note"?-1:0)-(b.status==="note"?-1:0));
+  const body =
+    (rec.length?`<div class="subhead">Record</div>${rec.map(entryHtml).join("")}`:"") +
+    (proSorted.length?`<div class="subhead">Promises</div>${proSorted.map(promiseHtml).join("")}`:"");
+  return `<details class="rec"><summary><span class="chev">&#9656;</span>${esc(bits.join(" \u00b7 "))}</summary>
+    <div class="recbody">${body}</div></details>`;
+}
+
+function card(c){
+  const id=c.j+"|"+c.race+"|"+c.name;
+  return `<li class="cand" data-id="${esc(id)}" data-search="${esc((c.name+" "+c.party).toLowerCase())}">
+    <button type="button" class="mark" aria-pressed="${marks.has(id)}" aria-label="Shortlist ${esc(c.name)}">&#10003;</button>
+    <div>
+      <div class="nm">${esc(c.name)}</div>
+      <div class="row2">
+        <span class="tag">${esc(c.party)}</span>
+        ${c.inc===1?`<span class="inc">Incumbent</span>`:""}
+        ${c.inc===2?`<span class="sit">Sitting councillor</span>`:""}
+        ${c.url?`<a class="lnk" href="${esc(c.url)}" target="_blank" rel="noopener">campaign page &rarr;</a>`:""}
+      </div>
+      ${c.bio?`<div class="bio">${esc(c.bio)}</div>`:""}
+      ${disclosure(c.j+"|"+c.race+"|"+c.name)}
+    </div></li>`;
+}
+
+// Marked-vs-seats, per race. renderCard() has warned about over-voting since launch, but only
+// once the print view is open, which is after the choices are made. Same arithmetic, shown while
+// the choice is being made.
+function syncSeatCounts(){
+  document.querySelectorAll(".racehead").forEach(h=>{
+    const el=h.querySelector(".rmark"); if(!el) return;
+    const seats=+el.dataset.seats;
+    const n=[...marks].filter(k=>k.startsWith(state.j+"|"+h.dataset.race+"|")).length;
+    el.hidden = n===0;
+    el.classList.toggle("over", n>seats);
+    el.textContent = n>seats ? ` \u00b7 ${n} marked, drop ${n-seats}` : ` \u00b7 ${n} marked`;
+  });
+}
+
+// The print sheet covers every municipality, so this counts all marks, not just this tab's.
+// Counted through ALL so a mark left behind by a withdrawn candidate is not advertised.
+function syncPrintCount(){
+  const pb=document.getElementById("printbtn"); if(!pb) return;
+  const n=ALL.filter(c=>marks.has(c.j+"|"+c.race+"|"+c.name)).length;
+  pb.textContent = n ? `Print shortlist (${n})` : "Print shortlist";
+}
+
+// A search only looks inside the current tab, so a name on another ballot reads as "no matches".
+// The City and District of North Vancouver are separate ballots that people mix up, which is
+// exactly when this bites. Party is left out of the count because the jump clears it.
+function showEmpty(visible){
+  const em=document.getElementById("empty"); if(!em) return;
+  em.hidden = visible>0;
+  if(visible>0) return;
+  if(!rowsFor(state.j).length){ em.textContent=NO_ROWS; return; }
+  let hint="";
+  if(state.q){
+    const others=JORDER.filter(j=>j!==state.j).map(j=>{
+      const n=ALL.filter(c=>c.j===j
+        && (state.race==="all" || c.race===state.race)
+        && (c.name+" "+c.party).toLowerCase().includes(state.q)
+        && (!state.onlyMarked || marks.has(c.j+"|"+c.race+"|"+c.name))).length;
+      return n ? {j,n} : null;
+    }).filter(Boolean);
+    if(others.length) hint=`<span class="elsewhere">Found on another ballot: ${others.map(o=>
+      `<button type="button" class="mini jump" data-j="${esc(o.j)}">${o.n} in ${esc(SHORT[o.j]||o.j)}</button>`).join("")}</span>`;
+  }
+  em.innerHTML = "No candidates match those filters." + hint;
+}
+
+function applyFilters(){
+  let visible=0;
+  document.querySelectorAll("li.cand").forEach(li=>{
+    const g=li.closest(".pgroup");
+    let ok=true;
+    if(state.race!=="all" && g.dataset.race!==state.race) ok=false;
+    if(ok && state.party && g.dataset.party!==state.party) ok=false;
+    if(ok && state.q && !li.dataset.search.includes(state.q)) ok=false;
+    if(ok && state.onlyMarked && !marks.has(li.dataset.id)) ok=false;
+    li.classList.toggle("hide",!ok);
+    if(ok) visible++;
+  });
+  document.querySelectorAll(".pgroup").forEach(g=>{ g.hidden = !g.querySelector("li.cand:not(.hide)"); });
+  document.querySelectorAll(".racehead").forEach(h=>{
+    h.hidden = ![...document.querySelectorAll(`.pgroup[data-race="${h.dataset.race}"]`)].some(g=>!g.hidden);
+  });
+  showEmpty(visible);
+  const rc=document.getElementById("resultcount");
+  if(rc) rc.textContent = visible+(visible===1?" candidate":" candidates")+" shown in "+state.j;
+  const mc=document.getElementById("markcount");
+  if(mc) mc.textContent=[...marks].filter(k=>k.startsWith(state.j+"|")).length;
+  syncSeatCounts();
+  syncPrintCount();
+  document.querySelectorAll(".section[data-juris]").forEach(s=>{ s.hidden = s.dataset.juris!==state.j; });
+  syncFilters();
+  renderCard();
+}
+
+function allDetails(){ return [...document.querySelectorAll("#roster details.rec")]; }
+function renderAll(){ renderGlance(); renderControls(); renderRoster(); applyFilters(); }
+
+function selectJuris(j){
+  barSettle();
+  state.j=j; state.party=null;
+  if(!racesFor(state.j).includes(state.race)) state.race="all";
+  const sel=document.querySelector("#jtabs select"); if(sel) sel.value=state.j;
+  document.querySelectorAll(".jtab").forEach(x=>{const s=x.dataset.j===state.j;x.setAttribute("aria-pressed",String(s));x.setAttribute("aria-current",s?"page":"false");});
+  renderAll();
+  window.scrollTo({top:0,behavior:"instant"});
+}
+document.getElementById("jtabs").addEventListener("click",e=>{
+  const b=e.target.closest(".jtab"); if(!b) return;
+  selectJuris(b.dataset.j);
+});
+document.getElementById("jtabs").addEventListener("change",e=>selectJuris(e.target.value));
+document.getElementById("raceseg").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  state.race=b.dataset.race;
+  document.querySelectorAll("#raceseg button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+  applyFilters();
+});
+document.getElementById("parties").addEventListener("click",e=>{
+  const b=e.target.closest(".pchip"); if(!b) return;
+  state.party = state.party===b.dataset.party ? null : b.dataset.party;
+  document.querySelectorAll(".pchip").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.party===state.party)));
+  applyFilters();
+});
+document.getElementById("q").addEventListener("input",e=>{ state.q=e.target.value.trim().toLowerCase(); applyFilters(); });
+document.getElementById("onlymarked").addEventListener("click",e=>{
+  state.onlyMarked=!state.onlyMarked;
+  e.currentTarget.setAttribute("aria-pressed",String(state.onlyMarked));
+  applyFilters();
+});
+// Marks are the only thing a reader creates here, they live in localStorage alone, and there is
+// no undo. So the first click arms, the second clears. It disarms itself after a few seconds.
+(function(){
+  const cb=document.getElementById("clearmarks"); if(!cb) return;
+  const LABEL="Clear marks here";
+  let armed=null;
+  function disarm(){ clearTimeout(armed); armed=null; cb.textContent=LABEL; cb.classList.remove("arm"); }
+  cb.addEventListener("click",()=>{
+    if(!armed){
+      cb.textContent="Click again to clear";
+      cb.classList.add("arm");
+      armed=setTimeout(disarm,4000);
+      return;
+    }
+    disarm();
+    [...marks].filter(k=>k.startsWith(state.j+"|")).forEach(k=>marks.delete(k));
+    save();
+    document.querySelectorAll(".mark").forEach(m=>m.setAttribute("aria-pressed","false"));
+    applyFilters();
+  });
+})();
+
+document.getElementById("empty").addEventListener("click",e=>{
+  const b=e.target.closest(".jump"); if(!b) return;
+  selectJuris(b.dataset.j);
+});
+document.getElementById("roster").addEventListener("click",e=>{
+  const b=e.target.closest(".mark"); if(!b) return;
+  const id=b.closest("li.cand").dataset.id;
+  if(marks.has(id)) marks.delete(id); else marks.add(id);
+  b.setAttribute("aria-pressed",String(marks.has(id)));
+  save(); applyFilters();
+});
+
+const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+function today(){ const d=new Date(); return `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`; }
+
+function renderCard(){
+  const body=document.getElementById("cardbody");
+  if(!body) return;
+  const picked=ALL.filter(c=>marks.has(c.j+"|"+c.race+"|"+c.name));
+  if(!picked.length){
+    body.innerHTML=`<p class="cardempty">Nothing marked yet. Tick the box beside a candidate and they will appear here, ready to print and take with you.</p>
+      <p class="cardfoot">Your marks are stored in this browser only and are never sent anywhere. Nobody else can see who you picked.</p>`;
+    return;
+  }
+  const out=[];
+  out.push(`<div class="cardmeta">Prepared ${esc(today())} &middot; voting day ${esc(VOTING_DAY)}</div>`);
+  for(const j of JORDER){
+    const inJ=picked.filter(c=>c.j===j);
+    if(!inJ.length) continue;
+    out.push(`<div class="cj"><h3>${esc(j)}</h3>
+      <div class="cjdates">${J[j].dates.map(d=>esc(d[0])+": "+esc(d[1])).join(" &middot; ")}</div>`);
+    for(const race of racesFor(j)){
+      const list=inJ.filter(c=>c.race===race);
+      if(!list.length) continue;
+      const s=J[j].seats[race];
+      const title = RACE_TITLE[race]||race;
+      const over = list.length > s;
+      out.push(`<div class="cr">
+        <div class="crh">${esc(title)} &middot; ${s===1?"vote for 1":"vote for up to "+s} &middot; you marked ${list.length}</div>
+        <ul>${list.map(c=>`<li><span class="box"></span><span class="cn">${esc(c.name)}</span> <span class="cp">${esc(c.party)}</span></li>`).join("")}</ul>
+        ${over?`<p class="warn">You have marked ${list.length} names for ${s} ${s===1?"seat":"seats"}. A ballot with too many marks in one race has that race discounted, so drop ${list.length-s} before you vote.</p>`:""}
+      </div>`);
+    }
+    out.push(`</div>`);
+  }
+  out.push(`<p class="cardfoot">Your marks are stored in this browser only and are never sent anywhere. Nobody else can see who you picked. ${esc(CARD_NOTE)}</p>`);
+  body.innerHTML=out.join("");
+}
+
+function showCard(on){
+  document.getElementById("ballotcard").hidden = !on;
+  document.body.classList.toggle("showcard", on);
+  if(on){ renderCard(); window.scrollTo({top:0,behavior:"instant"}); }
+}
+// Anything that changes the height of the sticky bar calls this first. The browser corrects
+// the scroll position to keep the page steady, and that correction is delivered as an ordinary
+// scroll event. Scroll events run before resize-observer callbacks in the rendering loop, so
+// the observer below cannot catch it in time: the caller has to say so up front.
+let barSettle = ()=>{};
+function on(id,fn){ const el=document.getElementById(id); if(el) el.addEventListener("click",fn); }
+on("printbtn",()=>showCard(true));
+on("backbtn",()=>showCard(false));
+on("doprint",()=>{ try{ window.print(); }catch(e){} });
+on("filterstoggle",()=>{
+  filtersOpen=!filtersOpen;
+  try{ localStorage.setItem(STORE+".filters", filtersOpen?"1":"0"); }catch(e){}
+  barSettle();
+  syncFilters();
+});
+// footer/in-page links point at collapsed sections; open the target before the browser scrolls to it
+document.addEventListener("click",e=>{
+  const a=e.target.closest('a[href^="#"]'); if(!a) return;
+  const t=document.getElementById(a.getAttribute("href").slice(1));
+  if(t && t.tagName==="DETAILS") t.open=true;
+});
+
+on("expandbtn",()=>allDetails().forEach(d=>{ d.open=true; }));
+on("collapsebtn",()=>allDetails().forEach(d=>{ d.open=false; }));
+(function(){
+  const bar=document.querySelector(".controls");
+  if(!bar) return;
+  const raf = (window.requestAnimationFrame || (f=>f())).bind(window);
+  // Auto-hide is a small-screen affordance: on a desktop viewport the bar just stays pinned.
+  // 820px is the page's breakpoint. Re-checked on every scroll so a resize can't strand it hidden.
+  const narrow = window.matchMedia && window.matchMedia("(max-width:820px)");
+  // Only auto-hide once the bar is actually pinned. While it still sits in normal flow
+  // there is nothing to win by sliding it away. Measured off the masthead's bottom edge
+  // rather than the bar itself, because the bar carries a transform while hidden and its
+  // own rect would then always read as pinned.
+  const above = document.querySelector(".masthead");
+  const topInset = (typeof getComputedStyle === "function" && parseFloat(getComputedStyle(bar).top)) || 0;
+  function pinned(){
+    if(!above || !above.getBoundingClientRect) return true;
+    return above.getBoundingClientRect().bottom <= topInset;
+  }
+  let last=window.scrollY||0, queued=false, hidden=false, settleUntil=0;
+  function setHidden(v){ if(v===hidden) return; hidden=v; bar.classList.toggle("hide", v); }
+  function update(){
+    const y=window.scrollY||0, d=y-last;
+    // The bar changing its own height moves the page under the reader, and the browser
+    // corrects the scroll position to compensate. That correction arrives as a scroll event
+    // and reads exactly like a downward flick, so the bar would hide itself. Ignore scrolls
+    // for a moment after any resize of the bar: opening the filter panel, switching to a
+    // municipality with a different party-chip count, or rotating the phone.
+    if(Date.now() < settleUntil){ last=y; queued=false; return; }
+    if(!narrow || !narrow.matches) setHidden(false);
+    else if(!pinned()) setHidden(false);
+    else if(d>6) setHidden(true);
+    else if(d<-6) setHidden(false);
+    last=y; queued=false;
+  }
+  window.addEventListener("scroll",()=>{ if(!queued){ queued=true; raf(update); } },{passive:true});
+  barSettle = ()=>{ last=window.scrollY||0; settleUntil=Date.now()+400; };
+  // Backstop for height changes with no click behind them: rotating the phone, a font
+  // swap landing, the result-count text rewrapping.
+  if(typeof ResizeObserver === "function") new ResizeObserver(barSettle).observe(bar);
+  if(narrow && narrow.addEventListener) narrow.addEventListener("change",()=>{ if(!narrow.matches) setHidden(false); });
+})();
+const toTop=document.getElementById("totop");
+if(toTop){
+  const smooth=!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  on("totop",()=>window.scrollTo({top:0,behavior:smooth?"smooth":"auto"}));
+  const showHide=()=>{ toTop.hidden = (window.scrollY||0) < 600; };
+  window.addEventListener("scroll", showHide, {passive:true});
+  showHide();
+}
+
+(function(){
+  const n=document.getElementById("days"), l=document.getElementById("dayslabel");
+  if(!n||!l) return;
+  const [y,m,dd]=ELECTION_DAY.split("-").map(Number);
+  const d=Math.ceil((new Date(y,m-1,dd)-new Date())/86400000);
+  if(d>0){ n.hidden=false; n.textContent=d; l.textContent=(d===1?"day":"days")+" until voting day"; }
+  else if(d===0){ n.hidden=false; n.textContent="Today"; l.textContent="voting places are open 8am to 8pm"; }
+  else { n.hidden=true; l.textContent="This election was held on "+VOTING_DAY+". The results are not on this page."; }
+  const pv=document.getElementById("provisional");
+  if(pv) pv.hidden = !!PROVISIONAL_UNTIL && new Date() >= new Date(PROVISIONAL_UNTIL);
+})();
+renderAll();
+
+</script>
+</body>
+</html>

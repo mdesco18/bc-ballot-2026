@@ -378,6 +378,8 @@ body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard
 .choice{display:flex;flex-direction:column;gap:8px;padding:20px;border:1px solid var(--rule-2);background:var(--surface);
   color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
 .choice:hover{border-color:var(--accent)}
+.choice[aria-disabled="true"]{opacity:.5;cursor:not-allowed;box-shadow:none}
+.choice[aria-disabled="true"]:hover{border-color:var(--rule-2)}
 .choice .ctitle{font-family:Newsreader,Georgia,serif;font-size:24px;font-weight:600;line-height:1.15}
 .choice .csub{font-size:14px;color:var(--ink-2)}
 @media (max-width:820px){ .choice .ctitle{font-size:26px} .choice .csub{font-size:17px} }
@@ -401,11 +403,12 @@ body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard
         <span class="ctitle">Mayor, council, park board and school board</span>
         <span class="csub">Vancouver, Richmond, Delta, City and District of North Vancouver, Victoria and Nanaimo.</span>
       </a>
-      <a class="choice" href="provincial/">
+      <!-- Re-enable once the provincial election is called: make this an <a class="choice" href="provincial/"> again. -->
+      <div class="choice" aria-disabled="true" title="This guide will be enabled if a provincial election is called.">
         <span class="kicker">Provincial election &middot; Saturday 24 October 2026</span>
         <span class="ctitle">Your MLA</span>
         <span class="csub">The 26 electoral districts that cover the same seven cities.</span>
-      </a>
+      </div>
     </nav>
   </div>
 </main>

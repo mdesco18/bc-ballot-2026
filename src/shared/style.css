@@ -359,6 +359,8 @@ body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard
 .choice{display:flex;flex-direction:column;gap:8px;padding:20px;border:1px solid var(--rule-2);background:var(--surface);
   color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
 .choice:hover{border-color:var(--accent)}
+.choice[aria-disabled="true"]{opacity:.5;cursor:not-allowed;box-shadow:none}
+.choice[aria-disabled="true"]:hover{border-color:var(--rule-2)}
 .choice .ctitle{font-family:Newsreader,Georgia,serif;font-size:24px;font-weight:600;line-height:1.15}
 .choice .csub{font-size:14px;color:var(--ink-2)}
 @media (max-width:820px){ .choice .ctitle{font-size:26px} .choice .csub{font-size:17px} }

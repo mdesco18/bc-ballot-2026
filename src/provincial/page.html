@@ -1,0 +1,98 @@
+<div id="floatbar">
+  <button type="button" class="fbtn" id="expandbtn" hidden aria-label="Expand all notes" title="Expand all notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3l5 5 5-5"/><path d="M7 11l5 5 5-5"/></svg></button>
+  <button type="button" class="fbtn" id="collapsebtn" hidden aria-label="Collapse all notes" title="Collapse all notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 13l-5-5-5 5"/><path d="M17 21l-5-5-5 5"/></svg></button>
+  <button type="button" class="fbtn" id="totop" hidden aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V5"/><path d="M5 12l7-7 7 7"/></svg></button>
+</div>
+
+<div id="ballotcard" hidden>
+  <div class="wrap">
+    <div class="cardhead">
+      <h2>Your shortlist</h2>
+      <div class="cardactions">
+        <button type="button" class="mini" id="doprint">Print this</button>
+        <button type="button" class="mini" id="backbtn">Back to the candidates</button>
+      </div>
+    </div>
+    <div id="cardbody"></div>
+  </div>
+</div>
+
+<a class="skip" href="#roster">Skip to the candidate list</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="kicker">British Columbia &middot; Provincial General Election &middot; Saturday 24 October 2026</div>
+    <h1>Who's on your <em>ballot</em></h1>
+    <p class="standfirst">Every nominated candidate for MLA in the electoral districts that cover Vancouver, Richmond, Delta, North Vancouver, Victoria and Nanaimo. Mark the ones you want to come back to.</p>
+    <p class="subnote">Your district depends on your address, not your city: most cities here are split across several. Look yours up with <a href="https://mydistrict.elections.bc.ca/" target="_blank" rel="noopener">Elections BC's My District</a>. The local elections a week earlier have <a href="../municipal/">their own guide</a>.</p>
+    <div class="countdown"><b id="days">&mdash;</b><span id="dayslabel">days until voting day</span></div>
+    <p class="provisional" id="provisional" hidden>Provisional list. Candidates are added as Elections BC confirms nominations. Check your district on Elections BC before relying on any name here.</p>
+    <nav class="jtabs" id="jtabs" aria-label="Choose your electoral district"></nav>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="wrap">
+    <div class="ctl-row">
+      <div class="seg" id="raceseg" role="group" aria-label="Filter by race" hidden>
+        <button type="button" data-race="all" aria-pressed="true">All races</button>
+      </div>
+      <label class="vh" for="q">Search candidates by name or party</label>
+      <input type="search" id="q" placeholder="Search name or party&hellip;">
+      <button type="button" class="mini" id="filterstoggle" aria-expanded="true" aria-controls="filterpanel">Filters</button>
+      <button type="button" class="mini" id="printbtn">Print shortlist</button>
+    </div>
+    <p class="vh" id="resultcount" role="status" aria-live="polite"></p>
+    <div id="filterpanel">
+      <div class="parties" id="parties" role="group" aria-label="Filter by party"></div>
+      <div class="ctl-row" style="margin-top:8px">
+        <button type="button" class="mini" id="onlymarked" aria-pressed="false">Shortlist only</button>
+        <button type="button" class="mini" id="clearmarks">Clear marks here</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="glance" id="glance"></div>
+    <div id="roster"></div>
+    <p class="empty" id="empty" hidden>No candidates match those filters.</p>
+
+    <details class="section" id="privacy">
+      <summary><span class="chev">&#9656;</span><h2>What this page stores</h2></summary>
+      <p>This page never learns who you plan to vote for. Nothing you do here leaves your device. There is no account, no sign-in, no cookies, no analytics and no form that submits anywhere. Nobody, including the person who shared this link with you, can see which candidates you marked.</p>
+      <p>Your shortlist is written to your own browser's local storage. It survives closing the tab, but never syncs: marks made on your phone will not appear on your laptop, and clearing your browser data erases them. Everyone you send the link to gets their own empty shortlist.</p>
+      <p>Print your shortlist with the button at the top of the candidate list. Printing happens on your own machine.</p>
+    </details>
+
+    <details class="section" id="how">
+      <summary><span class="chev">&#9656;</span><h2>How BC provincial elections work</h2></summary>
+      <p>British Columbia elects 93 Members of the Legislative Assembly, one per electoral district. You vote once, for one candidate in your own district, and the candidate with the most votes wins the seat. The party that can hold the confidence of the legislature forms government; 47 seats is a majority.</p>
+      <p>Your district is set by your home address. Several cities in this guide are split across two to twelve districts, and two districts cross a city line: West Vancouver-Capilano takes in part of the District of North Vancouver, and Oak Bay-Gordon Head part of the City of Victoria.</p>
+      <p>Voting places, advance voting dates and registration are run by Elections BC. Use <a href="https://mydistrict.elections.bc.ca/" target="_blank" rel="noopener">My District</a> to find your district and <a href="https://wheretovote.elections.bc.ca/" target="_blank" rel="noopener">Where to Vote</a> to find a voting place. To register or update your registration, use <a href="https://eregister.electionsbc.gov.bc.ca/ovr/" target="_blank" rel="noopener">online voter registration</a>.</p>
+    </details>
+
+    <details class="section" id="whynote">
+      <summary><span class="chev">&#9656;</span><h2>Why this exists</h2></summary>
+      <p>This is the provincial companion to the <a href="../municipal/">local elections guide</a>, built the same way: every name in one place, grouped by party, with a shortlist you can print. Nothing you do on this page is collected or sent anywhere.</p>
+      <div class="callout">
+        <p><strong>Get in touch.</strong> <a href="mailto:marc.a.descoteaux@gmail.com?subject=BC%20Ballot%202026%20provincial">Email me</a> with feedback, a question, a correction, or anything else about this page. All of it is welcome.</p>
+      </div>
+    </details>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://elections.bc.ca/">Elections BC</a></li>
+      <li><a href="https://mydistrict.elections.bc.ca/">Elections BC &mdash; find your district</a></li>
+      <li><a href="https://wheretovote.elections.bc.ca/">Elections BC &mdash; where to vote</a></li>
+      <li><a href="https://eregister.electionsbc.gov.bc.ca/ovr/">Elections BC &mdash; register to vote</a></li>
+      <li><a href="#privacy">What this page stores</a></li>
+    </ul>
+    <p class="fine">Party summaries, where present, paraphrase each party's own published material and are not endorsements.</p>
+  </div>
+</footer>

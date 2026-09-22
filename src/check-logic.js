@@ -1,7 +1,7 @@
 // Drives the real page functions against the real candidate data.
 // check-render.js proves the script runs; this proves two of its decisions are right.
 const fs=require('fs'), path=require('path'), assert=require('assert');
-const page=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
+const page=fs.readFileSync(path.join(__dirname,'..','municipal','index.html'),'utf8');
 
 const els={};
 const el=id=>els[id] ||= {id,innerHTML:'',textContent:'',hidden:false,dataset:{},

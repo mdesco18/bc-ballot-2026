@@ -2,6 +2,18 @@
 
 Dated rather than versioned. The page is a guide to one election on one date, so a release number would carry no information a date does not.
 
+## Unreleased
+
+### Added
+
+- Provincial election guide at `provincial/`, for the 24 October 2026 general election. Covers the 26 electoral districts that include any part of the seven cities in the local guide. Districts are grouped by city in a native select, because 26 do not fit as tabs. Candidates appear once nominations close.
+- Landing page at the site root that links to both guides.
+
+### Changed
+
+- The local elections guide moved to `municipal/`. Shortlist marks are kept, because both guides are on the same origin and the storage key is unchanged.
+- Both guides are built from one stylesheet and one script. Each guide supplies its markup, data and a small config.
+
 ## 2026-09-18
 
 ### Added

@@ -26,12 +26,12 @@ jobs:
         with:
           node-version: '22'
 
-      # index.html is generated from src/ and is the file Pages serves. A hand edit to it,
+      # The HTML pages are generated from src/ and are the files Pages serves. A hand edit to one,
       # or a rebuild someone forgot to run, would publish something src/ no longer describes.
-      - name: index.html is current with src/
+      - name: pages are current with src/
         run: |
           ./src/build.sh
-          git diff --exit-code -- index.html
+          git diff --exit-code -- index.html municipal/ provincial/
 
       - name: Checks
         run: |

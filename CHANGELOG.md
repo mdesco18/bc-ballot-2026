@@ -9,6 +9,7 @@ Dated rather than versioned. The page is a guide to one election on one date, so
 - Provincial election guide at `provincial/`, for the 24 October 2026 general election. Covers the 26 electoral districts that include any part of the seven cities in the local guide. Districts are grouped by city in a native select, because 26 do not fit as tabs. Candidates appear once nominations close.
 - Landing page at the site root that links to both guides.
 - Link back to the landing page at the top of both guides.
+- Favicon: the shortlist checkmark on the site green, inline in each page.
 
 ### Changed
 

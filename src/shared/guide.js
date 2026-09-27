@@ -87,7 +87,7 @@ const PSTAT={kept:{n:"Kept",c:"--h4"},partial:{n:"Partly kept",c:"--h3"},broken:
              note:{n:"Read this first",c:"--h10"},costed:{n:"Funding named",c:"--h4"},
              nocost:{n:"No costs published",c:"--h3"},noplatform:{n:"No platform found",c:"--hind"},
              backed:{n:"Backed by an existing program",c:"--h4"},
-             reversed:{n:"Reversed",c:"--h6"},jurisdiction:{n:"Outside council's power",c:"--h0"},
+             reversed:{n:"Reversed",c:"--h6"},jurisdiction:{n:JURIS_LABEL,c:"--h0"},
              costing:{n:"Costing questioned",c:"--h3"}};
 const SEARCHED_SET=new Set(SEARCHED);
 
@@ -131,7 +131,7 @@ function card(c){
       <div class="row2">
         <span class="tag">${esc(c.party)}</span>
         ${c.inc===1?`<span class="inc">Incumbent</span>`:""}
-        ${c.inc===2?`<span class="sit">Sitting councillor</span>`:""}
+        ${c.inc===2?`<span class="sit">${esc(SIT_LABEL)}</span>`:""}
         ${c.url?`<a class="lnk" href="${esc(c.url)}" target="_blank" rel="noopener">campaign page &rarr;</a>`:""}
       </div>
       ${c.bio?`<div class="bio">${esc(c.bio)}</div>`:""}

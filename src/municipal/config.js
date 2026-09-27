@@ -114,3 +114,4 @@ const ELECTION_DAY="2026-10-17", VOTING_DAY="Saturday 17 October 2026";
 const PROVISIONAL_UNTIL="2026-09-18T23:00:00Z";   // 4pm Pacific, 18 Sept
 const CARD_NOTE="Candidate lists are current to 18 September 2026; check your municipality's own page before voting.";
 const NO_ROWS="No candidates are listed for this municipality.";
+const SIT_LABEL="Sitting councillor", JURIS_LABEL="Outside council's power";

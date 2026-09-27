@@ -1,6 +1,6 @@
 <div id="floatbar">
-  <button type="button" class="fbtn" id="expandbtn" hidden aria-label="Expand all notes" title="Expand all notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3l5 5 5-5"/><path d="M7 11l5 5 5-5"/></svg></button>
-  <button type="button" class="fbtn" id="collapsebtn" hidden aria-label="Collapse all notes" title="Collapse all notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 13l-5-5-5 5"/><path d="M17 21l-5-5-5 5"/></svg></button>
+  <button type="button" class="fbtn" id="expandbtn" aria-label="Expand all notes" title="Expand all notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3l5 5 5-5"/><path d="M7 11l5 5 5-5"/></svg></button>
+  <button type="button" class="fbtn" id="collapsebtn" aria-label="Collapse all notes" title="Collapse all notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 13l-5-5-5 5"/><path d="M17 21l-5-5-5 5"/></svg></button>
   <button type="button" class="fbtn" id="totop" hidden aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V5"/><path d="M5 12l7-7 7 7"/></svg></button>
 </div>
 
@@ -27,7 +27,7 @@
     <p class="standfirst">Every nominated candidate for MLA in the electoral districts that cover Vancouver, Richmond, Delta, North Vancouver, Victoria and Nanaimo. Mark the ones you want to come back to.</p>
     <p class="subnote">Your district depends on your address, not your city: most cities here are split across several. Look yours up with <a href="https://mydistrict.elections.bc.ca/" target="_blank" rel="noopener">Elections BC's My District</a>. The local elections a week earlier have <a href="../municipal/">their own guide</a>.</p>
     <div class="countdown"><b id="days">&mdash;</b><span id="dayslabel">days until voting day</span></div>
-    <p class="provisional" id="provisional" hidden>Provisional list. Candidates are added as Elections BC confirms nominations. Check your district on Elections BC before relying on any name here.</p>
+    <p class="provisional" id="provisional" hidden>Provisional list. Until nominations close at 1pm on 3 October, each district shows its sitting MLA, whether or not that person is running again, plus the candidates Elections BC has accepted so far. Check your district on Elections BC before relying on any name here.</p>
     <nav class="jtabs" id="jtabs" aria-label="Choose your electoral district"></nav>
   </div>
 </header>
@@ -59,6 +59,31 @@
     <div class="glance" id="glance"></div>
     <div id="roster"></div>
     <p class="empty" id="empty" hidden>No candidates match those filters.</p>
+
+    <details class="section" id="method">
+      <summary><span class="chev">&#9656;</span><h2>How the record notes work</h2></summary>
+      <p>Some names carry a collapsed <strong>Record</strong> or <strong>Promises</strong> note: dated, linked entries, not a score. There is deliberately no ranking and no index.</p>
+      <p>Coverage follows scrutiny, not conduct. A premier or a cabinet minister is examined daily; a first-term backbencher rarely is. A score would make the unexamined person look clean, which inverts what a voter wants to know. No note means nothing was found or nobody looked, and those are not the same thing. Where a person was searched and nothing turned up, the page says so.</p>
+      <h3>Every entry carries two tags</h3>
+      <p>The first says what kind of thing it is.</p>
+      <ul>
+        <li><strong>Financial interest</strong> &mdash; self-dealing or benefit.</li>
+        <li><strong>Election finance</strong> &mdash; spending and donation rules.</li>
+        <li><strong>Conduct in office</strong> &mdash; Conflict of Interest Commissioner, Speaker and caucus matters.</li>
+        <li><strong>Record</strong> &mdash; verifiable facts about performance, such as votes, bills, expenses and party changes.</li>
+        <li><strong>Cleared</strong> &mdash; investigations that ended in exoneration, included so the page is not only bad news.</li>
+      </ul>
+      <p>The second says how well established it is.</p>
+      <ul>
+        <li><strong>Finding</strong> &mdash; a body with jurisdiction ruled: the Conflict of Interest Commissioner, a court, Elections BC, the Legislature.</li>
+        <li><strong>Filed</strong> &mdash; a complaint or petition exists and was not decided against the person.</li>
+        <li><strong>Reported</strong> &mdash; substantive journalism from a named outlet, linked.</li>
+      </ul>
+      <p>Rumour, social media and opinion columns are excluded, and so is anything that cannot be linked.</p>
+      <h3>Promises</h3>
+      <p>For sitting MLAs: whether a commitment they personally made in 2024, or own as the responsible minister, was <strong>kept</strong>, <strong>partially kept</strong>, <strong>broken</strong> or <strong>reversed</strong>. The party platform as a whole is not charged to every MLA who ran under it. For new platforms, no judgment on whether a plan is a good idea, only two checkable flags: <strong>outside the province's power</strong> and <strong>costing questioned</strong>.</p>
+      <p>This section is incomplete by design. If you find an error, <a href="mailto:marc.a.descoteaux@gmail.com?subject=BC%20Ballot%202026%20correction">email me</a> rather than passing it on.</p>
+    </details>
 
     <details class="section" id="privacy">
       <summary><span class="chev">&#9656;</span><h2>What this page stores</h2></summary>
@@ -92,8 +117,10 @@
       <li><a href="https://mydistrict.elections.bc.ca/">Elections BC &mdash; find your district</a></li>
       <li><a href="https://wheretovote.elections.bc.ca/">Elections BC &mdash; where to vote</a></li>
       <li><a href="https://eregister.electionsbc.gov.bc.ca/ovr/">Elections BC &mdash; register to vote</a></li>
+      <li><a href="https://www.leg.bc.ca/members">Legislative Assembly of BC &mdash; current members</a></li>
+      <li><a href="#method">How the record notes work</a></li>
       <li><a href="#privacy">What this page stores</a></li>
     </ul>
-    <p class="fine">Party summaries, where present, paraphrase each party's own published material and are not endorsements.</p>
+    <p class="fine">Sitting MLAs, their roles and their stated plans to run again are as reported by 27 September 2026; a sitting MLA listed here is not a nominated candidate until Elections BC accepts the nomination. Party summaries, where present, paraphrase each party's own published material and are not endorsements.</p>
   </div>
 </footer>

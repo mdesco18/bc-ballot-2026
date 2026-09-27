@@ -1382,6 +1382,7 @@ const ELECTION_DAY="2026-10-17", VOTING_DAY="Saturday 17 October 2026";
 const PROVISIONAL_UNTIL="2026-09-18T23:00:00Z";   // 4pm Pacific, 18 Sept
 const CARD_NOTE="Candidate lists are current to 18 September 2026; check your municipality's own page before voting.";
 const NO_ROWS="No candidates are listed for this municipality.";
+const SIT_LABEL="Sitting councillor", JURIS_LABEL="Outside council's power";
 
 // Shared rendering engine. Each page's config.js defines the election-specific constants it reads.
 const KEY=STORE+".marks";
@@ -1472,7 +1473,7 @@ const PSTAT={kept:{n:"Kept",c:"--h4"},partial:{n:"Partly kept",c:"--h3"},broken:
              note:{n:"Read this first",c:"--h10"},costed:{n:"Funding named",c:"--h4"},
              nocost:{n:"No costs published",c:"--h3"},noplatform:{n:"No platform found",c:"--hind"},
              backed:{n:"Backed by an existing program",c:"--h4"},
-             reversed:{n:"Reversed",c:"--h6"},jurisdiction:{n:"Outside council's power",c:"--h0"},
+             reversed:{n:"Reversed",c:"--h6"},jurisdiction:{n:JURIS_LABEL,c:"--h0"},
              costing:{n:"Costing questioned",c:"--h3"}};
 const SEARCHED_SET=new Set(SEARCHED);
 
@@ -1516,7 +1517,7 @@ function card(c){
       <div class="row2">
         <span class="tag">${esc(c.party)}</span>
         ${c.inc===1?`<span class="inc">Incumbent</span>`:""}
-        ${c.inc===2?`<span class="sit">Sitting councillor</span>`:""}
+        ${c.inc===2?`<span class="sit">${esc(SIT_LABEL)}</span>`:""}
         ${c.url?`<a class="lnk" href="${esc(c.url)}" target="_blank" rel="noopener">campaign page &rarr;</a>`:""}
       </div>
       ${c.bio?`<div class="bio">${esc(c.bio)}</div>`:""}

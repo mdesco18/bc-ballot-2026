@@ -17,16 +17,15 @@ const SHORT={};
 const DATES=[["Voting day","Saturday 24 October, 8am to 8pm"],["Advance voting","Friday 16 to Wednesday 21 October, 8am to 8pm"],["Nominations close","Saturday 3 October, 1pm"]];
 const J={};
 for(const j of JORDER) J[j]={seats:{MLA:1}, blurb:[], dates:DATES,
-  link:"https://elections.bc.ca/", vote:"https://mydistrict.elections.bc.ca/"};
+  link:"https://elections.bc.ca/2026-provincial-election/candidate-list/", vote:"https://mydistrict.elections.bc.ca/"};
+J["Vancouver-Strathcona"].blurb=["The seat is vacant: Joan Phillip (BC NDP) died on 28 August 2026."];
 
 // Colours for the parties expected on the ballot; names to be matched to Elections BC's list at nomination close.
-const SLOT={"BC NDP":"--h3","Conservative Party of BC":"--h0","BC Green Party":"--h4","Independent":"--hind"};
+const SLOT={"BC NDP":"--h3","Conservative Party of BC":"--h0","BC Green Party":"--h4","OneBC":"--h5","CentreBC":"--h2","Independent":"--hind","No affiliation listed":"--hind"};
 const PNOTE={};
 
-const ALL=M.map(r=>({j:r[0], race:"MLA", party:r[1], name:r[2], inc:r[3], bio:"", url:r[4]}));
+const ALL=M.map(r=>({j:r[0], race:"MLA", party:r[1], name:r[2], inc:r[3], bio:r[5]||"", url:r[4]}));
 
-// dev note: record and promise notes not started for this election
-const R={}, P={}, SEARCHED=[];
 
 // Read by shared/guide.js.
 const STORE="bcballot2026.provincial";
@@ -36,5 +35,6 @@ const RACE_TITLE={};
 function raceNote(){ return ""; }
 const ELECTION_DAY="2026-10-24", VOTING_DAY="Saturday 24 October 2026";
 const PROVISIONAL_UNTIL=null;
-const CARD_NOTE="Check Elections BC for the final candidate list in your district before voting.";
-const NO_ROWS="Candidates are not listed yet. They appear here once nominations close with Elections BC.";
+const CARD_NOTE="Until nominations close on 3 October, districts list their sitting MLA whether or not that person is running again. Check Elections BC for the final candidate list in your district before voting.";
+const NO_ROWS="No one is listed here yet. Candidates appear as Elections BC accepts nominations.";
+const SIT_LABEL="Sitting MLA, not yet nominated", JURIS_LABEL="Outside the province's power";

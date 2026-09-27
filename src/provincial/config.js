@@ -14,7 +14,7 @@ const JGROUPS=[
 const JORDER=JGROUPS.flatMap(g=>g[1]);
 const SHORT={};
 
-const DATES=[["Voting day","Saturday 24 October, 8am to 8pm"],["Advance voting","Dates to follow from Elections BC"]];
+const DATES=[["Voting day","Saturday 24 October, 8am to 8pm"],["Advance voting","Friday 16 to Wednesday 21 October, 8am to 8pm"],["Nominations close","Saturday 3 October, 1pm"]];
 const J={};
 for(const j of JORDER) J[j]={seats:{MLA:1}, blurb:[], dates:DATES,
   link:"https://elections.bc.ca/", vote:"https://mydistrict.elections.bc.ca/"};

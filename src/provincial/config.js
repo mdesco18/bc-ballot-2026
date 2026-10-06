@@ -14,7 +14,9 @@ const JGROUPS=[
 const JORDER=JGROUPS.flatMap(g=>g[1]);
 const SHORT={};
 
-const DATES=[["Voting day","Saturday 24 October, 8am to 8pm"],["Advance voting","Friday 16 to Wednesday 21 October, 8am to 8pm"],["Nominations close","Saturday 3 October, 1pm"]];
+const DATES=[["Voting day","Saturday 24 October, 8am to 8pm"],["Advance voting","Friday 16 to Wednesday 21 October, 8am to 8pm"],
+  ["Vote by mail","Request a package by Sunday 18 October. Elections BC must receive it by 8pm on 24 October."],
+  ["District electoral office","Vote at any office in BC until 4pm on 24 October."],["Nominations close","Saturday 3 October, 1pm"]];
 const J={};
 for(const j of JORDER) J[j]={seats:{MLA:1}, blurb:[], dates:DATES,
   link:"https://elections.bc.ca/2026-provincial-election/candidate-list/", vote:"https://mydistrict.elections.bc.ca/",
@@ -36,6 +38,10 @@ const PNOTE={
   "Libertarian":"British Columbia Libertarian Party, founded in 1986. Leader Alex Joehl is running in Langley-Abbotsford. The party runs four candidates.",
   "Unaffiliated":"Neither endorsed by a party nor registered as independent. The ballot shows the name only."
 };
+// Each party's own campaign page, linked after its note. The Communist Party and CWP have none we could find.
+const PLINK={"BC NDP":"https://www.bcndp.ca/action-for-you","Conservative Party":"https://conservativebc.ca/plan/",
+  "BC Green Party":"https://bcgreens.ca/our-plan/","CentreBC":"https://www.centrebc.ca/our-policy/","OneBC":"https://1bc.ca/",
+  "Libertarian":"https://www.libertarian.bc.ca/platform/"};
 
 const ALL=M.map(r=>({j:r[0], race:"MLA", party:r[1], name:r[2], inc:r[3], bio:r[5]||"", url:r[4]}));
 

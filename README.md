@@ -24,6 +24,7 @@ Do not hand-edit the generated HTML. Edit the parts in `src/` and run `src/build
 | `municipal/school_data.js` | `S`: school board candidates |
 | `municipal/record_data.js` | `R` and `P`: record entries, promise entries, searched-clear list |
 | `provincial/data.js` | `M`: MLA candidates |
+| `provincial/byparty.js` | "Find a party": the districts a party runs in, with a jump to its candidate in each |
 
 Three checks live in `src/`. Run all of them after every change.
 
@@ -33,6 +34,7 @@ Three checks live in `src/`. Run all of them after every change.
 | `check-logic.js` | Drives the real page functions against the municipal candidate data: the Print button count, and the cross-ballot search hint including its agreement with the active race filter. |
 | `check-stickybar.js` | Captures the page's own listeners and replays a scroll sequence. Covers the sticky bar hiding itself, which the render check cannot reach. |
 | `check-chooser.js` | Runs the landing page countdown at fixed dates before, during and after advance voting and voting day, and checks what each card says. |
+| `check-byparty.js` | Clicks every "Find a party" chip and checks the district list and "No candidate" rows against the provincial data. |
 
 ```bash
 for f in src/check-*.js; do node "$f" || break; done

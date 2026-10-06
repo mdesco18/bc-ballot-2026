@@ -76,4 +76,4 @@ build ../municipal/index.html "BC Ballot 2026: local elections" \
 build ../provincial/index.html "BC Ballot 2026: provincial election" \
   "Every nominated candidate for MLA in the electoral districts covering seven British Columbia cities, for the 24 October 2026 provincial election." \
   provincial/page.html \
-  provincial/data.js provincial/record_data.js provincial/config.js shared/guide.js
+  provincial/data.js provincial/record_data.js provincial/config.js shared/guide.js provincial/byparty.js

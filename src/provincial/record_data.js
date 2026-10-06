@@ -1,4 +1,4 @@
-// R = record entries, P = promise entries, keyed "District|MLA|Name". Same rules as municipal/record_data.js.
+// R = record entries, P = promise entries, keyed "District|MLA|Name" or "party|PartyName". Same rules as municipal/record_data.js.
 // Sitting MLAs researched 27 September 2026; MLAs not running again were removed on 6 October. Other candidates researched 6 October 2026.
 // type:  financial | election | conduct | record | cleared
 // label: Finding | Filed | Reported | Raised, no finding | Cleared
@@ -119,9 +119,67 @@ const R = {
       text:"CBC News reported that Weaver criticized Premier Eby and said he was considering aligning with Conservative leader John Rustad before the 2024 election.",
       src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/andrew-weaver-shows-support-bc-conservatives-1.7262839" }
   ],
+  // Party records: shown once, in "Find a party". Researched 6 October 2026.
+  "party|BC NDP":[
+    { type:"election", label:"Finding", date:"30 March 2026",
+      text:"Elections BC fined the BC NDP $200 for about 8,065 campaign text messages sent on 6 and 7 October 2024 without the required authorization statement. It found no deliberate attempt to break the rules.",
+      src:"Elections BC", url:"https://elections.bc.ca/docs/amp/Enforcement-Notice-BC-NDP-2026-076.pdf" },
+    { type:"election", label:"Finding", date:"30 March 2026",
+      text:"Elections BC fined Karen Cooling, the BC NDP's financial agent, $900 for accepting two 2024 contributions that went $2,648 over the annual limit in total. The party returned the excess, and Elections BC found no deliberate attempt to break the rules.",
+      src:"Elections BC", url:"https://elections.bc.ca/docs/amp/Enforcement-Notice-Cooling-2026-317.pdf" }
+  ],
+  "party|Conservative Party":[
+    { type:"record", label:"Reported", date:"28 May 2025",
+      text:"The Canadian Press reported that all 41 Conservative MLAs voted against Bill 15, the Infrastructure Projects Act, at third reading. The Legislature's record shows the vote tied 46 to 46 and the Speaker voted for the bill.",
+      src:"The Canadian Press via Times Colonist", url:"https://www.timescolonist.com/national-business/bill-fast-tracking-infrastructure-projects-passes-as-speaker-raj-chouhan-breaks-tie-10729709" },
+    { type:"record", label:"Finding", date:"28 May 2025",
+      text:"The Legislature's record shows every MLA outside the NDP, including the Conservatives, voted against third reading of Bill 14, the Renewable Energy Projects (Streamlined Permitting) Act. It passed when the Speaker broke a 46 to 46 tie.",
+      src:"Legislative Assembly of B.C., Votes and Proceedings", url:"https://www.leg.bc.ca/parliamentary-business/overview/43rd-parliament/1st-session/votes-and-proceedings/v250528.htm" },
+    { type:"record", label:"Finding", date:"28 May 2025",
+      text:"The Legislature's record shows Bill 7, the Economic Stabilization (Tariff Response) Act, passed third reading 48 to 44. Every MLA outside the NDP and Green caucuses, including the Conservatives, voted against it.",
+      src:"Legislative Assembly of B.C., Votes and Proceedings", url:"https://www.leg.bc.ca/parliamentary-business/overview/43rd-parliament/1st-session/votes-and-proceedings/v250528.htm" },
+    { type:"record", label:"Finding", date:"1 April 2026",
+      text:"The Legislature's record shows every MLA outside the NDP, including the Conservatives, voted against Bill 2, the Budget Measures Implementation Act, 2026. The bill raised the lowest income tax rate to 5.6 per cent. It passed when the Speaker broke a 46 to 46 tie.",
+      src:"Legislative Assembly of B.C., Votes and Proceedings", url:"https://www.leg.bc.ca/parliamentary-business/overview/43rd-parliament/2nd-session/votes-and-proceedings/v260401.htm" },
+    { type:"record", label:"Finding", date:"22 April 2026",
+      text:"The Legislature's record shows Conservative MLA Trevor Halford moved to introduce a bill repealing the Declaration on the Rights of Indigenous Peoples Act. All 44 Conservative and independent MLAs voted for it. NDP and Green MLAs defeated it 47 to 44.",
+      src:"Legislative Assembly of B.C., Votes and Proceedings", url:"https://www.leg.bc.ca/parliamentary-business/overview/43rd-parliament/2nd-session/votes-and-proceedings/v260422.htm" },
+    { type:"election", label:"Finding", date:"1 December 2025",
+      text:"Elections BC fined the Conservative Party $1,500 for filing late notice of a 4 March 2025 fundraiser, \"John Rustad Presents an Evening with Friends\", which raised $116,523. It found no deliberate attempt to break the rules.",
+      src:"Elections BC", url:"https://www.elections.bc.ca/docs/amp/Enforcement-Notice-Conservative-Party-2025-028.pdf" },
+    { type:"election", label:"Finding", date:"17 July 2026",
+      text:"Elections BC fined Robert McRudden, the party's former financial agent, $3,000. It found he accepted three 2024 contributions over the limit. He returned four prohibited contributions 147 to 304 days after notice, against a 30-day rule.",
+      src:"Elections BC", url:"https://elections.bc.ca/docs/amp/Enforcement-Notice-McRudden-2026.pdf" }
+  ],
+  "party|BC Green Party":[
+    { type:"record", label:"Finding", date:"31 March 2025",
+      text:"The Legislature's record shows the two Green MLAs cast the only votes against Bill 8, the Carbon Tax Amendment Act, 2025, at second reading. It passed 88 to 2 and ended the consumer carbon tax on 1 April 2025.",
+      src:"Legislative Assembly of B.C., Votes and Proceedings", url:"https://www.leg.bc.ca/parliamentary-business/overview/43rd-parliament/1st-session/votes-and-proceedings/v250331.htm" },
+    { type:"record", label:"Reported", date:"28 May 2025",
+      text:"The Canadian Press reported that both Green MLAs voted against Bill 15, the Infrastructure Projects Act, at third reading. The bill passed when the Speaker broke a 46 to 46 tie.",
+      src:"The Canadian Press via Times Colonist", url:"https://www.timescolonist.com/national-business/bill-fast-tracking-infrastructure-projects-passes-as-speaker-raj-chouhan-breaks-tie-10729709" },
+    { type:"record", label:"Reported", date:"9 February 2026",
+      text:"The Greens announced they would not renew their Co-operation and Responsible Government Accord with the NDP when it expired in March 2026. Leader Emily Lowan cited stalled or undelivered commitments. MLA Jeremy Valeriote said the two Green MLAs would vote bill by bill.",
+      src:"The Canadian Press via CTV News", url:"https://www.ctvnews.ca/vancouver/article/bc-greens-wont-renew-accord-with-ndp-citing-stalled-undelivered-promises/" }
+  ],
 };
 
 const P = {
+  // 2024 platform commitments, judged once per party on what happened afterwards.
+  "party|BC NDP":[
+    { status:"kept",
+      text:"The 2024 platform promised to remove B.C.'s consumer carbon tax if Ottawa dropped its national requirement. After Ottawa did so, Bill 8 set the tax to zero from 1 April 2025. The Legislature's record shows the bill passed second reading 88 to 2 on 31 March 2025.",
+      src:"BC Gov News; Legislative Assembly of B.C., Votes and Proceedings", url:"https://news.gov.bc.ca/releases/2025FIN0014-000280" },
+    { status:"kept",
+      text:"On 4 October 2024 the party promised to double the speculation and vacancy tax. It named rates of 1 per cent for Canadians and 3 per cent for non-Canadians. Bill 5 of 2025 set those rates from the 2026 tax year, after passing second reading 89 to 0 on 6 May 2025.",
+      src:"Government of B.C. (pledge reported by CBC News, 4 October 2024)", url:"https://www2.gov.bc.ca/gov/content/taxes/speculation-vacancy-tax/how-tax-works/tax-rates" },
+    { status:"kept",
+      text:"The 2024 platform committed to free hormone therapy for menopause. From 1 March 2026, B.C. covered menopausal hormone therapy at no cost under the BC PharmaCare National Pharmacare Plan.",
+      src:"BC Gov News (platform reported by CTV News, 3 October 2024)", url:"https://news.gov.bc.ca/releases/2026HLTH0023-000237" },
+    { status:"broken",
+      text:"In September 2024 the party promised a middle-class tax cut that would exempt an extra $10,000 of income from tax each year. Budget 2026 instead raised the lowest income tax rate from 5.06 to 5.6 per cent, and Bill 2 enacted it on 1 April 2026.",
+      src:"The Canadian Press via CFJC Today (pledge reported by Squamish Reporter, 30 September 2024)", url:"https://cfjctoday.com/2026/02/17/b-c-hikes-tax-rate-as-budget-delivers-record-13-billion-deficit/" }
+  ],
   "Vancouver-Hastings|MLA|Niki Sharma":[
     { status:"partial",
       text:"In August 2025 Sharma said B.C. would file an appeal of the Cowichan Tribes Aboriginal title ruling and seek a stay. By March 2026 the Globe and Mail reported that all parties had filed applications to appeal but the appeal process was stalled because the trial's final order had not been issued.",
@@ -165,6 +223,8 @@ const P = {
 
 // Searched with nothing adverse found and no promise with a checkable status.
 const SEARCHED = [
+  "party|CentreBC",
+  "party|OneBC",
   "Vancouver-Langara|MLA|Sunita Dhir",
   "Vancouver-Little Mountain|MLA|Christine Boyle",
   "North Vancouver-Seymour|MLA|Susie Chant",

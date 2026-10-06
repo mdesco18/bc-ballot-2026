@@ -37,7 +37,7 @@ function renderGlance(){
     `<div class="glance-top">${cells}<div class="gcell"><div class="t-lab">Your shortlist</div><div class="t-num" id="markcount">${shortlisted}</div><div class="t-sub">marked here</div></div></div>
      <div class="glance-body">${m.blurb.map(p=>`<p>${esc(p)}</p>`).join("")}
        <div class="dates">${m.dates.map(d=>`<div><b>${esc(d[0])}</b>${esc(d[1])}</div>`).join("")}</div>
-       <p style="margin-top:12px;font-size:13px"><a href="${esc(m.link)}" target="_blank" rel="noopener">Official candidate list &rarr;</a> &nbsp;&nbsp; <a href="${esc(m.vote)}" target="_blank" rel="noopener">Register and find your voting place &rarr;</a></p>
+       <p style="margin-top:12px;font-size:13px"><a href="${esc(m.link)}" target="_blank" rel="noopener">Official candidate list &rarr;</a> &nbsp;&nbsp; <a href="${esc(m.vote)}" target="_blank" rel="noopener">Register and find your voting place &rarr;</a>${m.more?` &nbsp;&nbsp; <a href="${esc(m.more[0])}" target="_blank" rel="noopener">${esc(m.more[1])} &rarr;</a>`:""}</p>
      </div>`;
 }
 

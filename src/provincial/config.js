@@ -17,7 +17,8 @@ const SHORT={};
 const DATES=[["Voting day","Saturday 24 October, 8am to 8pm"],["Advance voting","Friday 16 to Wednesday 21 October, 8am to 8pm"],["Nominations close","Saturday 3 October, 1pm"]];
 const J={};
 for(const j of JORDER) J[j]={seats:{MLA:1}, blurb:[], dates:DATES,
-  link:"https://elections.bc.ca/2026-provincial-election/candidate-list/", vote:"https://mydistrict.elections.bc.ca/"};
+  link:"https://elections.bc.ca/2026-provincial-election/candidate-list/", vote:"https://mydistrict.elections.bc.ca/",
+  more:["https://bcballot.ca/ridings/"+j.toLowerCase().replace(/ /g,"-")+"/","More on this district at bcballot.ca"]};
 J["Vancouver-Strathcona"].blurb=["The seat is vacant: Joan Phillip (BC NDP) died on 28 August 2026."];
 
 // Party names as Elections BC spells them on the final candidate list.

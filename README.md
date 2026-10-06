@@ -24,7 +24,7 @@ Do not hand-edit the generated HTML. Edit the parts in `src/` and run `src/build
 | `municipal/school_data.js` | `S`: school board candidates |
 | `municipal/record_data.js` | `R` and `P`: record entries, promise entries, searched-clear list |
 | `provincial/data.js` | `M`: MLA candidates |
-| `provincial/byparty.js` | "Find a party": the districts a party runs in, with a jump to its candidate in each |
+| `provincial/byparty.js` | "Find a party": a party's summary, campaign link and party record, the districts it runs in, and a jump to its candidate in each. Roster party headings link here. |
 
 Three checks live in `src/`. Run all of them after every change.
 

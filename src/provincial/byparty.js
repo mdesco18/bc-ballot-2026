@@ -1,5 +1,6 @@
-// "Find a party": pick a party to see which of the guide's districts it runs in, and jump to
-// its candidate in any of them. Provincial only: many voters here choose a party first.
+// "Find a party": pick a party to see its summary, campaign link and party record, which districts
+// it runs in, and jump to its candidate in any of them. Provincial only: many voters here choose a
+// party first. Each roster party heading links here instead of repeating the note per district.
 (function(){
   const box=document.getElementById("byparty"); if(!box) return;
   const chips=document.getElementById("bypchips"), out=document.getElementById("bypout");
@@ -14,7 +15,9 @@
     chips.querySelectorAll(".bychip").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.party===sel)));
     if(!sel){ out.hidden=true; out.innerHTML=""; return; }
     const has=JORDER.filter(j=>ALL.some(c=>c.j===j&&c.party===sel));
-    out.innerHTML=`<p><strong>${esc(sel)}</strong> has ${has.length===JORDER.length?"a candidate in all":"candidates in "+has.length+" of the"} ${JORDER.length} districts in this guide. Select a district to see everyone running there.</p>`+
+    const info=(PNOTE[sel]?`<p class="pnote">${esc(PNOTE[sel])}${PLINK[sel]?` <a href="${esc(PLINK[sel])}" target="_blank" rel="noopener">Campaign page &rarr;</a>`:""}</p>`:"")
+      +disclosure("party|"+sel);
+    out.innerHTML=info+`<p><strong>${esc(sel)}</strong> has ${has.length===JORDER.length?"a candidate in all":"candidates in "+has.length+" of the"} ${JORDER.length} districts in this guide. Select a district to see everyone running there.</p>`+
       JGROUPS.map(([g,js])=>`<h3>${esc(g)}</h3><ul>${js.map(j=>{
         const cs=ALL.filter(c=>c.j===j&&c.party===sel);
         return `<li><button type="button" class="bypj" data-j="${esc(j)}">${esc(j)}</button>`+
@@ -27,6 +30,11 @@
     const b=e.target.closest(".bychip"); if(!b) return;
     sel = sel===b.dataset.party ? null : b.dataset.party;
     render();
+  });
+  document.getElementById("roster").addEventListener("click",e=>{
+    const b=e.target.closest(".aboutp"); if(!b) return;
+    sel=b.dataset.party; render();
+    box.scrollIntoView({block:"start"});
   });
   out.addEventListener("click",e=>{
     const b=e.target.closest(".bypj"); if(!b) return;

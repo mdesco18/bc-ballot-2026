@@ -138,6 +138,10 @@ main .wrap{padding-block:28px 10px}
 .pgroup h3 .bar{width:4px;height:17px;background:var(--pc);flex:none}
 .pgroup h3 .cnt{font-family:"IBM Plex Mono",monospace;font-weight:400;font-size:12px;color:var(--muted);letter-spacing:.06em}
 .pnote{font-size:13px;color:var(--muted);margin:5px 0 0 13px;max-width:70ch}
+.aboutp{appearance:none;border:0;background:none;padding:0;margin:4px 0 0 13px;font:inherit;font-size:13px;color:var(--accent);text-decoration:underline;cursor:pointer}
+.byparty,.pgroup{scroll-margin-top:110px}
+.bypres .pnote{margin:10px 0 0;font-size:14px;color:var(--ink-2)}
+.bypres details.rec{margin-top:8px}
 
 ul.cands{list-style:none;margin:10px 0 0;padding:0;border-top:1px solid var(--rule)}
 li.cand{display:grid;grid-template-columns:30px 1fr;gap:0 12px;align-items:start;padding:9px 4px 9px 0;border-bottom:1px solid var(--rule)}
@@ -379,5 +383,5 @@ body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard
 .choice .ccount{font-size:13px;color:var(--muted)}
 .choice .ccount b{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:500;color:var(--flag)}
 .choice .ccount .cadv{display:block;margin-top:2px}
-@media (max-width:820px){ .byparty h2{font-size:19px} .byparty .sub,.bypres > p,.bypres li{font-size:17px} .bychip{font-size:15px;padding:5px 11px} }
+@media (max-width:820px){ .aboutp{font-size:16px} .bypres .pnote{font-size:17px} .byparty h2{font-size:19px} .byparty .sub,.bypres > p,.bypres li{font-size:17px} .bychip{font-size:15px;padding:5px 11px} }
 @media (max-width:820px){ .choice .ctitle{font-size:26px} .choice .csub{font-size:17px} .choice .ccount{font-size:16px} }

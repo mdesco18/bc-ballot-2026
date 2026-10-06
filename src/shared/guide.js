@@ -73,8 +73,9 @@ function renderRoster(){
       if(!list.length) continue;
       out.push(`<div class="pgroup" data-race="${esc(race)}" data-party="${esc(p)}" style="--pc:var(${slot(p)})">
         <h3><span class="bar"></span>${esc(p)} <span class="cnt">${list.length}</span></h3>
-        ${PNOTE[p]?`<p class="pnote">${esc(PNOTE[p])}${typeof PLINK!=="undefined"&&PLINK[p]?` <a href="${esc(PLINK[p])}" target="_blank" rel="noopener">Campaign page &rarr;</a>`:""}</p>`:""}
-        ${disclosure(state.j+"|party|"+p)}
+        ${typeof PARTY_PANEL!=="undefined"
+          ? `<button type="button" class="aboutp" data-party="${esc(p)}">About this party &rarr;</button>`
+          : `${PNOTE[p]?`<p class="pnote">${esc(PNOTE[p])}</p>`:""}${disclosure(state.j+"|party|"+p)}`}
         <ul class="cands">${list.map(card).join("")}</ul></div>`);
     }
   }

@@ -38,6 +38,9 @@ const PNOTE={
   "Libertarian":"British Columbia Libertarian Party, founded in 1986. Leader Alex Joehl is running in Langley-Abbotsford. The party runs four candidates.",
   "Unaffiliated":"Neither endorsed by a party nor registered as independent. The ballot shows the name only."
 };
+// Party notes, campaign links and party records show once, in "Find a party" (byparty.js),
+// not in every district's roster.
+const PARTY_PANEL=true;
 // Each party's own campaign page, linked after its note. The Communist Party and CWP have none we could find.
 const PLINK={"BC NDP":"https://www.bcndp.ca/action-for-you","Conservative Party":"https://conservativebc.ca/plan/",
   "BC Green Party":"https://bcgreens.ca/our-plan/","CentreBC":"https://www.centrebc.ca/our-policy/","OneBC":"https://1bc.ca/",

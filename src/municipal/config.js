@@ -97,11 +97,11 @@ const J = {
 const JORDER = ["Vancouver","Richmond","Delta","City of North Vancouver","District of North Vancouver","Victoria","Nanaimo"];
 const SHORT = {"City of North Vancouver":"North Van (City)","District of North Vancouver":"North Van (District)"};
 
-// merge: Vancouver rows use [race,party,name,incumbent,bio,url]; X rows use [juris,race,party,name,inc,url]
+// merge: Vancouver rows use [race,party,name,incumbent,bio,url]; X and S rows use [juris,race,party,name,inc,url,bio?]
 const ALL = [];
 for (const c of C) ALL.push({j:"Vancouver", race:c[0], party:c[1], name:c[2], inc:c[3], bio:c[4], url:c[5]});
-for (const r of X) ALL.push({j:r[0], race:r[1], party:r[2], name:r[3], inc:r[4], bio:"", url:r[5]});
-for (const r of S) ALL.push({j:r[0], race:r[1], party:r[2], name:r[3], inc:r[4], bio:"", url:r[5]});
+for (const r of X) ALL.push({j:r[0], race:r[1], party:r[2], name:r[3], inc:r[4], bio:r[6]||"", url:r[5]});
+for (const r of S) ALL.push({j:r[0], race:r[1], party:r[2], name:r[3], inc:r[4], bio:r[6]||"", url:r[5]});
 
 // Read by shared/guide.js.
 const STORE="bcballot2026";

@@ -45,7 +45,7 @@ const X=[
 ["Richmond", "Council", "Independent", "Dennis Page", 0, ""],
 ["Richmond", "Council", "Independent", "Hong Yan Melody Pan", 0, ""],
 ["Richmond", "Council", "Richmond Citizens' Association", "Keefer Pelech", 0, ""],
-["Richmond", "Council", "Conservative", "Lisa Phillips", 0, ""],
+["Richmond", "Council", "Conservative", "Lisa Phillips", 0, "", "Also the Conservative Party candidate for MLA in Vancouver-South Granville on 24 October."],
 ["Richmond", "Council", "Advance Richmond", "Wallace Pong", 0, ""],
 ["Richmond", "Council", "Richmond Citizens' Association", "Tamas Revoczi", 0, ""],
 ["Richmond", "Council", "Conservative", "Alex Sagert", 0, ""],

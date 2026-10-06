@@ -66,7 +66,7 @@ HTML
 
 build ../index.html "BC Ballot 2026" \
   "Candidate guides for the 2026 British Columbia local and provincial elections." \
-  chooser.html
+  chooser.html chooser.js
 
 build ../municipal/index.html "BC Ballot 2026: local elections" \
   "Every nominated candidate for mayor, council, park board and school board in seven British Columbia municipalities voting on 17 October 2026." \

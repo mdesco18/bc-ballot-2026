@@ -16,6 +16,7 @@ Do not hand-edit the generated HTML. Edit the parts in `src/` and run `src/build
 | `shared/style.css` | CSS for every page |
 | `shared/guide.js` | rendering, filters, shortlist, print |
 | `chooser.html` | the landing page |
+| `chooser.js` | the landing page countdown to each voting day and advance voting |
 | `<guide>/page.html` | markup and prose sections |
 | `<guide>/config.js` | jurisdictions, races, parties, election date, and the other constants `guide.js` reads |
 | `municipal/van_data.js` | `C`: Vancouver candidates |
@@ -31,6 +32,7 @@ Three checks live in `src/`. Run all of them after every change.
 | `check-render.js` | Runs each guide's script against its real element IDs and reports anything referenced but missing, plus whether the roster rendered. A null element reference silently blanks the page. |
 | `check-logic.js` | Drives the real page functions against the municipal candidate data: the Print button count, and the cross-ballot search hint including its agreement with the active race filter. |
 | `check-stickybar.js` | Captures the page's own listeners and replays a scroll sequence. Covers the sticky bar hiding itself, which the render check cannot reach. |
+| `check-chooser.js` | Runs the landing page countdown at fixed dates before, during and after advance voting and voting day, and checks what each card says. |
 
 ```bash
 for f in src/check-*.js; do node "$f" || break; done

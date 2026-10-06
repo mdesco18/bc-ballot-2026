@@ -386,7 +386,10 @@ body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard
 .choice[aria-disabled="true"]:hover{border-color:var(--rule-2)}
 .choice .ctitle{font-family:Newsreader,Georgia,serif;font-size:24px;font-weight:600;line-height:1.15}
 .choice .csub{font-size:14px;color:var(--ink-2)}
-@media (max-width:820px){ .choice .ctitle{font-size:26px} .choice .csub{font-size:17px} }
+.choice .ccount{font-size:13px;color:var(--muted)}
+.choice .ccount b{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:500;color:var(--flag)}
+.choice .ccount .cadv{display:block;margin-top:2px}
+@media (max-width:820px){ .choice .ctitle{font-size:26px} .choice .csub{font-size:17px} .choice .ccount{font-size:16px} }
 </style>
 </head>
 <body>
@@ -406,14 +409,49 @@ body.showcard .masthead,body.showcard .controls,body.showcard main,body.showcard
         <span class="kicker">Local elections &middot; Saturday 17 October 2026</span>
         <span class="ctitle">Mayor, council, park board and school board</span>
         <span class="csub">Vancouver, Richmond, Delta, City and District of North Vancouver, Victoria and Nanaimo.</span>
+        <span class="ccount" id="cd-municipal" hidden></span>
       </a>
       <a class="choice" href="provincial/">
         <span class="kicker">Provincial election &middot; Saturday 24 October 2026</span>
         <span class="ctitle">Your MLA</span>
         <span class="csub">Every candidate in the 26 electoral districts that cover the same seven cities.</span>
+        <span class="ccount" id="cd-provincial" hidden></span>
       </a>
     </nav>
   </div>
 </main>
+<script>
+// Countdown on each chooser card. Provincial dates are Elections BC's; municipal advance dates
+// differ by city (see each city's panel in municipal/config.js), so only the first day is used.
+(function(){
+  const now=new Date(), pad=n=>String(n).padStart(2,"0");
+  const today=now.getFullYear()+"-"+pad(now.getMonth()+1)+"-"+pad(now.getDate());
+  const daysTo=s=>{ const [y,m,d]=s.split("-").map(Number); return Math.ceil((new Date(y,m-1,d)-now)/86400000); };
+  const plural=n=>n===1?"day":"days";
+  const E=[
+    {id:"cd-municipal", day:"2026-10-17", label:"Saturday 17 October 2026", advFrom:"2026-10-03", advTo:"2026-10-15",
+     before:n=>`Advance voting starts in ${n} ${plural(n)} in some cities. Dates differ by city.`,
+     during:"Advance voting is under way in some cities. Dates differ by city.", after:""},
+    {id:"cd-provincial", day:"2026-10-24", label:"Saturday 24 October 2026", advFrom:"2026-10-16", advTo:"2026-10-21",
+     before:n=>`Advance voting opens in ${n} ${plural(n)}: 16 to 21 October, 8am to 8pm.`,
+     during:"Advance voting is open today, 8am to 8pm, until 21 October.", after:"Advance voting has ended."}
+  ];
+  for(const e of E){
+    const el=document.getElementById(e.id);
+    if(!el) continue;
+    const d=daysTo(e.day);
+    let main, adv="";
+    if(d>0){
+      main=`<b>${d}</b> ${plural(d)} until voting day`;
+      adv = today<e.advFrom ? e.before(daysTo(e.advFrom)) : today<=e.advTo ? e.during : e.after;
+    }
+    else if(d===0) main="<b>Today</b> voting places are open 8am to 8pm";
+    else main="This election was held on "+e.label+".";
+    el.innerHTML=main+(adv?`<span class="cadv">${adv}</span>`:"");
+    el.hidden=false;
+  }
+})();
+
+</script>
 </body>
 </html>

@@ -37,7 +37,7 @@ const PNOTE = {
   "Achieving for Delta":"Mayor George Harvie's slate, which has governed Delta since 2018.",
   "One Delta":"Councillor Dylan Kruger's slate, running a full six-candidate council team behind his mayoral bid.",
   "Delta First":"Melissa Granum's slate, running three council candidates.",
-  "REAL Nanaimo":"The only slate in the Nanaimo race, with mayoral candidate Anne-Marie Dryden and seven council candidates. Every other candidate runs as an independent.",
+  "REAL Nanaimo":"The only slate in the Nanaimo race, with mayoral candidate Anne Marie Dryden and seven council candidates. Every other candidate runs as an independent.",
   "Victoria For All":"The only slate on Victoria's council ballot, running two candidates. Everyone else, in both races, runs as an independent.",
   "Independent":"Candidates running with no slate or party affiliation."
 };

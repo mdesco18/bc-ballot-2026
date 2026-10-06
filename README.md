@@ -2,7 +2,7 @@
 
 Voter guides for two 2026 British Columbia elections, a week apart:
 
-- `municipal/`: the 17 October general local elections. Every nominated candidate for mayor, council, park board and school board in seven municipalities: Vancouver, Richmond, Delta, City and District of North Vancouver, Victoria and Nanaimo. 414 candidates, 107 seats.
+- `municipal/`: the 17 October general local elections. Every nominated candidate for mayor, council, park board and school board in seven municipalities: Vancouver, Richmond, Delta, City and District of North Vancouver, Victoria and Nanaimo. 412 candidates, 107 seats.
 - `provincial/`: the 24 October provincial general election. Every nominated MLA candidate in the 26 electoral districts that cover the same seven cities.
 
 `index.html` links to both. Each page is a single self-contained file: no server, no CDN scripts. The only external request is Google Fonts, and it falls back to system fonts without them.

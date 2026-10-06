@@ -1,5 +1,5 @@
 // R = record entries, P = promise entries, keyed "District|MLA|Name". Same rules as municipal/record_data.js.
-// Researched 27 September 2026 against sitting MLAs; re-check each name once nominations close.
+// Researched 27 September 2026 against sitting MLAs. Entries for MLAs not running again were removed when the final candidate list was loaded on 6 October.
 // type:  financial | election | conduct | record | cleared
 // label: Finding | Filed | Reported | Raised, no finding | Cleared
 // status (promises): kept | partial | broken | reversed
@@ -42,11 +42,6 @@ const R = {
       text:"Global News reported that Dix, as Energy Minister, directed the B.C. Utilities Commission to apply BC Hydro rate increases of 3.75 per cent in April 2025 and April 2026, citing the capital plan, Site C costs, drought and inflation.",
       src:"Global News", url:"https://globalnews.ca/news/11085319/bc-hydro-rate-increase" }
   ],
-  "Vancouver-South Granville|MLA|Brenda Bailey":[
-    { type:"record", label:"Reported", date:"February 2026",
-      text:"Global News reported that the provincial deficit under Finance Minister Bailey stood at a forecast $11.2 billion for the fiscal year ending March 2026, and that the premier's deputy minister described the deficit as unsustainable in a briefing. The Globe and Mail reported the same figure ahead of Budget 2026.",
-      src:"Global News; The Globe and Mail", url:"https://globalnews.ca/news/11668687/bc-deficit-unsustainable-budget-day/" }
-  ],
   "Vancouver-West End|MLA|Spencer Chandra Herbert":[
     { type:"record", label:"Reported", date:"28 May 2026",
       text:"The Canadian Press reported that Chandra Herbert, as Minister of Indigenous Relations and Reconciliation, held back the Kitselas Treaty Act from a vote in the spring 2026 session, saying members needed more time for debate and that the government would consult further with neighbouring First Nations before the fall.",
@@ -62,30 +57,6 @@ const R = {
     { type:"record", label:"Reported", date:"30 July 2024",
       text:"Wat crossed the floor from BC United to the Conservative Party of BC before the 2024 election. She said the Conservatives were best placed to defeat the NDP.",
       src:"CKPG Today", url:"https://ckpgtoday.ca/2024/07/30/political-juggernaut-another-bc-united-mla-crosses-the-floor-to-conservatives/" }
-  ],
-  "Richmond Centre|MLA|Hon Chan":[
-    { type:"conduct", label:"Filed", date:"26 March 2026",
-      text:"Chan was charged with assault, assault by choking and uttering threats over an alleged 12 January 2024 incident. A special prosecutor was appointed on 27 June 2025. Interim Conservative leader Trevor Halford removed him from caucus, stating that any allegations of domestic violence are taken seriously. No court finding has been made.",
-      src:"Global News", url:"https://globalnews.ca/news/11747468/bc-conservative-mla-removed-caucus-serious-charges/" },
-    { type:"election", label:"Finding", date:"17 February 2026",
-      text:"Elections BC found that Chan's financial agent accepted a prohibited contribution when the campaign auditor did not charge for services, and imposed a $200 penalty. Elections BC stated the candidate gained no advantage, the campaign cooperated, and there was no deliberate attempt to circumvent the Act.",
-      src:"Elections BC", url:"https://elections.bc.ca/docs/amp/Enforcement-Notice-Chan-2026.pdf" },
-    { type:"conduct", label:"Filed", date:"1 September 2026",
-      text:"Chan pleaded not guilty through counsel on 27 August 2026, elected trial by jury and waived a preliminary inquiry. He said in March 2026 he would not resign because everyone is innocent until proven guilty.",
-      src:"Global News", url:"https://globalnews.ca/news/12043840/bc-mla-hon-chan-not-guilty-plea-alleged-intimate-partner-violence/" }
-  ],
-  "Richmond-Steveston|MLA|Kelly Greene":[
-    { type:"record", label:"Reported", date:"24 July 2026",
-      text:"As Minister of Emergency Management and Climate Readiness, Greene published a statement that she was disappointed by FortisBC's decision to expand the Tilbury LNG facility, citing safety concerns. Premier Eby said he helped draft the statement and supported her advocacy.",
-      src:"Canadian Press via National Newswatch", url:"https://nationalnewswatch.com/2026/07/28/eby-defends-ministers-criticism-on-lng-expansion-citing-big-tent" }
-  ],
-  "Delta North|MLA|Ravi Kahlon":[
-    { type:"cleared", label:"Cleared", date:"14 August 2019",
-      text:"Acting Conflict of Interest Commissioner Lynn Smith found that Kahlon was neither in a conflict of interest nor in an apparent conflict of interest over his work on the Select Standing Committee on Crown Corporations, which reviewed ride-hailing, while his father held a Victoria taxi licence. The opinion stated that Kahlon's finances were completely separate from his father's and that he had no financial interest in the taxi industry.",
-      src:"Conflict of Interest Commissioner", url:"https://coibc.ca/wp-content/uploads/2019/08/Whether-Ravi-Kahlon-MLA-Delta-North-was-in-a-conflict-or-apparent-conflict-of-interest-in-relation-to-duties-as-member-of-Select-Standing-Committee-on-Crown-Corporations-1.pdf" },
-    { type:"financial", label:"Raised, no finding", date:"25 September 2024",
-      text:"The BC Conservatives asked the Registrar of Lobbyists to investigate a potential conflict between Kahlon, then Housing Minister, and Core Firm, a consulting firm co-founded by his sister, after Kahlon publicly praised its client Renewal Development. Kahlon said he had no contact with the company and that the complaint had no merit. No decision by the registrar was located.",
-      src:"Delta Optimist", url:"https://www.delta-optimist.com/highlights/bc-housing-minister-faces-questions-about-sisters-consulting-client-9573495" }
   ],
   "Delta South|MLA|Ian Paton":[
     { type:"record", label:"Reported", date:"2 September 2026",
@@ -109,7 +80,7 @@ const R = {
       text:"Ma said the government made an error in not adequately consulting First Nations before introducing Bill 15 and committed to wider consultation when developing its regulations.",
       src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/b-c-minister-says-government-erred-in-not-consulting-first-nations-on-legislation-1.7536257" }
   ],
-  "West Vancouver-Capilano|MLA|Lynne Block":[
+  "North Vancouver-Seymour|MLA|Lynne Block":[
     { type:"record", label:"Reported", date:"29 July 2026",
       text:"Block was one of three Conservative MLAs who declined a request to resign their seats so leader Kerry-Lynne Findlay could run in a byelection. Block said she considered the request and declined because she loved the job and knew her riding well.",
       src:"Black Press Media", url:"https://todayinbc.com/2026/07/31/b-c-conservative-leader-talks-future-plans-but-first-needs-a-seat/" },
@@ -151,16 +122,6 @@ const P = {
       text:"Dix signed the BC Nurses' Union 2024 candidate pledge to support minimum nurse-to-patient staffing ratios in all care settings. BCNU reported in March 2026 that the first hospital phase was 81 per cent activated, with long-term care and community settings still to come.",
       src:"BC Nurses' Union", url:"https://www.bcnu.org/news-and-events/campaigns-and-initiatives/past-campaigns/2024-provincial-election/candidate-pledge-signees" }
   ],
-  "Vancouver-South Granville|MLA|Brenda Bailey":[
-    { status:"partial",
-      text:"Bailey signed the BC Nurses' Union 2024 candidate pledge to support minimum nurse-to-patient staffing ratios in all care settings. BCNU reported in March 2026 that the first hospital phase was 81 per cent activated, with long-term care and community settings still to come.",
-      src:"BC Nurses' Union", url:"https://www.bcnu.org/news-and-events/news/2026/minimum-nurse-patient-ratios-focus-bc-nurses-conference" }
-  ],
-  "Delta North|MLA|Ravi Kahlon":[
-    { status:"partial",
-      text:"As Housing Minister, Kahlon launched BC Builds on 13 February 2024 with $950 million and $2 billion in low-cost financing to deliver lower-cost rental homes for middle-income households, with a stated goal of 8,000 to 10,000 homes over five years. As of 2 June 2026 the province reported more than 5,600 homes delivered or underway and ground broken on 4,000 units. Kahlon left the housing portfolio in November 2024.",
-      src:"BC Gov News", url:"https://news.gov.bc.ca/releases/2026HMA0028-000639" }
-  ],
   "North Vancouver-Lonsdale|MLA|Bowinn Ma":[
     { status:"partial",
       text:"On 1 October 2024 Ma pledged a bus rapid transit line from Park Royal to Metrotown with construction starting in 2025 and planning for a later light rail or SkyTrain upgrade. TransLink instead began construction of an R2 RapidBus extension on that corridor in April 2026 and launched the service in September 2026, while full bus rapid transit remained in planning.",
@@ -186,7 +147,6 @@ const SEARCHED = [
   "Vancouver-Langara|MLA|Sunita Dhir",
   "Vancouver-Little Mountain|MLA|Christine Boyle",
   "North Vancouver-Seymour|MLA|Susie Chant",
-  "Vancouver-Fraserview|MLA|George Chow",
   "Victoria-Swan Lake|MLA|Nina Krieger",
   "Victoria-Beacon Hill|MLA|Grace Lore",
   "Richmond-Queensborough|MLA|Steve Kooner",

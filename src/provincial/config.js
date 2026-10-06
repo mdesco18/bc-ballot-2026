@@ -20,9 +20,20 @@ for(const j of JORDER) J[j]={seats:{MLA:1}, blurb:[], dates:DATES,
   link:"https://elections.bc.ca/2026-provincial-election/candidate-list/", vote:"https://mydistrict.elections.bc.ca/"};
 J["Vancouver-Strathcona"].blurb=["The seat is vacant: Joan Phillip (BC NDP) died on 28 August 2026."];
 
-// Colours for the parties expected on the ballot; names to be matched to Elections BC's list at nomination close.
-const SLOT={"BC NDP":"--h3","Conservative Party of BC":"--h0","BC Green Party":"--h4","OneBC":"--h5","CentreBC":"--h2","Independent":"--hind","No affiliation listed":"--hind"};
-const PNOTE={};
+// Party names as Elections BC spells them on the final candidate list.
+const SLOT={"BC NDP":"--h3","Conservative Party":"--h0","BC Green Party":"--h4","OneBC":"--h5","CentreBC":"--h2",
+  "Communist Party of BC":"--h6","CWP":"--h7","Libertarian":"--h8","Independent":"--hind","Unaffiliated":"--hind"};
+const PNOTE={
+  "BC NDP":"Governing party since 2017, led by Premier David Eby, who called this snap election on 22 September. Campaigning on a temporary 10-cent cut to the provincial fuel tax with a regulated maximum pump price, doubling critical mineral exports within five years, and a new tax on unsold condominiums.",
+  "Conservative Party":"Official opposition. Led by interim leader Lorne Doerkson since Kerry-Lynne Findlay resigned on 20 September. Campaigning on no new or higher taxes, doubling LNG production by 2032, a second oil pipeline to the coast, and repealing the SOGI program in schools.",
+  "BC Green Party":"Led by Emily Lowan since September 2025. Held two seats and ended its cooperation agreement with the NDP in February 2026. Lowan's priorities include a tax on the ultra-wealthy and proportional representation.",
+  "CentreBC":"Founded in March 2025 by former BC United MLA Karin Kirkpatrick. Elenore Sturko became leader on 22 September 2026, after seven of its eight MLAs rejoined the Conservatives. Says it will focus on the economy, health care and public safety.",
+  "OneBC":"Right-wing party founded in June 2025 after the Conservatives removed Dallas Brodie from caucus. Brodie is interim leader. The party campaigns against what it calls the \"reconciliation industry\".",
+  "Communist Party of BC":"Founded in 1924. Leader Robert Crooks is running in Vancouver-Strathcona.",
+  "CWP":"CanWest Party, a Richmond-based party founded in 2026 and led by Wei Ping Chen. The ballot shows its abbreviation.",
+  "Libertarian":"British Columbia Libertarian Party, founded in 1986.",
+  "Unaffiliated":"Neither endorsed by a party nor registered as independent. The ballot shows the name only."
+};
 
 const ALL=M.map(r=>({j:r[0], race:"MLA", party:r[1], name:r[2], inc:r[3], bio:r[5]||"", url:r[4]}));
 
@@ -34,7 +45,7 @@ const RACE_LABEL={};
 const RACE_TITLE={};
 function raceNote(){ return ""; }
 const ELECTION_DAY="2026-10-24", VOTING_DAY="Saturday 24 October 2026";
-const PROVISIONAL_UNTIL=null;
-const CARD_NOTE="Until nominations close on 3 October, districts list their sitting MLA whether or not that person is running again. Check Elections BC for the final candidate list in your district before voting.";
-const NO_ROWS="No one is listed here yet. Candidates appear as Elections BC accepts nominations.";
+const PROVISIONAL_UNTIL="2026-10-03T20:00:00Z";   // 1pm Pacific, 3 Oct
+const CARD_NOTE="Candidate lists are current to 6 October 2026, from Elections BC's final list; check your district on Elections BC before voting.";
+const NO_ROWS="No candidates are listed for this district.";
 const SIT_LABEL="Sitting MLA, not yet nominated", JURIS_LABEL="Outside the province's power";

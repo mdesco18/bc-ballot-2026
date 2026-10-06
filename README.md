@@ -44,4 +44,4 @@ For the local elections, the Elections BC "Registered Candidates" PDF is a campa
 
 Record and promise entries are tagged by evidence strength (Finding / Filed / Reported) and every one links to its source. Excluded: anything not traceable to a named outlet or a body with jurisdiction.
 
-Provincial candidate lists come from Elections BC, which runs provincial elections. District coverage follows Elections BC's 2023 redistribution.
+Provincial candidate lists come from Elections BC, which runs provincial elections. District coverage follows Elections BC's 2023 redistribution. Current to 6 October 2026, from Elections BC's final list after nominations closed on 3 October.

@@ -1,5 +1,5 @@
 // R = record entries, P = promise entries, keyed "District|MLA|Name". Same rules as municipal/record_data.js.
-// Researched 27 September 2026 against sitting MLAs. Entries for MLAs not running again were removed when the final candidate list was loaded on 6 October.
+// Sitting MLAs researched 27 September 2026; MLAs not running again were removed on 6 October. Other candidates researched 6 October 2026.
 // type:  financial | election | conduct | record | cleared
 // label: Finding | Filed | Reported | Raised, no finding | Cleared
 // status (promises): kept | partial | broken | reversed
@@ -98,6 +98,27 @@ const R = {
       text:"Anderson sponsored private member's Bill M216, the Professional Reliance Act, which would have required local governments to accept technical reports from licensed professionals without staff review. After the Union of BC Municipalities raised safety and liability concerns, Anderson asked the committee to stop considering the bill; the Housing Minister said the province would do further work on its principles. No adverse finding was made.",
       src:"CHLY 101.7 FM; BC Gov News", url:"https://www.chly.ca/local-news/2025/11/28/ubcm-has-red-flags-over-bill-m216-that-would-fast-track-housing-in-british-columbia" }
   ],
+  "North Vancouver-Seymour|MLA|Ben Holt":[
+    { type:"conduct", label:"Finding", date:"2 February 2023",
+      text:"Holt pleaded guilty to three counts of mischief and one count of breaching bail conditions over Save Old Growth traffic blockades in Burnaby, Vancouver and the North Shore in 2022. He apologized in court and said his civil disobedience was over. A provincial court judge imposed a 60-day conditional sentence with house arrest and a curfew, then six months of probation.",
+      src:"Burnaby Now (via Squamish Chief); Castanet", url:"https://squamishchief.com/highlights/lower-mainland-anti-logging-protester-sentenced-to-house-arrest-curfew-6477186" }
+  ],
+  "Delta South|MLA|Jim McMurtry":[
+    { type:"conduct", label:"Filed", date:"28 July 2026",
+      text:"Maple Ridge News reported that the Abbotsford school district fired McMurtry in February 2023 over 2021 classroom remarks on residential school deaths and other alleged misconduct, which he disputes. His union declined to take the grievance to arbitration, and the Labour Relations Board upheld that decision. In July 2026 he petitioned B.C. Supreme Court to review the board's decision. No tribunal has ruled on whether the dismissal was justified.",
+      src:"Maple Ridge News", url:"https://www.mapleridgenews.com/2026/07/28/court-petition-filed-on-behalf-of-teacher-fired-for-residential-school-comments-in-abbotsford/" }
+  ],
+  "Oak Bay-Gordon Head|MLA|Andrew Weaver":[
+    { type:"record", label:"Reported", date:"29 May 2017",
+      text:"Global News reported that Weaver, as BC Green leader, agreed to support a BC NDP minority government on confidence and budget votes without joining cabinet.",
+      src:"Global News", url:"https://globalnews.ca/news/3486794/b-c-green-party-leader-andrew-weaver-agrees-to-support-john-horgans-ndp/" },
+    { type:"record", label:"Reported", date:"15 January 2020",
+      text:"CBC News reported that Weaver left the Green caucus to sit as an independent MLA, citing family health problems. He said he still supported the minority government.",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/andrew-weaver-green-party-bc-independent-1.5427746" },
+    { type:"record", label:"Reported", date:"13 July 2024",
+      text:"CBC News reported that Weaver criticized Premier Eby and said he was considering aligning with Conservative leader John Rustad before the 2024 election.",
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/andrew-weaver-shows-support-bc-conservatives-1.7262839" }
+  ],
 };
 
 const P = {
@@ -150,5 +171,72 @@ const SEARCHED = [
   "Victoria-Swan Lake|MLA|Nina Krieger",
   "Victoria-Beacon Hill|MLA|Grace Lore",
   "Richmond-Queensborough|MLA|Steve Kooner",
-  "Vancouver-Yaletown|MLA|Terry Yung"
+  "Vancouver-Yaletown|MLA|Terry Yung",
+  "Vancouver-Fraserview|MLA|Francoise Raunet",
+  "Vancouver-Fraserview|MLA|Deep Sandhu",
+  "Vancouver-Fraserview|MLA|Aman Singh",
+  "Vancouver-Hastings|MLA|Christian Bosio",
+  "Vancouver-Hastings|MLA|Kimball Cariou",
+  "Vancouver-Hastings|MLA|Kyra Philbert",
+  "Vancouver-Hastings|MLA|Phyllis Tang",
+  "Vancouver-Kensington|MLA|Adam Hawk",
+  "Vancouver-Kensington|MLA|Aron Lageri",
+  "Vancouver-Langara|MLA|John Atoyebi",
+  "Vancouver-Langara|MLA|Jaime Stein",
+  "Vancouver-Little Mountain|MLA|Alex Muir",
+  "Vancouver-Point Grey|MLA|Michael Davis",
+  "Vancouver-Point Grey|MLA|Alex McMillan",
+  "Vancouver-Point Grey|MLA|Beatrice Sharpe",
+  "Vancouver-Quilchena|MLA|Carson Binda",
+  "Vancouver-Quilchena|MLA|Douglas Courtemanche",
+  "Vancouver-Quilchena|MLA|Petra Kuret",
+  "Vancouver-Quilchena|MLA|Callista Ryan",
+  "Vancouver-Renfrew|MLA|Rebecca Haber",
+  "Vancouver-Renfrew|MLA|Tom Ikonomou",
+  "Vancouver-Renfrew|MLA|Lisa Prescott",
+  "Vancouver-South Granville|MLA|Maria J Cruz",
+  "Vancouver-South Granville|MLA|Lara Honrado",
+  "Vancouver-South Granville|MLA|Lisa Phillips",
+  "Vancouver-South Granville|MLA|Colin Smith",
+  "Vancouver-South Granville|MLA|Salvatore Vetro",
+  "Vancouver-Strathcona|MLA|Amanda Burrows",
+  "Vancouver-Strathcona|MLA|Jordan Zheng McIntosh",
+  "Vancouver-Strathcona|MLA|Tanya Webking",
+  "Vancouver-West End|MLA|Scott MacDonald",
+  "Vancouver-West End|MLA|Dion Weisner",
+  "Vancouver-Yaletown|MLA|Sam Chandola",
+  "Vancouver-Yaletown|MLA|Margareta Dovgal",
+  "Richmond-Bridgeport|MLA|Linda Li",
+  "Richmond Centre|MLA|Lawrence Chen",
+  "Richmond Centre|MLA|Calvin Dang",
+  "Richmond Centre|MLA|Sacha Peter",
+  "Richmond Centre|MLA|Henry Yao",
+  "Richmond-Queensborough|MLA|Luc Burns",
+  "Richmond-Queensborough|MLA|Dhar Grewal",
+  "Richmond-Steveston|MLA|Bruce Kong",
+  "Richmond-Steveston|MLA|Barry Wosk",
+  "Richmond-Steveston|MLA|Gordon Zhang",
+  "Delta North|MLA|Monica Mohan",
+  "Delta North|MLA|Kuldeep Rangi",
+  "Delta North|MLA|Todd Schierling",
+  "Delta South|MLA|Skadi Green",
+  "Delta South|MLA|Jason McCormick",
+  "North Vancouver-Lonsdale|MLA|Trevor Withers",
+  "North Vancouver-Seymour|MLA|Lori Climenhaga",
+  "North Vancouver-Seymour|MLA|Frederick Thiele",
+  "West Vancouver-Capilano|MLA|Honieh Barzegari",
+  "West Vancouver-Capilano|MLA|Naomi Chocyk",
+  "West Vancouver-Capilano|MLA|Caroline Elliott",
+  "Victoria-Beacon Hill|MLA|Joachim Agou",
+  "Victoria-Beacon Hill|MLA|Rajinder S. Sahota",
+  "Victoria-Swan Lake|MLA|Carolyn Howe",
+  "Victoria-Swan Lake|MLA|Tim Taylor",
+  "Oak Bay-Gordon Head|MLA|Andrew Appleton",
+  "Oak Bay-Gordon Head|MLA|Stan Sipos",
+  "Nanaimo-Gabriola Island|MLA|Mark MacDonald",
+  "Nanaimo-Gabriola Island|MLA|Anna Mary McKenzie",
+  "Nanaimo-Lantzville|MLA|Kelsey Pringle",
+  "Nanaimo-Lantzville|MLA|Pepper Saltman",
+  "West Vancouver-Capilano|MLA|Arwa Shurab",
+  "Vancouver-Strathcona|MLA|Robert Crooks"
 ];

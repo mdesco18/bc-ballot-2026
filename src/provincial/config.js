@@ -23,15 +23,16 @@ J["Vancouver-Strathcona"].blurb=["The seat is vacant: Joan Phillip (BC NDP) died
 // Party names as Elections BC spells them on the final candidate list.
 const SLOT={"BC NDP":"--h3","Conservative Party":"--h0","BC Green Party":"--h4","OneBC":"--h5","CentreBC":"--h2",
   "Communist Party of BC":"--h6","CWP":"--h7","Libertarian":"--h8","Independent":"--hind","Unaffiliated":"--hind"};
+// Party notes current to 6 October 2026, from Canadian Press reports, party releases and Elections BC.
 const PNOTE={
-  "BC NDP":"Governing party since 2017, led by Premier David Eby, who called this snap election on 22 September. Campaigning on a temporary 10-cent cut to the provincial fuel tax with a regulated maximum pump price, doubling critical mineral exports within five years, and a new tax on unsold condominiums.",
-  "Conservative Party":"Official opposition. Led by interim leader Lorne Doerkson since Kerry-Lynne Findlay resigned on 20 September. Campaigning on no new or higher taxes, doubling LNG production by 2032, a second oil pipeline to the coast, and repealing the SOGI program in schools.",
-  "BC Green Party":"Led by Emily Lowan since September 2025. Held two seats and ended its cooperation agreement with the NDP in February 2026. Lowan's priorities include a tax on the ultra-wealthy and proportional representation.",
-  "CentreBC":"Founded in March 2025 by former BC United MLA Karin Kirkpatrick. Elenore Sturko became leader on 22 September 2026, after seven of its eight MLAs rejoined the Conservatives. Says it will focus on the economy, health care and public safety.",
-  "OneBC":"Right-wing party founded in June 2025 after the Conservatives removed Dallas Brodie from caucus. Brodie is interim leader. The party campaigns against what it calls the \"reconciliation industry\".",
-  "Communist Party of BC":"Founded in 1924. Leader Robert Crooks is running in Vancouver-Strathcona.",
-  "CWP":"CanWest Party, a Richmond-based party founded in 2026 and led by Wei Ping Chen. The ballot shows its abbreviation.",
-  "Libertarian":"British Columbia Libertarian Party, founded in 1986.",
+  "BC NDP":"Governing party since 2017, led by Premier David Eby, who called this election on 22 September. Pledges a temporary 10-cent cut to the provincial fuel tax with a regulated maximum pump price. Also pledges higher income tax above $190,405 and a new bracket above $1 million to fund health care, and a tax on unsold condominiums. Runs 92 candidates.",
+  "Conservative Party":"Official opposition. Interim leader Lorne Doerkson replaced Kerry-Lynne Findlay, who resigned on 20 September. Pledges no new or higher taxes and doubling LNG production by 2032. Also pledges to remove the PST on Canadian alcohol during the trade war and to repeal SOGI in schools. Runs candidates in all 93 districts.",
+  "BC Green Party":"Led by Emily Lowan since September 2025. Held two seats and chose in 2026 not to renew its accord with the NDP. Pledges a tax on wealth over $50 million, which it estimates raises $22.2 billion in year one. Also pledges 26,000 non-market homes a year, free child care by 2031, and proportional representation. Runs 73 candidates.",
+  "CentreBC":"Founded in March 2025 by former BC United MLA Karin Kirkpatrick. Elenore Sturko became leader on 22 September 2026, after seven of its eight MLAs rejoined the Conservatives. Sturko calls it a home for liberals. Its website lists policy areas still in development. Runs 35 candidates, including former Green leader Andrew Weaver.",
+  "OneBC":"Founded in June 2025 after the Conservatives removed Dallas Brodie from caucus. Brodie is interim leader. Its platform lists a 25% income tax cut in every bracket and a 2% PST cut. It also lists ending DRIPA and UNDRIP and removing SOGI 123 from classrooms. Runs 33 candidates.",
+  "Communist Party of BC":"Founded in 1924. Leader Robert Crooks is running in Vancouver-Strathcona. The party runs four candidates.",
+  "CWP":"CanWest Party, a Richmond-based party founded in 2026 and led by Wei Ping Chen. The ballot shows its abbreviation. It runs two candidates, both in Richmond.",
+  "Libertarian":"British Columbia Libertarian Party, founded in 1986. Leader Alex Joehl is running in Langley-Abbotsford. The party runs four candidates.",
   "Unaffiliated":"Neither endorsed by a party nor registered as independent. The ballot shows the name only."
 };
 

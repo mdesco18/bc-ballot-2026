@@ -42,7 +42,7 @@ for f in src/check-*.js; do node "$f" || break; done
 
 ## Data provenance
 
-Municipal candidate lists come from each municipality's own official candidate page, cross-checked against localelections.ca and votemate.org. Current to 18 September 2026, after the 4pm withdrawal deadline and the 5pm ballot draw.
+Municipal candidate lists come from each municipality's own official candidate page, cross-checked against localelections.ca and votemate.org. Current to 6 October 2026, checked name by name against each municipality's page after the 18 September withdrawal deadline. Record notes and Vancouver polling are current to 16 October 2026.
 
 For the local elections, the Elections BC "Registered Candidates" PDF is a campaign-financing snapshot and is incomplete: it omitted 34 of Vancouver's 99 candidates. Do not use it as a source.
 

@@ -47,49 +47,49 @@ const J = {
     seats:{Mayor:1, Council:10, "Park Board":7, School:9}, schoolNote:"Vancouver School Board (SD39). All nine seats are elected by Vancouver voters.",
     blurb:["Ken Sim's ABC Vancouver swept all three bodies in 2022 and is defending them against a field that has grown two new parties since. 130 candidates are running for 27 seats across four ballots.",
            "Vancouver is the only city here with a separately elected park board, and the only one with plebiscite questions on the ballot."],
-    dates:[["Advance voting","3, 7, 10 and 13 October, 8am to 8pm"],["Voting day","Saturday 17 October, 8am to 8pm"],["Voting places","Any of 85 places citywide, vote-anywhere"],["By mail","Apply by noon on 5 October"]],
+    dates:[["Voting day","Saturday 17 October, 8am to 8pm"],["Voting places","Any of 85 places citywide, vote-anywhere"]],
     link:"https://vancouver.ca/your-government/2026-candidate-information.aspx", vote:"https://vancouver.ca/election/2026/where-to-vote.aspx"
   },
   "Richmond": {
     seats:{Mayor:1, Council:8, School:7}, schoolNote:"Richmond Board of Education (SD38). All seven seats are elected by Richmond voters.",
-    blurb:["Malcolm Brodie, mayor since 2001, is not running. The first open mayor's race in Richmond in 25 years drew eight candidates, two of them sitting councillors.",
+    blurb:["Malcolm Brodie, mayor since 2001, is not running. The first open mayor's race in Richmond in 25 years drew seven candidates, two of them sitting councillors.",
            "The council race is the busiest in the province outside Vancouver: 55 candidates for eight seats, spread across eleven slates and fourteen independents."],
-    dates:[["Advance voting","3, 7, 8, 9 and 10 October"],["Voting day","Saturday 17 October"],["By mail","Applications open to 17 October"]],
+    dates:[["Voting day","Saturday 17 October, 8am to 8pm"]],
     link:"https://www.richmond.ca/city-hall/elections/candidateslist.htm", vote:"https://www.richmond.ca/city-hall/elections.htm"
   },
   "Delta": {
     seats:{Mayor:1, Council:6, School:7}, schoolNote:"Delta Board of Education (SD37). All seven seats are elected by Delta voters.",
     blurb:["Mayor George Harvie seeks a third term against Dylan Kruger, a sitting councillor running with his own slate, and Delta First's Melissa Granum.",
            "Delta is the most slate-organized council race here: fifteen of the twenty candidates carry a slate label."],
-    dates:[["Advance voting","3, 6 and 7 October"],["Voting day","Saturday 17 October"]],
+    dates:[["Voting day","Saturday 17 October, 8am to 8pm"]],
     link:"https://www.delta.ca/elections/candidates", vote:"https://www.delta.ca/city-hall/municipal-information/elections"
   },
   "City of North Vancouver": {
     seats:{Mayor:1, Council:6, School:3}, schoolNote:"North Vancouver Board of Education (SD44), shared with the District. City voters elect three of the seven seats.",
     blurb:["Mayor Linda Buchanan seeks a third term against three challengers. All six sitting councillors are running again.",
            "No slates: every candidate in both races runs as an independent."],
-    dates:[["Advance voting","7, 10, 13, 14 and 15 October at City Hall"],["Voting day","Saturday 17 October"],["By mail","Ballots must arrive by 8pm on 17 October"]],
+    dates:[["Voting day","Saturday 17 October, 8am to 8pm"],["By mail","Ballots must arrive by 8pm on 17 October"]],
     link:"https://www.cnv.org/City-Hall/General-Local-Election/2026-General-Local-Election", vote:"https://www.cnv.org/City-Hall/General-Local-Election/2026-General-Local-Election"
   },
   "District of North Vancouver": {
     seats:{Mayor:1, Council:6, School:4}, schoolNote:"North Vancouver Board of Education (SD44), shared with the City. District voters elect four of the seven seats.",
     blurb:["Mayor Mike Little seeks a third term against four challengers. Six incumbent councillors are running in a field of fifteen.",
            "As in the City, no slates are registered: everyone runs as an independent."],
-    dates:[["Voting day","Saturday 17 October"],["Advance voting","Check dnv.org for dates and places"]],
+    dates:[["Voting day","Saturday 17 October, 8am to 8pm"]],
     link:"https://www.dnv.org/government-administration/2026-general-local-election", vote:"https://www.dnv.org/government-administration/2026-general-local-election"
   },
   "Victoria": {
     seats:{Mayor:1, Council:8, School:2}, schoolNote:"Greater Victoria Board of Education (SD61), shared with neighbouring municipalities. Victoria voters elect two trustees.",
-    blurb:["Mayor Marianne Alto seeks a second term in an eight-way race. Seven of the eight sitting councillors are running again; Chris Coleman is not.",
+    blurb:["Mayor Marianne Alto seeks a second term in an eight-way race. One of the eight, Lyall Atkinson, ended his campaign on 7 October and endorsed Bruce McGuigan, but his name remains on the ballot. Seven of the eight sitting councillors are running again; Chris Coleman is not.",
            "Victoria's politics run on independents. Only two of the 21 council candidates carry a slate label, and none of the mayoral candidates do."],
-    dates:[["Advance voting","7 October at the Victoria Conference Centre; 13, 14 and 15 October at Crystal Garden"],["Voting day","Saturday 17 October"],["By mail","Ballots must arrive by 8pm on 17 October"]],
+    dates:[["Voting day","Saturday 17 October, 8am to 8pm"],["By mail","Ballots must arrive by 8pm on 17 October"]],
     link:"https://www.victoria.ca/city-government/elections", vote:"https://www.victoria.ca/city-government/elections"
   },
   "Nanaimo": {
     seats:{Mayor:1, Council:8, School:9}, schoolNote:"Nanaimo-Ladysmith Board of Education (SD68). Nine seats and eleven candidates.",
     blurb:["Mayor Leonard Krog seeks a third term. Forty candidates are running for eight council seats, seven of them sitting councillors; Tyler Brown is not running again.",
            "REAL Nanaimo is the only slate, with a mayoral candidate and seven council candidates. Everyone else runs as an independent."],
-    dates:[["Advance voting","7 and 14 October"],["Voting day","Saturday 17 October"],["By mail","Apply by 4pm on 16 October"]],
+    dates:[["Voting day","Saturday 17 October, 8am to 8pm"]],
     link:"https://www.nanaimo.ca/your-government/elections", vote:"https://www.nanaimo.ca/your-government/elections"
   }
 };
@@ -112,6 +112,6 @@ function raceNote(j,race){ return race==="School" ? J[j].schoolNote+" Incumbency
 const JGROUPS=null;
 const ELECTION_DAY="2026-10-17", VOTING_DAY="Saturday 17 October 2026";
 const PROVISIONAL_UNTIL="2026-09-18T23:00:00Z";   // 4pm Pacific, 18 Sept
-const CARD_NOTE="Candidate lists are current to 18 September 2026; check your municipality's own page before voting.";
+const CARD_NOTE="Candidate lists are current to 6 October 2026; check your municipality's own page before voting.";
 const NO_ROWS="No candidates are listed for this municipality.";
 const SIT_LABEL="Sitting councillor", JURIS_LABEL="Outside council's power";

@@ -10,9 +10,18 @@ const OPEN_MEETINGS = {
   src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/ken-sim-integrity-commissioner-1.7617152"
 };
 
+const DNV_SSMUH = {
+  type:"record", label:"Finding", date:"13 April 2026",
+  text:"District council voted 4 to 3 that it does not support implementing the province's small-scale multi-unit housing (SSMUH) rules in the District. Mayor Little moved the motion and Coun. Muri seconded it. Councillors Back, Hanson and Pope voted against. All seven members were present.",
+  src:"District of North Vancouver council minutes", url:"https://docs.dnv.org/documents/meeting-minutes-20260413.pdf"
+};
+
 const R = {
   // ---------------- VANCOUVER ----------------
   "Vancouver|Mayor|Ken Sim":[
+    { type:"conduct", label:"Filed", date:"March 2026",
+      text:"Coun. Sean Orr filed a defamation suit against Sim in BC Supreme Court. It alleges Sim told Chinese-language media at a 6 February 2026 city hall briefing that Orr had distributed illegal drugs on the streets on Christmas Day. Sim later apologized publicly. The claim has not been decided, and trial is far off.",
+      src:"The Tyee", url:"https://www.thetyee.ca/News/2026/03/11/Sean-Orr-Sues-Mayor-Ken-Sim/" },
     OPEN_MEETINGS,
     { type:"conduct", label:"Finding", date:"11 May 2026",
       text:"A second investigation found Sim breached the council code of conduct twice, by using a City Hall news conference and an official social media post to represent Coun. Sean Orr as antisemitic. The investigator called for a written apology. Council voted not to act on the findings: all six ABC members against, the other four in favour. Sim declared a conflict and did not vote.",
@@ -31,6 +40,9 @@ const R = {
       src:"The Tyee, on the view cone decision", url:"https://thetyee.ca/News/2024/07/18/Vancouver-Protected-View-Cones-Started-Melt/" }
   ],
   "Vancouver|Council|Lenny Zhou":[
+    { type:"conduct", label:"Reported", date:"February 2026",
+      text:"In a Mandarin-language WeChat video, Zhou said councillors outside the ABC majority \u201care drug users themselves\u201d and had distributed drugs on the streets before Christmas. Several councillors called for a review and censure. Zhou deleted the video and apologized, saying his comments were \u201cbased on incorrect information.\u201d",
+      src:"CTV News", url:"https://www.ctvnews.ca/vancouver/article/vancouver-councillor-denounced-for-video-saying-rivals-used-and-distributed-drugs/" },
     OPEN_MEETINGS,
     { type:"conduct", label:"Reported", date:"July 2024",
       text:"Zhou moved the 24 July 2024 motion that froze Integrity Commissioner Lisa Southern's power to report publicly on complaints, including investigations then pending against council members. After public backlash he moved to rescind it, saying he had heard “loud and clear from the residents of Vancouver that they do not want to see this amendment move forward.” Council recessed the special meeting and the freeze was dropped.",
@@ -61,6 +73,9 @@ const R = {
       src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/integrity-commissioner-vancouver-mayor-ruling-1.6516014" }
   ],
   "Vancouver|Mayor|Kareem Allam":[
+    { type:"conduct", label:"Filed", date:"May 2025",
+      text:"Mayor Sim filed a defamation suit against Allam and Alexander Tsakumis in BC Supreme Court. It alleges Allam told Tsakumis in November 2023 that Sim had driven while intoxicated and been stopped by police. The claim has not been decided, and trial is far off.",
+      src:"Coast Reporter", url:"https://www.coastreporter.net/bc-news/vancouver-mayor-files-defamation-lawsuit-against-former-chief-of-staff-developer-10728500" },
     { type:"record", label:"Reported", date:"February 2023",
       text:"Allam left his post as Mayor Sim's chief of staff after roughly three months. Neither he nor the mayor's office gave a public reason. He is a political strategist and lobbyist and has been associated with Fairview Strategy since 2019.",
       src:"Business in Vancouver", url:"https://www.biv.com/news/economy-law-politics/vancouver-mayor-ken-sims-top-staffer-quits-8270477" },
@@ -83,7 +98,20 @@ const R = {
       src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/george-harvie-delta-mayor-metro-vancouver-chair-controversy-1.7218561" },
     { type:"record", label:"Reported", date:"December 2025",
       text:"Four councillors elected on Harvie's slate were told Achieving for Delta would not endorse them again. In a joint statement they said the decision was “aimed at silencing voices that have raised concerns about the mayor's pattern of reckless spending and increasingly erratic decision-making.” These are allegations by political opponents, not findings by any body.",
-      src:"Delta Optimist", url:"https://www.delta-optimist.com/local-news/dylan-kruger-launches-mayoralty-bid-with-one-delta-12326729" }
+      src:"Delta Optimist", url:"https://www.delta-optimist.com/local-news/dylan-kruger-launches-mayoralty-bid-with-one-delta-12326729" },
+    { type:"record", label:"Reported", date:"June 2024",
+      text:"In late 2018 Paramjit Grewal, an unsuccessful council candidate on Harvie's Achieving for Delta slate that year, was appointed to a newly retitled director position. City financial reports show his pay rose from $141,744 in 2019 to $170,128 in 2022 and $258,198 in 2023. Council ended his employment in 2024 after an in-camera vote. The city did not say who authorized the increases.",
+      src:"Delta Optimist", url:"https://www.delta-optimist.com/local-news/delta-report-shows-huge-pay-hike-to-former-employee-9133426" }
+  ],
+  "Delta|Mayor|Dylan Kruger":[
+    { type:"conduct", label:"Filed", date:"April 2024",
+      text:"Paramjit Grewal, a former Delta director, sued the City of Delta for wrongful dismissal and Kruger, then a councillor, for defamation, seeking $700,000 in damages. Kruger and the city deny the allegations. No decision has been reported.",
+      src:"Delta Optimist", url:"https://www.delta-optimist.com/highlights/city-of-delta-council-member-deny-managers-700k-dismissal-allegations-8979065" }
+  ],
+  "Delta|Council|Jennyfer Cassar":[
+    { type:"election", label:"Finding", date:"August 2026",
+      text:"Elections BC investigated complaints about Cassar's use of Facebook business advertising. It said it brought her back into compliance and gave her education about the rules. It issued no monetary penalty.",
+      src:"Delta Optimist", url:"https://www.delta-optimist.com/local-news/elections-bc-concludes-investigation-into-achieving-for-delta-candidate-12637746" }
   ],
 
   // ---------------- VICTORIA ----------------
@@ -100,26 +128,56 @@ const R = {
 
   // ---------------- NANAIMO ----------------
   "Nanaimo|Mayor|Leonard Krog":[
+    { type:"record", label:"Reported", date:"May 2026",
+      text:"In 2024, electors stopped the city's plan to borrow up to $90 million for a new public works yard: 8,655 submitted opposition forms in an alternative approval process, above the 7,974 needed. In May 2026 council authorized borrowing of up to $76.68 million for the yard without elector approval, after provincial changes to municipal borrowing rules allowed it. Krog called the project \u201cthe most basic of basics\u201d for public works staff.",
+      src:"Times Colonist", url:"https://www.timescolonist.com/2026-civic-election-nanaimo/ex-nanaimo-mayor-who-oversaw-chaotic-council-wants-to-return-as-a-councillor-12785655" },
     { type:"record", label:"Reported", date:"2024",
       text:"Nanaimo's mayor and councillors claimed $77,457 in expenses in 2024. Krog claimed the least of any member, $3,887.",
       src:"The Discourse", url:"https://thediscourse.ca/nanaimo/nanaimo-councillor-defends-conference-expenses" }
+  ],
+  "Nanaimo|Council|Bill McKay":[
+    { type:"record", label:"Reported", date:"March 2016",
+      text:"McKay was mayor of Nanaimo from 2014 to 2018. In March 2016, seven city councillors called for his resignation.",
+      src:"Times Colonist", url:"https://www.timescolonist.com/2026-civic-election-nanaimo/ex-nanaimo-mayor-who-oversaw-chaotic-council-wants-to-return-as-a-councillor-12785655" }
   ],
 
   // ---------------- DISTRICT OF NORTH VANCOUVER ----------------
   "District of North Vancouver|Council|Betty Forbes":[
     { type:"financial", label:"Filed, later dropped", date:"2019–2021",
       text:"Forbes was the district's only resident with an active complaint file about pigeons, concerning birds kept by her next-door neighbour. After her 2018 election she emailed councillors asking them to ban pigeon ownership, two days before the matter first reached council. The ban that passed affected only her neighbour. Eleven residents petitioned the BC Supreme Court to remove Forbes and Coun. Lisa Muri from office. Mayor Mike Little ordered an independent review by David Loukidelis, which returned 12 recommendations on conflict-of-interest training and ethics. Council repealed the ban. The court case was dropped and no finding of conflict was made against her.",
-      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/north-van-pigeons-betty-forbes-1.5964869" }
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/north-van-pigeons-betty-forbes-1.5964869" },
+    DNV_SSMUH
   ],
   "District of North Vancouver|Council|Lisa Muri":[
     { type:"financial", label:"Filed, later dropped", date:"2019–2021",
       text:"Muri was named alongside Coun. Betty Forbes in a BC Supreme Court petition by eleven residents seeking their removal from office over the district's pigeon ban. The petition was dropped and no finding was made against her. The independent review ordered by the mayor made recommendations on conflict-of-interest training rather than findings against individual members.",
-      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/north-vancouver-pigeon-feud-petition-1.5406046" }
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/north-vancouver-pigeon-feud-petition-1.5406046" },
+    DNV_SSMUH
   ],
   "District of North Vancouver|Mayor|Mike Little":[
     { type:"record", label:"Reported", date:"2019–2020",
       text:"Little ordered the independent review of council's conduct over the pigeon ban after CBC News provided emails showing a councillor had asked colleagues to pass it. Council later repealed the bylaw.",
-      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/pigeon-investigation-report-north-van-2020-1.5468615" }
+      src:"CBC News", url:"https://www.cbc.ca/news/canada/british-columbia/pigeon-investigation-report-north-van-2020-1.5468615" },
+    DNV_SSMUH
+  ],
+  "District of North Vancouver|Council|Herman Mah":[DNV_SSMUH],
+  "District of North Vancouver|Council|Jordan Back":[DNV_SSMUH],
+  "District of North Vancouver|Council|Jim Hanson":[DNV_SSMUH],
+  "District of North Vancouver|Council|Catherine Pope":[DNV_SSMUH],
+  // ---------------- CITY OF NORTH VANCOUVER ----------------
+  "City of North Vancouver|Mayor|Oliver King":[
+    { type:"record", label:"Filed", date:"March 2026",
+      text:"King faces firearms charges over alleged offences in North Vancouver and Vancouver on 19 June 2025. An RCMP release put the count at 18, including possessing a prohibited or restricted firearm with ammunition and possessing a firearm without a licence. None of the charges have been proven in court.",
+      src:"Vancouver Sun", url:"https://ca.news.yahoo.com/north-vancouver-mayoral-candidate-criminal-201748767.html" },
+    { type:"record", label:"Filed", date:"2025",
+      text:"King faces one count of fraud over an alleged offence in West Vancouver on 4 March 2025. A provincial court trial is scheduled to start later in October 2026. The charge has not been proven in court.",
+      src:"North Shore News", url:"https://www.nsnews.com/local-news/city-of-north-vancouver-mayoralty-candidate-facing-gun-fraud-charges-12899798" },
+    { type:"record", label:"Finding", date:"May 2011",
+      text:"A U.S. federal jury in Seattle convicted King on five counts, including unlawful firearms dealing and lying to border agents. After an appeal, one count was dropped and his sentence was reduced to 30 months. U.S. authorities also knew him as Hamid Malekpour, a name he changed in 2008.",
+      src:"Vancouver Sun", url:"https://ca.news.yahoo.com/north-vancouver-mayoral-candidate-criminal-201748767.html" },
+    { type:"financial", label:"Reported", date:"September 2026",
+      text:"King left the assets, liabilities, income and real property sections of his nomination form blank.",
+      src:"Vancouver Sun", url:"https://ca.news.yahoo.com/north-vancouver-mayoral-candidate-criminal-201748767.html" }
   ]
 };
 
@@ -132,7 +190,7 @@ const P = {
     { status:"partial", text:"Hire 100 mental health nurses to pair with officers. About 50 workers with a range of specialized training were hired instead." },
     { status:"partial", text:"5,000 new childcare spaces. About 2,000 delivered, with 743 more approved." },
     { status:"partial", text:"Speed up permitting, the “3-3-3-1” pledge. Simple renovation permits hit the target, 92% inside three days; other categories still lag." },
-    { status:"partial", text:"Tax restraint. Property taxes rose 22.1% across the four-year term, after ABC criticised the previous council's 25%. The 2025 increase was zero." },
+    { status:"partial", text:"Tax restraint. Property taxes rose 22.1% across the four-year term, after ABC criticised the previous council's 25%. The 2026 increase was zero.", src:"CTV News", url:"https://www.ctvnews.ca/vancouver/article/vancouver-council-approves-zero-per-cent-property-tax-increase/" },
     { status:"broken",  text:"Double co-op housing, about 6,000 units. 334 net new units were added." },
     { status:"broken",  text:"Plant 100,000 trees in four years. Net new trees from 2023 to 2025 totalled 257." },
     { status:"broken",  text:"Create a Night Mayor position. Never created." },
@@ -160,7 +218,7 @@ const P = {
 const SEARCHED = [
   "Richmond|Mayor|Alexa Loo","Richmond|Mayor|Rob Howard","Richmond|Mayor|Mei Kang","Richmond|Mayor|Dickens Cheung",
   "Richmond|Council|Carol Day","Richmond|Council|Laura Gillanders","Richmond|Council|Michael Wolfe","Richmond|Council|Andy Hobbs",
-  "Delta|Mayor|Dylan Kruger","Delta|Mayor|Melissa Granum",
+  "Delta|Mayor|Melissa Granum",
   "Victoria|Council|Marg Gardiner","Victoria|Council|Jeremy Caradonna","Victoria|Council|Matt Dell","Victoria|Council|Dave Thompson",
   "Nanaimo|Council|Paul Manly","Nanaimo|Council|Sheryl Armstrong","Nanaimo|Council|Ian Thorpe","Nanaimo|Council|Hilary Eastmure",
   "City of North Vancouver|Mayor|Linda Buchanan","City of North Vancouver|Mayor|Mike McGraw",
@@ -214,8 +272,16 @@ Object.assign(P, {
       src:"Peace Arch News", url:"https://peacearchnews.com/2026/09/04/kruger-one-delta-promise-no-new-taxes-levies-or-fees-if-elected/" }
   ],
   "Delta|party|Delta First":[
-    { status:"noplatform", text:"No platform published. Mayoral candidate Melissa Granum said the party would listen to residents before offering one.",
-      src:"Peace Arch News", url:"https://peacearchnews.com/2026/03/11/delta-first-announces-mayor-council-candidates-ahead-of-fall-election/" }
+    { status:"nocost", text:"The platform, released 8 September 2026, commits to a council code of conduct with independent oversight, a zero-based budget review and better access to healthcare. Granum said healthcare is a provincial responsibility. No costs are published.",
+      src:"Delta Optimist", url:"https://www.delta-optimist.com/local-news/delta-first-launches-election-platform-12754129" }
+  ],
+  "Delta|party|Achieving for Delta":[
+    { status:"nocost", text:"The full platform, released 13 October 2026, includes a freeze on city fee increases in 2027, a new North Delta Recreation Centre and a City Ombudsman. No costs are published.",
+      src:"Delta Optimist", url:"https://www.delta-optimist.com/2026-civic-election/achieving-for-delta-releases-full-election-platform-12888227" }
+  ],
+  "Nanaimo|party|REAL Nanaimo":[
+    { status:"noplatform", text:"No specific or costed pledges were published as of 16 October 2026. The site sets out values such as responsible, ethical and accountable leadership.",
+      src:"REAL Nanaimo", url:"https://realnanaimo.ca/" }
   ],
   "Victoria|party|Victoria For All":[
     { status:"jurisdiction", text:"Free and expanded public transit. In Greater Victoria, fares, routes and service levels are set by the Victoria Regional Transit Commission under the BC Transit Act, whose members are appointed by the province. Victoria council does not control them.",

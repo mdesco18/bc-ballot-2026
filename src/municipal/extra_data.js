@@ -127,7 +127,7 @@ const X=[
 ["District of North Vancouver", "Council", "Independent", "Catherine Pope", 1, ""],
 ["District of North Vancouver", "Council", "Independent", "Stephanie Wilson", 0, ""],
 ["Victoria", "Mayor", "Independent", "Marianne Alto", 1, ""],
-["Victoria", "Mayor", "Independent", "Lyall Atkinson", 0, ""],
+["Victoria", "Mayor", "Independent", "Lyall Atkinson", 0, "", "Ended his campaign on 7 October and endorsed Bruce McGuigan. His name remains on the ballot."],
 ["Victoria", "Mayor", "Independent", "Darren Gervais-Harrison", 0, ""],
 ["Victoria", "Mayor", "Independent", "Christopher Hanna", 0, ""],
 ["Victoria", "Mayor", "Independent", "Mike Harris", 0, ""],

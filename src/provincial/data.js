@@ -1,6 +1,6 @@
 // M = MLA candidates: [district, party, name, incumbent, url, bio]. Roles as reported by 27 September 2026.
 // The final list from Elections BC (https://elections.bc.ca/2026-provincial-election/candidate-list/, CSV download),
-// with party names as Elections BC spells them. Nominations closed 1pm Saturday 3 October. Current to 6 October 2026.
+// with party names as Elections BC spells them. Nominations closed 1pm Saturday 3 October. Current to 6 October 2026; withdrawals and disendorsements to 16 October 2026.
 // Vancouver-Strathcona has no incumbent: the seat was vacant at dissolution.
 const M=[
 ["Vancouver-Fraserview","BC Green Party","Francoise Raunet",0,""],
@@ -42,7 +42,7 @@ const M=[
 ["Vancouver-South Granville","OneBC","Salvatore Vetro",0,""],
 ["Vancouver-Strathcona","BC NDP","Amanda Burrows",0,"","Executive director of First United in Vancouver's Downtown Eastside."],
 ["Vancouver-Strathcona","Communist Party of BC","Robert Crooks",0,"","Communist Party of BC leader since July 2025."],
-["Vancouver-Strathcona","Conservative Party","Jordan Zheng McIntosh",0,""],
+["Vancouver-Strathcona","Conservative Party","Jordan Zheng McIntosh",0,"","Dropped by the Conservative Party on 15 October. Ballots were already printed, and Elections BC still lists him as the Conservative candidate."],
 ["Vancouver-Strathcona","BC Green Party","Tanya Webking",0,""],
 ["Vancouver-West End","BC NDP","Spencer Chandra Herbert",1,"","Minister of Indigenous Relations and Reconciliation."],
 ["Vancouver-West End","BC Green Party","Scott MacDonald",0,""],
@@ -50,7 +50,7 @@ const M=[
 ["Vancouver-Yaletown","CentreBC","Sam Chandola",0,"","Conservative Party candidate in North Vancouver-Seymour in 2024."],
 ["Vancouver-Yaletown","Conservative Party","Margareta Dovgal",0,"","Managing director of Resource Works, a natural resource policy non-profit."],
 ["Vancouver-Yaletown","BC Green Party","Priyan Samarakoone",0,""],
-["Vancouver-Yaletown","Unaffiliated","Timothy Webster",0,""],
+["Vancouver-Yaletown","Unaffiliated","Timothy Webster",0,"","Withdrew on 8 October. His name remains on the printed ballot, and election officials will tell voters he has withdrawn."],
 ["Vancouver-Yaletown","BC NDP","Terry Yung",1,"","Minister of State for Community Safety and Integrated Services."],
 ["Richmond-Bridgeport","BC NDP","Linda Li",0,""],
 ["Richmond-Bridgeport","Conservative Party","Teresa Wat",1,"","Elected as a Conservative in 2024, sat as an independent and then with CentreBC from August 2026, and rejoined the Conservative caucus on 22 September."],
@@ -61,7 +61,7 @@ const M=[
 ["Richmond-Queensborough","BC Green Party","Luc Burns",0,""],
 ["Richmond-Queensborough","BC NDP","Dhar Grewal",0,""],
 ["Richmond-Queensborough","Conservative Party","Steve Kooner",1,"","Opposition critic for Attorney General."],
-["Richmond-Steveston","Independent","Robert Evans",0,""],
+["Richmond-Steveston","Independent","Robert Evans",0,"","Said on 9 October he planned to withdraw and back CentreBC's Barry Wosk. Elections BC has announced no withdrawal, so his name is on the ballot."],
 ["Richmond-Steveston","BC NDP","Bruce Kong",0,""],
 ["Richmond-Steveston","CentreBC","Barry Wosk",0,""],
 ["Richmond-Steveston","CWP","Keenan Yang",0,""],
@@ -80,12 +80,12 @@ const M=[
 ["North Vancouver-Seymour","BC NDP","Susie Chant",1,"","Parliamentary Secretary for Seniors' Services and Long-Term Care."],
 ["North Vancouver-Seymour","CentreBC","Lori Climenhaga",0,""],
 ["North Vancouver-Seymour","BC Green Party","Ben Holt",0,""],
-["North Vancouver-Seymour","OneBC","Frederick Thiele",0,""],
+["North Vancouver-Seymour","OneBC","Frederick Thiele",0,"","Withdrew on 13 October. His name remains on the printed ballot, and election officials will tell voters he has withdrawn."],
 ["West Vancouver-Capilano","BC NDP","Honieh Barzegari",0,""],
 ["West Vancouver-Capilano","OneBC","Naomi Chocyk",0,""],
 ["West Vancouver-Capilano","Conservative Party","Caroline Elliott",0,"","Placed second in the 2026 Conservative Party leadership race, which Kerry-Lynne Findlay won."],
 ["West Vancouver-Capilano","BC Green Party","Arwa Shurab",0,""],
-["Victoria-Beacon Hill","Conservative Party","Joachim Agou",0,""],
+["Victoria-Beacon Hill","Conservative Party","Joachim Agou",0,"","Dropped by the Conservative Party on 8 October and running as an independent. The printed ballot still lists him as the Conservative candidate."],
 ["Victoria-Beacon Hill","BC NDP","Grace Lore",1,"","Minister without Portfolio."],
 ["Victoria-Beacon Hill","BC Green Party","Rajinder S. Sahota",0,""],
 ["Victoria-Swan Lake","BC Green Party","Carolyn Howe",0,"","President of the Greater Victoria Teachers' Association."],

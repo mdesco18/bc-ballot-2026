@@ -2,9 +2,24 @@
 // Sitting MLAs researched 27 September 2026; MLAs not running again were removed on 6 October. Other candidates researched 6 October 2026.
 // type:  financial | election | conduct | record | cleared
 // label: Finding | Filed | Reported | Raised, no finding | Cleared
-// status (promises): kept | partial | broken | reversed
+// status (promises): kept | partial | broken | reversed | costing | jurisdiction
 
 const R = {
+  "Richmond-Bridgeport|MLA|Linda Li":[
+    { type:"financial", label:"Finding", date:"30 June 2026",
+      text:"The Superintendent of Real Estate at the BC Financial Services Authority imposed administrative penalties on Li as a managing broker. It found she closed a deal file without complete, signed buyer disclosure forms, failed to take reasonable steps to avoid a conflict of interest, and gave the regulator incomplete and misleading information. She acknowledged the client's signatures were obtained about a year late, during the investigation, and that the documents were backdated. Eby said on 16 October that she had paid the fine and completed the required remedial course.",
+      src:"BC Financial Services Authority; Business in Vancouver", url:"https://www.bcfsa.ca/media/4962/download" }
+  ],
+  "Vancouver-Strathcona|MLA|Jordan Zheng McIntosh":[
+    { type:"conduct", label:"Reported", date:"15 October 2026",
+      text:"The Conservative Party dropped McIntosh less than an hour after NDP candidate Callista Ryan posted screenshots of what she said were his posts on a pseudonymous X account. One post said Hitler \u201cmay not have intended death\u201d during the Holocaust. McIntosh, who finished high school in 2025, declined to comment.",
+      src:"The Canadian Press via CTV News", url:"https://www.ctvnews.ca/vancouver/article/bc-conservatives-dump-candidate-accused-of-hitler-remarks/" }
+  ],
+  "Victoria-Beacon Hill|MLA|Joachim Agou":[
+    { type:"conduct", label:"Reported", date:"8 October 2026",
+      text:"The Conservative Party dropped Agou after the NDP made public posts he had written on X, since deleted. In one he shared a meme suggesting Pakistani immigrants had turned London into a \u201cs---hole\u201d; in another he wrote of a driver who drove into a pro-Palestinian march that \u201che should have reversed too.\u201d Agou apologized and said he takes responsibility for his words, but rejected any accusation of racism.",
+      src:"Times Colonist", url:"https://www.timescolonist.com/2026-bc-votes/bc-conservatives-pull-victoria-beacon-hill-candidate-after-posts-surface-12874734" }
+  ],
   "Vancouver-Hastings|MLA|Niki Sharma":[
     { type:"record", label:"Reported", date:"21 September 2026",
       text:"CTV News reported that Sharma, as Attorney General, filed a civil suit in a California court against OpenAI over the Tumbler Ridge school shooting, alleging the company failed to alert police to the shooter's activity on ChatGPT. The case had not been decided.",
@@ -178,7 +193,9 @@ const P = {
       src:"BC Gov News (platform reported by CTV News, 3 October 2024)", url:"https://news.gov.bc.ca/releases/2026HLTH0023-000237" },
     { status:"broken",
       text:"In September 2024 the party promised a middle-class tax cut that would exempt an extra $10,000 of income from tax each year. Budget 2026 instead raised the lowest income tax rate from 5.06 to 5.6 per cent, and Bill 2 enacted it on 1 April 2026.",
-      src:"The Canadian Press via CFJC Today (pledge reported by Squamish Reporter, 30 September 2024)", url:"https://cfjctoday.com/2026/02/17/b-c-hikes-tax-rate-as-budget-delivers-record-13-billion-deficit/" }
+      src:"The Canadian Press via CFJC Today (pledge reported by Squamish Reporter, 30 September 2024)", url:"https://cfjctoday.com/2026/02/17/b-c-hikes-tax-rate-as-budget-delivers-record-13-billion-deficit/" },
+    { status:"costing", text:"The party says higher income tax on top earners raises $1 billion in 2028-29. UBC Okanagan economist Ross Hickey told The Canadian Press that figure is unlikely once people respond to the tax, and said independent economists put it at $500 million to $700 million.",
+      src:"The Canadian Press via Narcity", url:"https://www.narcity.com/tax-talk-a-theme-in-b-c-s-election-campaign" }
   ],
   "Vancouver-Hastings|MLA|Niki Sharma":[
     { status:"partial",
@@ -219,6 +236,15 @@ const P = {
       text:"In September 2024 Malcolmson told CBC the rule reducing disability assistance for couples was not the right rule and her ministry hoped to tackle it. On 13 November 2025 the ministry announced the couples clawback would end 1 December 2025.",
       src:"BC Gov News", url:"https://news.gov.bc.ca/releases/2025SDPR0017-001110" }
   ],
+  // 2026 platform items whose arithmetic a named outlet reported as disputed.
+  "party|Conservative Party":[
+    { status:"costing", text:"The party pledges to raise the basic personal exemption to $32,000, cutting income tax by up to $1,000 a year, and had not published the cost by 16 October. University of Victoria economist Justin Wiltshire put it at about $3 billion a year, and Marc Lee of the Canadian Centre for Policy Alternatives at $2 billion to $4 billion.",
+      src:"Times Colonist", url:"https://www.timescolonist.com/2026-bc-votes/bc-parties-dodge-the-deficit-as-election-promises-pile-up-12884873" }
+  ],
+  "party|BC Green Party":[
+    { status:"costing", text:"The party estimates its one-time tax on wealth over $50 million raises $22.2 billion in its first year. Economist Ross Hickey told The Canadian Press that wealth taxes in European countries raised little because people moved their wealth. Marc Lee told the Times Colonist it would be extremely difficult to implement provincially, given federal jurisdiction over finance.",
+      src:"The Canadian Press via Narcity", url:"https://www.narcity.com/tax-talk-a-theme-in-b-c-s-election-campaign" }
+  ]
 };
 
 // Searched with nothing adverse found and no promise with a checkable status.
@@ -260,13 +286,13 @@ const SEARCHED = [
   "Vancouver-South Granville|MLA|Colin Smith",
   "Vancouver-South Granville|MLA|Salvatore Vetro",
   "Vancouver-Strathcona|MLA|Amanda Burrows",
-  "Vancouver-Strathcona|MLA|Jordan Zheng McIntosh",
+  
   "Vancouver-Strathcona|MLA|Tanya Webking",
   "Vancouver-West End|MLA|Scott MacDonald",
   "Vancouver-West End|MLA|Dion Weisner",
   "Vancouver-Yaletown|MLA|Sam Chandola",
   "Vancouver-Yaletown|MLA|Margareta Dovgal",
-  "Richmond-Bridgeport|MLA|Linda Li",
+  
   "Richmond Centre|MLA|Lawrence Chen",
   "Richmond Centre|MLA|Calvin Dang",
   "Richmond Centre|MLA|Sacha Peter",
@@ -287,7 +313,7 @@ const SEARCHED = [
   "West Vancouver-Capilano|MLA|Honieh Barzegari",
   "West Vancouver-Capilano|MLA|Naomi Chocyk",
   "West Vancouver-Capilano|MLA|Caroline Elliott",
-  "Victoria-Beacon Hill|MLA|Joachim Agou",
+
   "Victoria-Beacon Hill|MLA|Rajinder S. Sahota",
   "Victoria-Swan Lake|MLA|Carolyn Howe",
   "Victoria-Swan Lake|MLA|Tim Taylor",

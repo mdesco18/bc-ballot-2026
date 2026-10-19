@@ -404,7 +404,7 @@ if(toTop){
   const d=Math.ceil((new Date(y,m-1,dd)-new Date())/86400000);
   if(d>0){ n.hidden=false; n.textContent=d; l.textContent=(d===1?"day":"days")+" until voting day"; }
   else if(d===0){ n.hidden=false; n.textContent="Today"; l.textContent="voting places are open 8am to 8pm"; }
-  else { n.hidden=true; l.textContent="This election was held on "+VOTING_DAY+". The results are not on this page."; }
+  else { n.hidden=true; l.textContent="This election was held on "+VOTING_DAY+". "+AFTER_VOTE; }
   const pv=document.getElementById("provisional");
   if(pv) pv.hidden = !!PROVISIONAL_UNTIL && new Date() >= new Date(PROVISIONAL_UNTIL);
 })();

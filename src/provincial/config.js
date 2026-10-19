@@ -56,6 +56,7 @@ const RACE_LABEL={};
 const RACE_TITLE={};
 function raceNote(){ return ""; }
 const ELECTION_DAY="2026-10-24", VOTING_DAY="Saturday 24 October 2026";
+const AFTER_VOTE="The results are not on this page.";
 const PROVISIONAL_UNTIL="2026-10-03T20:00:00Z";   // 1pm Pacific, 3 Oct
 const CARD_NOTE="Candidate lists are current to 6 October 2026, from Elections BC's final list; check your district on Elections BC before voting.";
 const NO_ROWS="No candidates are listed for this district.";
